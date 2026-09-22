@@ -10,10 +10,11 @@ pub enum Theme {
     Reclamation,
     Expedition,
     Automata,
+    Phantom,
 }
 
 impl Theme {
-    pub const ALL: [Self; 9] = [
+    pub const ALL: [Self; 10] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -23,6 +24,7 @@ impl Theme {
         Self::Reclamation,
         Self::Expedition,
         Self::Automata,
+        Self::Phantom,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -32,11 +34,12 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 4] = [
+    pub const INTERFACES: [Self; 5] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
         Self::Automata,
+        Self::Phantom,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -55,6 +58,7 @@ impl Theme {
             Self::Reclamation => "reclamation",
             Self::Expedition => "expedition",
             Self::Automata => "automata",
+            Self::Phantom => "phantom",
         }
     }
 
@@ -69,6 +73,7 @@ impl Theme {
             Self::Reclamation => "生息演算 · 营地",
             Self::Expedition => "集成战略 · 旅程",
             Self::Automata => "尼尔 · 日常档案",
+            Self::Phantom => "P5 · 开饭预告",
         }
     }
 
@@ -83,6 +88,7 @@ impl Theme {
             Self::Reclamation => "休整片刻，再次出发。",
             Self::Expedition => "每一顿，都是旅途的一站。",
             Self::Automata => "把平凡的每一餐，写入档案。",
+            Self::Phantom => "今天的胃口，由自己宣告。",
         }
     }
 
@@ -98,6 +104,7 @@ impl Theme {
             Self::Reclamation => include_str!("../assets/themes/reclamation.css"),
             Self::Expedition => include_str!("../assets/themes/expedition.css"),
             Self::Automata => include_str!("../assets/themes/automata.css"),
+            Self::Phantom => include_str!("../assets/themes/phantom.css"),
             _ => "",
         }
     }
@@ -107,6 +114,7 @@ impl Theme {
             Self::Control => include_str!("../assets/themes/control-scene.svg"),
             Self::Reclamation => include_str!("../assets/themes/reclamation-scene.svg"),
             Self::Expedition => include_str!("../assets/themes/expedition-scene.svg"),
+            Self::Phantom => include_str!("../assets/themes/phantom-scene.svg"),
             _ => "",
         }
     }

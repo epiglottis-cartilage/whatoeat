@@ -12,16 +12,20 @@ const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const { pathToFileURL } = require('node:url');
-const playwright = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const { values: options } = require('node:util').parseArgs({ options: {
+  playwright: { type: 'string' }, themes: { type: 'string' },
+  output: { type: 'string' }, browsers: { type: 'string' },
+} });
+const playwright = require(options.playwright || process.env.PLAYWRIGHT_MODULE || 'playwright');
 
 const root = path.resolve(__dirname, '..');
 const binary = path.resolve(process.env.PREVIEW_BIN || path.join(root, 'target/debug/preview'));
-const output = path.resolve(process.env.UI_CHECK_OUTPUT || path.join(os.tmpdir(), 'whatoeat-ui-check'));
-const browserNames = (process.env.UI_CHECK_BROWSERS || 'chromium').split(',');
+const output = path.resolve(options.output || process.env.UI_CHECK_OUTPUT || path.join(os.tmpdir(), 'whatoeat-ui-check'));
+const browserNames = (options.browsers || process.env.UI_CHECK_BROWSERS || 'chromium').split(',');
 const oldThemes = ['poster', 'rhodes', 'rhine', 'penguin', 'kazimierz'];
-const interfaces = ['control', 'reclamation', 'expedition', 'automata'];
+const interfaces = ['control', 'reclamation', 'expedition', 'automata', 'phantom'];
 const themes = [...oldThemes, ...interfaces];
-const selectedThemes = process.env.UI_CHECK_THEMES?.split(',') || themes;
+const selectedThemes = (options.themes || process.env.UI_CHECK_THEMES)?.split(',') || themes;
 for (const theme of selectedThemes) assert.ok(themes.includes(theme), `Unknown theme: ${theme}`);
 const widths = [360, 390, 760, 1060];
 const height = 840;

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="phantom-dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#110f16" opacity=".22"/></pattern></defs>
+  <path fill="#ca002d" d="M0 0h1440v1000H0z"/>
+  <path fill="#100e14" d="M890 0h550v1000H510L1060 165 660 235z"/>
+  <path fill="url(#phantom-dots)" d="M0 0h790L610 1000H0z"/>
+  <path fill="none" stroke="#fff" stroke-width="8" opacity=".12" d="m-90 900 270-190-90 300L0 690l320 170zm120-840 40 100 104-42-77 83 61 75-99-40-61 90 6-115-102-20 115-28z"/>
+  <path fill="#fff" opacity=".07" d="m1370 650 40 89 97-12-72 67 51 85-90-44-69 72 17-100-100-29 107-19z"/>
+  <path fill="#fff" d="m-30 960 1470-100 8 10L0 993z" opacity=".1"/>
+</svg>

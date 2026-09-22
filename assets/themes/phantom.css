@@ -1,0 +1,135 @@
+/* P5-01: a cut-paper composition with angular backing shapes and flat type.
+   No game characters or logo assets. Slanted decoration never clips form fields. */
+.theme-root[data-theme="phantom"] {
+  color-scheme: dark;
+  --canvas: #ca002d; --paper: #121116; --ink: #fffaf1;
+  --acid: #fffaf1; --pink: #df1745; --accent-ink: #141217;
+  --secondary-ink: #fffaf1; --surface: #201c24; --inset: #17151b;
+  --hover: #39313e; --muted: #d4cbd2; --subtle: #d4cbd2;
+  --divider: #766570; --stripe: #30232e; --stroke: #fffaf1;
+  --shadow: #0a0810; --strong: #fffaf1; --strong-ink: #141217;
+  --strong-accent: #141217; --inactive: #3b303b; --focus: #6ce9fa;
+  --danger: #ffc1c8; --danger-surface: #662231; --danger-ink: #fff1ee;
+  --warning-surface: #542130; --danger-button: #a51d38;
+  --line: 2px solid var(--stroke);
+  font-family: "Arial Black", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+.theme-root[data-theme="phantom"] .app-shell { background: transparent; }
+.theme-root[data-theme="phantom"] .masthead { background: #101015; border-bottom: 4px solid #fffaf1; }
+.theme-root[data-theme="phantom"] .brand-symbol { background: #ca002d; color: white; clip-path: polygon(0 15%, 95% 0, 100% 90%, 10% 100%); transform: rotate(-6deg); }
+.theme-root[data-theme="phantom"] .wordmark { font-style: italic; font-weight: 950; letter-spacing: -.05em; }
+.theme-root[data-theme="phantom"] .brand-subtitle { font-size: 9px; color: #cec5cc; }
+.theme-root[data-theme="phantom"] .theme-select { border: 2px solid #fffaf1; background-color: #211b25; }
+.theme-root[data-theme="phantom"] .main { max-width: 1250px; padding: 38px 48px 45px; }
+.theme-root[data-theme="phantom"] .eat-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 45px; min-height: 570px; }
+.theme-root[data-theme="phantom"] .interface-overview { align-self: center; padding: 20px 0 25px; isolation: isolate; }
+.theme-root[data-theme="phantom"] .overview-kicker { font: 800 10px/1.5 monospace; letter-spacing: .07em; padding: 7px 9px; background: #121116; color: #fffaf1; display: inline-block; transform: rotate(-3deg); margin-bottom: 25px; }
+.theme-root[data-theme="phantom"] .overview-title { font-weight: 950; font-style: italic; font-size: clamp(37px, 4.6vw, 67px); letter-spacing: -.07em; line-height: 1.6; text-shadow: 4px 4px #100c14, -2px -2px #100c14, 2px -2px #100c14, -2px 2px #100c14; transform: rotate(-4deg); }
+.theme-root[data-theme="phantom"] .overview-title span { background: #fffaf1; color: #16121b; padding: 2px 9px; text-shadow: none; box-shadow: 8px 7px #15101a; }
+.theme-root[data-theme="phantom"] .overview-copy { color: #fffaf1; margin-top: 22px; font-size: 13px; font-weight: 650; }
+.theme-root[data-theme="phantom"] .overview-visual { display: none; }
+.theme-root[data-theme="phantom"] .day-dial { position: relative; display: inline-flex; margin: 36px 0 9px; gap: 9px; padding: 8px 20px; color: #17121a; background: #fffaf1; transform: rotate(-5deg); box-shadow: 7px 6px #111017; }
+.theme-root[data-theme="phantom"] .day-month { color: #17121a; font: 700 12px/1.5 monospace; }
+.theme-root[data-theme="phantom"] .day-number { font: italic 950 52px/1 Arial, sans-serif; }
+.theme-root[data-theme="phantom"] .day-caption { color: #17121a; font-weight: 800; }
+.theme-root[data-theme="phantom"] .overview-stats { border: 0; margin-top: 24px; padding: 0; gap: 22px; }
+.theme-root[data-theme="phantom"] .overview-stat { background: #151019; padding: 10px 13px; gap: 7px; box-shadow: 3px 3px #fffaf1; }
+.theme-root[data-theme="phantom"] .overview-stat strong { font: italic 900 26px Arial, sans-serif; }
+.theme-root[data-theme="phantom"] .overview-stat span { color: #fffaf1; font-size: 10px; }
+.theme-root[data-theme="phantom"] .overview-caption { color: #fffaf1; font-size: 11px; margin-top: 25px; }
+.theme-root[data-theme="phantom"] .eat-console { padding: 23px 20px 22px; position: relative; isolation: isolate; }
+.theme-root[data-theme="phantom"] .eat-console::before { content: ""; position: absolute; z-index: -1; inset: -7px -9px; background: #151019; border: 4px solid #fffaf1; transform: skewY(-2deg); pointer-events: none; }
+.theme-root[data-theme="phantom"] .page-kicker { color: #e1d6df; font-size: 9px; letter-spacing: .06em; }
+.theme-root[data-theme="phantom"] .page-heading h1,
+.theme-root[data-theme="phantom"] .section-title { font-weight: 950; font-style: italic; font-size: clamp(32px, 3.8vw, 47px); letter-spacing: -.05em; }
+.theme-root[data-theme="phantom"] .page-heading h1 em,
+.theme-root[data-theme="phantom"] .section-title em { background: #fffaf1; color: #151019; padding: 1px 6px; margin-left: 7px; transform: rotate(-3deg); }
+.theme-root[data-theme="phantom"] .tiny-stamp { background: #ca002d; color: #fffaf1; font-size: 10px; transform: rotate(8deg); border: 2px solid #fffaf1; box-shadow: 3px 3px #ca002d; padding: 5px; }
+.theme-root[data-theme="phantom"] .food-ticket { background: #fffaf1; color: #17121a; border: 0; padding: 20px 21px 38px; box-shadow: 7px 7px #ca002d; min-height: 255px; animation: phantom-cut .22s ease-out both; }
+.theme-root[data-theme="phantom"] .ticket-top { font-size: 9px; font-weight: 700; color: #17121a; }
+.theme-root[data-theme="phantom"] .ticket-top span:first-child { background: #17121a; color: #fffaf1; border: 0; padding: 5px 9px; transform: rotate(-3deg); }
+.theme-root[data-theme="phantom"] .food-name { font: italic 950 clamp(50px, 6.5vw, 86px)/1.35 "Arial Black", "Noto Sans CJK SC", sans-serif; letter-spacing: -.07em; margin: 24px 0; }
+.theme-root[data-theme="phantom"] .food-name.long { font-size: 34px; letter-spacing: -.03em; line-height: 1.5; }
+.theme-root[data-theme="phantom"] .ticket-bottom p { color: #312930; font-weight: 600; }
+.theme-root[data-theme="phantom"] .food-sticker { background: #ca002d; color: #fffaf1; transform: rotate(5deg); font-weight: 700; }
+.theme-root[data-theme="phantom"] .ticket-edge { color: #38303a; font-size: 7px; left: 21px; }
+.theme-root[data-theme="phantom"] .decisions { margin-top: 24px; gap: 14px; }
+.theme-root[data-theme="phantom"] .decision { border: 2px solid #fffaf1; box-shadow: 4px 4px #ca002d; min-height: 95px; padding: 17px 15px; }
+.theme-root[data-theme="phantom"] .decision strong { font-style: italic; font-weight: 900; font-size: 31px; }
+.theme-root[data-theme="phantom"] .decision span { font-weight: 500; font-size: 10px; }
+.theme-root[data-theme="phantom"] .decision:hover { transform: translateY(-3px); box-shadow: 4px 7px #ca002d; }
+.theme-root[data-theme="phantom"] .decision.eat { color: #fffaf1; background: #ca002d; box-shadow: 4px 4px #fffaf1; }
+.theme-root[data-theme="phantom"] .decision.skip { background: #18131c; color: #fffaf1; }
+.theme-root[data-theme="phantom"] .small-print { color: #e1d6df; }
+.theme-root[data-theme="phantom"] .nav { background: #100e14; border-top: 4px solid #fffaf1; padding-inline: 26px; gap: 12px; }
+.theme-root[data-theme="phantom"] .nav-item { border: 0; font-weight: 800; position: relative; background: transparent; isolation: isolate; }
+.theme-root[data-theme="phantom"] .nav-item.active { color: #151019; }
+.theme-root[data-theme="phantom"] .nav-item.active::before { content: ""; position: absolute; z-index: -1; inset: 8px 0; background: #fffaf1; clip-path: polygon(6% 4%, 100% 0, 95% 93%, 0 100%); pointer-events: none; }
+.theme-root[data-theme="phantom"] .nav-item small { color: inherit; top: 11px; left: 15px; }
+.theme-root[data-theme="phantom"] .footer { background: #100e14; color: #ded4dd; border-top: 1px solid #5b4858; }
+.theme-root[data-theme="phantom"] .food-row { position: relative; background: #17121a; border: 0; border-left: 5px solid #fffaf1; box-shadow: 4px 4px #100c14; margin-bottom: 13px; }
+.theme-root[data-theme="phantom"] .food-row .row-main h3 { font-weight: 800; }
+.theme-root[data-theme="phantom"] .row-number { color: #fffaf1; font-weight: 800; }
+.theme-root[data-theme="phantom"] .toggle { color: #151019; background: #fffaf1; border: 0; font-weight: 800; }
+.theme-root[data-theme="phantom"] .toggle[aria-pressed="false"] { color: #fffaf1; background: #3b303b; }
+.theme-root[data-theme="phantom"] .meal-form,
+.theme-root[data-theme="phantom"] .backup-panel { border: 2px solid #fffaf1; box-shadow: 6px 6px #110d16; }
+.theme-root[data-theme="phantom"] .meal-form h2,
+.theme-root[data-theme="phantom"] .backup-panel h2 { display: inline-block; background: #fffaf1; color: #151019; padding: 4px 13px; font-style: italic; font-weight: 900; }
+.theme-root[data-theme="phantom"] .history-row { margin: 0 0 12px; padding: 20px; background: #17121a; border: 0; border-left: 4px solid #fffaf1; }
+.theme-root[data-theme="phantom"] .history-row h3 { font-weight: 800; }
+.theme-root[data-theme="phantom"] .history-row small { color: #151019; background: #fffaf1; display: inline-block; padding: 4px 7px; }
+.theme-root[data-theme="phantom"] .lede,
+.theme-root[data-theme="phantom"] .footnote { color: #fffaf1; background: #17121a; padding: 12px 15px; }
+.theme-root[data-theme="phantom"] .button { font-weight: 750; border: 2px solid #fffaf1; box-shadow: 3px 3px #100c14; }
+.theme-root[data-theme="phantom"] .toast { background: #fffaf1; color: #151019; border: 3px solid #151019; box-shadow: 5px 5px #ca002d; }
+.theme-root[data-theme="phantom"] .toast-mark { color: #b6002a; }
+.theme-root[data-theme="phantom"] .accepted-stamp { background: #fffaf1; color: #151019; border: 4px solid #151019; box-shadow: 6px 6px #ca002d; transform: rotate(-5deg); font-weight: 950; }
+@keyframes phantom-cut { from { opacity: 0; transform: translateX(9px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .theme-root[data-theme="phantom"] .main { padding-inline: 34px; }
+  .theme-root[data-theme="phantom"] .eat-layout { gap: 22px; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); }
+  .theme-root[data-theme="phantom"] .overview-title { font-size: 37px; }
+  .theme-root[data-theme="phantom"] .overview-stats { gap: 12px; }
+  .theme-root[data-theme="phantom"] .overview-stat { padding: 8px; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="phantom"] .main { padding: 25px 23px 35px; }
+  .theme-root[data-theme="phantom"] .eat-layout { display: flex; gap: 26px; min-height: 0; }
+  .theme-root[data-theme="phantom"] .interface-overview { align-self: stretch; padding: 0 0 9px; border: 0; }
+  .theme-root[data-theme="phantom"] .overview-kicker { font-size: 8px; margin: 0 0 12px; padding: 5px 8px; }
+  .theme-root[data-theme="phantom"] .overview-title { font-size: 30px; max-width: 75%; line-height: 1.55; letter-spacing: -.07em; transform: rotate(-2deg); }
+  .theme-root[data-theme="phantom"] .overview-title br { display: block; }
+  .theme-root[data-theme="phantom"] .overview-title span { padding: 0 4px; box-shadow: 4px 4px #151019; }
+  .theme-root[data-theme="phantom"] .day-dial { position: absolute; top: 30px; right: 0; margin: 0; padding: 8px; flex-direction: column; gap: 2px; transform: rotate(6deg); }
+  .theme-root[data-theme="phantom"] .day-month { font-size: 8px; }
+  .theme-root[data-theme="phantom"] .day-number { font-size: 37px; }
+  .theme-root[data-theme="phantom"] .overview-copy,
+  .theme-root[data-theme="phantom"] .overview-caption { display: none; }
+  .theme-root[data-theme="phantom"] .overview-stats { margin-top: 18px; gap: 15px; }
+  .theme-root[data-theme="phantom"] .overview-stat { padding: 6px 10px; box-shadow: 2px 2px #fffaf1; }
+  .theme-root[data-theme="phantom"] .overview-stat strong { font-size: 20px; }
+  .theme-root[data-theme="phantom"] .eat-console { padding: 15px 9px 16px; }
+  .theme-root[data-theme="phantom"] .eat-console::before { inset: -5px -7px; border-width: 3px; }
+  .theme-root[data-theme="phantom"] .page-heading { gap: 8px; margin-bottom: 20px; }
+  .theme-root[data-theme="phantom"] .page-heading h1 { font-size: 27px; line-height: 1.5; }
+  .theme-root[data-theme="phantom"] .page-heading h1 em { margin-left: 3px; padding: 0 4px; }
+  .theme-root[data-theme="phantom"] .tiny-stamp { font-size: 8px; padding: 4px; }
+  .theme-root[data-theme="phantom"] .page-kicker { font-size: 8px; letter-spacing: 0; gap: 9px; }
+  .theme-root[data-theme="phantom"] .food-ticket { min-height: 232px; padding: 18px 16px 33px; box-shadow: 4px 4px #ca002d; }
+  .theme-root[data-theme="phantom"] .food-name { font-size: 51px; }
+  .theme-root[data-theme="phantom"] .food-name.long { font-size: 28px; }
+  .theme-root[data-theme="phantom"] .ticket-top { font-size: 8px; letter-spacing: 0; }
+  .theme-root[data-theme="phantom"] .ticket-top span:first-child { font-size: 9px; }
+  .theme-root[data-theme="phantom"] .ticket-bottom p { font-size: 11px; }
+  .theme-root[data-theme="phantom"] .food-sticker { font-size: 9px; padding: 5px 7px; }
+  .theme-root[data-theme="phantom"] .ticket-edge { left: 16px; letter-spacing: .04em; }
+  .theme-root[data-theme="phantom"] .decision { min-height: 92px; padding: 15px 10px; }
+  .theme-root[data-theme="phantom"] .decision strong { font-size: 27px; }
+  .theme-root[data-theme="phantom"] .decision span { font-size: 9px; }
+  .theme-root[data-theme="phantom"] .nav { padding-inline: 7px; gap: 2px; }
+  .theme-root[data-theme="phantom"] .nav-item { font-size: 10px; padding-inline: 2px; }
+  .theme-root[data-theme="phantom"] .nav-item.active::before { inset: 4px 0; }
+  .theme-root[data-theme="phantom"] .history-row { padding: 17px 13px; }
+  .theme-root[data-theme="phantom"] .section-title { font-size: 33px; }
+}

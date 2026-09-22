@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 6,
-  "image_bytes_total": 4372453,
+  "reference_count": 7,
+  "image_bytes_total": 4473650,
   "references": [
     {
       "id": "HOME-01",
@@ -214,6 +214,29 @@
         900
       ],
       "format": "PNG"
+    },
+    {
+      "id": "P5-01",
+      "family": "phantom",
+      "title": "Persona 5 武器菜单历史画面",
+      "file": "references/persona/P5-01-menu.jpg",
+      "study": "studies/05-phantom.md",
+      "kind": "third_party_hosted_trailer_screenshot",
+      "source_page": "https://jiaxinwen.wordpress.com/2017/04/27/the-ui-design-of-persona-5/",
+      "original_image_url": "https://i0.wp.com/gematsu.com/wp-content/uploads/2015/02/Persona-5_PV-Snap_02-05_009.jpg",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Historical promotional frame, not current Royal menu; capture version unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "ce1ce99a9e7bc254edcfe67ec874b3b91ebb6eee656b844f83553862173a219f",
+      "bytes": 101197,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "format": "JPEG"
     }
   ]
 }

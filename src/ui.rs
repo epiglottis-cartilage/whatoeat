@@ -411,6 +411,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
     let active = data.menu().filter(|food| food.enabled).count();
     let count = data.eaten_count();
     let (kicker, title, second_line, copy, caption) = match theme {
+        Theme::Phantom => (
+            "TAKE YOUR APPETITE / 开饭预告",
+            "别再纠结，",
+            "现在开饭！",
+            "今日作战目标：好好吃一顿。",
+            "这一餐，就听自己的。",
+        ),
         Theme::Automata => (
             "ARCHIVE : DAILY MEALS",
             "日常记录",
