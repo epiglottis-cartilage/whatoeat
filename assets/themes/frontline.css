@@ -1,0 +1,106 @@
+/* BF-01: atmospheric field, light typography, white selected tile and thin rails. */
+.theme-root[data-theme="frontline"] {
+  --canvas: #303e43; --paper: #263439; --ink: #f1f3f0;
+  --acid: #f0f1ed; --pink: #c6a777; --accent-ink: #202c30;
+  --secondary-ink: #202c30; --surface: #35454b; --inset: #283a40;
+  --hover: #4c6067; --muted: #d0d8d8; --subtle: #c4d0d0;
+  --divider: #899a9b60; --stripe: #65777b25; --stroke: #9fadaf;
+  --shadow: #101b1e; --strong: #eff0eb; --strong-ink: #243136;
+  --strong-accent: #243136; --inactive: #45565c; --focus: #f3c47d;
+  --danger: #ffc8b2; --danger-surface: #51382f; --danger-ink: #ffe2d6;
+  --warning-surface: #443c32; --danger-button: #8c4637;
+  --line: 1px solid var(--stroke);
+  font-family: "Arial Narrow", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+.theme-root[data-theme="frontline"] .masthead { background: #22313750; border-bottom: 1px solid #bdcccc40; }
+.theme-root[data-theme="frontline"] .brand-symbol { border: 1px solid #d3c7af; border-radius: 50%; clip-path: none; background: transparent; color: #e6c78f; font-weight: 400; }
+.theme-root[data-theme="frontline"] .wordmark { font-size: 24px; font-weight: 400; letter-spacing: -.03em; }
+.theme-root[data-theme="frontline"] .brand-subtitle { color: #d0d8d8; letter-spacing: .15em; }
+.theme-root[data-theme="frontline"] .theme-select { background-color: #34464c; border: 1px solid #acb9b9; width: 177px; font-weight: 400; }
+.theme-root[data-theme="frontline"] .main { padding: 32px 42px 45px; max-width: 1250px; }
+.theme-root[data-theme="frontline"] .eat-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr); gap: 12px 24px; align-items: stretch; }
+.theme-root[data-theme="frontline"] .interface-overview { display: contents; }
+.theme-root[data-theme="frontline"] .overview-kicker { grid-column: 1/-1; grid-row: 1; font: 10px/1.5 sans-serif; color: #e4e9e8; letter-spacing: .12em; margin: 0; }
+.theme-root[data-theme="frontline"] .overview-title { grid-column: 1/-1; grid-row: 2; font-size: clamp(27px, 3.7vw, 44px); font-weight: 300; letter-spacing: .06em; line-height: 1.5; }
+.theme-root[data-theme="frontline"] .overview-title br { display: none; }
+.theme-root[data-theme="frontline"] .overview-copy { grid-column: 1/-1; grid-row: 3; margin: 0 0 16px; font-size: 12px; color: #d0d8d8; }
+.theme-root[data-theme="frontline"] .overview-visual { display: none; }
+.theme-root[data-theme="frontline"] .day-dial { grid-column: 2; grid-row: 4; display: flex; flex-wrap: wrap; align-content: end; align-items: baseline; padding: 25px; min-height: 190px; background: linear-gradient(155deg, #8b8b7570, #16262cc9); border: 1px solid #aab5b550; }
+.theme-root[data-theme="frontline"] .day-month { width: 100%; color: #e0e6e3; font: 12px sans-serif; letter-spacing: .15em; }
+.theme-root[data-theme="frontline"] .day-number { font: 300 64px/1.3 sans-serif; }
+.theme-root[data-theme="frontline"] .day-caption { color: #e0e6e3; font-size: 13px; }
+.theme-root[data-theme="frontline"] .overview-stats { grid-column: 2; grid-row: 5; display: grid; grid-template-columns: 1fr; gap: 15px; padding: 24px; margin: 0; background: #1b2b31c9; border: 1px solid #aab5b550; }
+.theme-root[data-theme="frontline"] .overview-stat { justify-content: space-between; gap: 15px; }
+.theme-root[data-theme="frontline"] .overview-stat strong { font: 300 32px sans-serif; order: 2; }
+.theme-root[data-theme="frontline"] .overview-stat span { color: #e0e6e3; font-size: 12px; }
+.theme-root[data-theme="frontline"] .overview-caption { grid-column: 2; grid-row: 6; margin: 0; padding: 15px 0; color: #d0d8d8; font-size: 11px; line-height: 1.8; }
+.theme-root[data-theme="frontline"] .eat-console { grid-column: 1; grid-row: 4/7; }
+.theme-root[data-theme="frontline"] .page-kicker { font-size: 9px; color: #dce3e1; }
+.theme-root[data-theme="frontline"] .page-heading { margin-bottom: 18px; }
+.theme-root[data-theme="frontline"] .page-heading h1,
+.theme-root[data-theme="frontline"] .section-title { font-size: 33px; font-weight: 400; letter-spacing: .03em; }
+.theme-root[data-theme="frontline"] .tiny-stamp { background: transparent; color: #f0ddb5; border: 1px solid #d3c09b; font-size: 9px; }
+.theme-root[data-theme="frontline"] .food-ticket { color: #243136; background: #f0f1ed; border: 0; padding: 0 25px 34px; min-height: 240px; }
+.theme-root[data-theme="frontline"] .ticket-top { background: linear-gradient(110deg, #485d64, #767a68); color: #f7f8f4; margin: 0 -25px; padding: 18px 25px; letter-spacing: .07em; }
+.theme-root[data-theme="frontline"] .ticket-top span:first-child { border: 0; padding: 0; }
+.theme-root[data-theme="frontline"] .food-name { font-weight: 450; letter-spacing: .01em; font-size: clamp(42px, 5vw, 66px); line-height: 1.45; margin: 18px 0 13px; }
+.theme-root[data-theme="frontline"] .food-name.long { font-size: 30px; line-height: 1.5; }
+.theme-root[data-theme="frontline"] .ticket-bottom { border-top: 1px solid #bec7c6; padding-top: 12px; color: #4d5c60; }
+.theme-root[data-theme="frontline"] .ticket-bottom p { font-size: 12px; }
+.theme-root[data-theme="frontline"] .food-sticker { color: #475659; background: transparent; border: 1px solid #9ba8a8; font-size: 9px; }
+.theme-root[data-theme="frontline"] .ticket-edge { left: 25px; color: #576768; font-size: 7px; }
+.theme-root[data-theme="frontline"] .decisions { gap: 12px; margin-top: 12px; }
+.theme-root[data-theme="frontline"] .decision { min-height: 89px; padding: 16px 21px; border: 1px solid #a2b1b4; }
+.theme-root[data-theme="frontline"] .decision strong { font-weight: 450; font-size: 26px; }
+.theme-root[data-theme="frontline"] .decision.skip { background: #23353bee; color: #eef2ee; }
+.theme-root[data-theme="frontline"] .decision.eat { background: #f0f1ed; color: #243136; border-color: #f0f1ed; }
+.theme-root[data-theme="frontline"] .decision:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px #fff; }
+.theme-root[data-theme="frontline"] .small-print { font-size: 9px; color: #d0d8d8; margin-top: 15px; }
+.theme-root[data-theme="frontline"] .nav { background: #1d2c32f5; border-top: 1px solid #aab5b560; padding-inline: 32px; }
+.theme-root[data-theme="frontline"] .nav-item { color: #d0d8d8; border: 0; font-weight: 400; }
+.theme-root[data-theme="frontline"] .nav-item.active { background: transparent; color: #fff; border-bottom: 3px solid #f0f1ed; }
+.theme-root[data-theme="frontline"] .nav-item small { color: #aebfbe; }
+.theme-root[data-theme="frontline"] .footer { background: #18272dcc; color: #d0d8d8; border-top: 1px solid #aab5b530; }
+.theme-root[data-theme="frontline"] .food-row { background: #23373ec9; border: 1px solid #afbcbb50; margin-bottom: 12px; }
+.theme-root[data-theme="frontline"] .food-row .row-main h3 { font-size: 23px; font-weight: 450; }
+.theme-root[data-theme="frontline"] .food-controls .toggle { background: #eef0ec; color: #253337; border: 0; }
+.theme-root[data-theme="frontline"] .food-controls .toggle[aria-pressed="false"] { background: #43565c; color: #e0e8e5; }
+.theme-root[data-theme="frontline"] .meal-form,
+.theme-root[data-theme="frontline"] .backup-panel { background: #23373ee6; border: 1px solid #afbcbb60; }
+.theme-root[data-theme="frontline"] .meal-form h2,
+.theme-root[data-theme="frontline"] .backup-panel h2 { font-weight: 400; font-size: 25px; letter-spacing: .05em; border-bottom: 1px solid #afbcbb60; padding-bottom: 15px; }
+.theme-root[data-theme="frontline"] .history-row { padding: 23px 18px; background: #23373e99; border-bottom: 1px solid #afbcbb60; }
+.theme-root[data-theme="frontline"] .history-row h3 { font-weight: 400; }
+.theme-root[data-theme="frontline"] .button { font-weight: 500; border-width: 1px; }
+.theme-root[data-theme="frontline"] .toast { background: #eff0eb; color: #243136; border: 0; }
+.theme-root[data-theme="frontline"] .toast-mark { color: #435f40; }
+.theme-root[data-theme="frontline"] .accepted-stamp { font-weight: 400; color: #f0f1ed; border-color: #b6c7c6; }
+@media (max-width: 760px) {
+  .theme-root[data-theme="frontline"] .masthead { padding-inline: 18px; }
+  .theme-root[data-theme="frontline"] .wordmark { font-size: 16px; letter-spacing: -.06em; }
+  .theme-root[data-theme="frontline"] .brand-subtitle { font-size: 8px; letter-spacing: .05em; }
+  .theme-root[data-theme="frontline"] .theme-select { width: 151px; font-size: 10px; }
+  .theme-root[data-theme="frontline"] .main { padding: 24px 21px 30px; }
+  .theme-root[data-theme="frontline"] .eat-layout { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .theme-root[data-theme="frontline"] .interface-overview { display: grid; grid-template-columns: 1fr; padding: 0; border: 0; margin-bottom: 25px; }
+  .theme-root[data-theme="frontline"] .overview-kicker { font-size: 8px; }
+  .theme-root[data-theme="frontline"] .overview-title { font-size: 25px; line-height: 1.55; margin: 10px 0 16px; letter-spacing: .02em; }
+  .theme-root[data-theme="frontline"] .overview-title span { display: block; }
+  .theme-root[data-theme="frontline"] .overview-copy,
+  .theme-root[data-theme="frontline"] .overview-caption,
+  .theme-root[data-theme="frontline"] .day-dial { display: none; }
+  .theme-root[data-theme="frontline"] .overview-stats { grid-column: 1; grid-row: 4; display: flex; justify-content: space-between; gap: 20px; padding: 10px 13px; background: #23373e99; }
+  .theme-root[data-theme="frontline"] .overview-stat { flex: 1; gap: 6px; }
+  .theme-root[data-theme="frontline"] .overview-stat strong { font-size: 21px; }
+  .theme-root[data-theme="frontline"] .overview-stat span { font-size: 10px; }
+  .theme-root[data-theme="frontline"] .page-heading h1 { font-size: 28px; }
+  .theme-root[data-theme="frontline"] .food-ticket { min-height: 225px; padding-inline: 20px; }
+  .theme-root[data-theme="frontline"] .ticket-top { margin-inline: -20px; padding: 14px 20px; font-size: 9px; }
+  .theme-root[data-theme="frontline"] .food-name { font-size: 50px; margin-top: 20px; }
+  .theme-root[data-theme="frontline"] .food-name.long { font-size: 28px; }
+  .theme-root[data-theme="frontline"] .ticket-edge { left: 20px; }
+  .theme-root[data-theme="frontline"] .decision { padding: 15px; min-height: 88px; }
+  .theme-root[data-theme="frontline"] .decision strong { font-size: 26px; }
+  .theme-root[data-theme="frontline"] .nav { padding-inline: 8px; }
+  .theme-root[data-theme="frontline"] .nav-item { font-size: 10px; }
+}

@@ -439,6 +439,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             "今日作战目标：好好吃一顿。",
             "这一餐，就听自己的。",
         ),
+        Theme::Frontline => (
+            "REST / 日常补给",
+            "休整时刻。",
+            "好好吃饭。",
+            "把步伐放慢，留一点时间给自己。",
+            "每一餐，都是平凡生活的纪念。",
+        ),
         Theme::Automata => (
             "ARCHIVE : DAILY MEALS",
             "日常记录",

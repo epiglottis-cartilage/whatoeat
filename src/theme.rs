@@ -14,10 +14,11 @@ pub enum Theme {
     Island,
     Terminal,
     Strand,
+    Frontline,
 }
 
 impl Theme {
-    pub const ALL: [Self; 13] = [
+    pub const ALL: [Self; 14] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -31,6 +32,7 @@ impl Theme {
         Self::Island,
         Self::Terminal,
         Self::Strand,
+        Self::Frontline,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -40,7 +42,7 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 8] = [
+    pub const INTERFACES: [Self; 9] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
@@ -49,6 +51,7 @@ impl Theme {
         Self::Island,
         Self::Terminal,
         Self::Strand,
+        Self::Frontline,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -71,6 +74,7 @@ impl Theme {
             Self::Island => "island",
             Self::Terminal => "terminal",
             Self::Strand => "strand",
+            Self::Frontline => "frontline",
         }
     }
 
@@ -89,6 +93,7 @@ impl Theme {
             Self::Island => "动森 · 小岛食记",
             Self::Terminal => "辐射 · 补给终端",
             Self::Strand => "死亡搁浅 · 一餐之遥",
+            Self::Frontline => "战地 1 · 休整时刻",
         }
     }
 
@@ -107,6 +112,7 @@ impl Theme {
             Self::Island => "慢慢生活，好好吃饭。",
             Self::Terminal => "先补给，再继续出发。",
             Self::Strand => "把温热的一餐，送给自己。",
+            Self::Frontline => "休整之后，再次出发。",
         }
     }
 
@@ -126,6 +132,7 @@ impl Theme {
             Self::Island => include_str!("../assets/themes/island.css"),
             Self::Terminal => include_str!("../assets/themes/terminal.css"),
             Self::Strand => include_str!("../assets/themes/strand.css"),
+            Self::Frontline => include_str!("../assets/themes/frontline.css"),
             _ => "",
         }
     }
@@ -138,6 +145,7 @@ impl Theme {
             Self::Phantom => include_str!("../assets/themes/phantom-scene.svg"),
             Self::Island => include_str!("../assets/themes/island-scene.svg"),
             Self::Strand => include_str!("../assets/themes/strand-scene.svg"),
+            Self::Frontline => include_str!("../assets/themes/frontline-scene.svg"),
             _ => "",
         }
     }

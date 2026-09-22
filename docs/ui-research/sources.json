@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 10,
-  "image_bytes_total": 4701617,
+  "reference_count": 11,
+  "image_bytes_total": 4887573,
   "references": [
     {
       "id": "HOME-01",
@@ -304,6 +304,30 @@
       "motion_status": "static only",
       "sha256": "a20d45531c79dc3ceca539f9eab38ed6ebff07c14938eb527d97e239eca231a6",
       "bytes": 117624,
+      "dimensions": [
+        1600,
+        900
+      ],
+      "format": "JPEG"
+    },
+    {
+      "id": "BF-01",
+      "family": "frontline",
+      "title": "Battlefield 1 historical main menu",
+      "file": "references/frontline/BF-01-menu.jpg",
+      "study": "studies/09-frontline.md",
+      "kind": "third_party_game_screenshot",
+      "source_page": "https://www.nickschaden.com/2016/11/21/battlefield-1-needs-ui-help/",
+      "original_image_url": "https://www.nickschaden.com/wordpress/wp-content/uploads/2016/11/battlefield1menus_mainmenu_original.jpg",
+      "page_published_at": "2016-11-21",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Historical screenshot with PlayStation prompts; client build unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "d4961308ca6844c3f9a5a815ba00d21e3825898999a0cd6d5d5fa41d43c22d08",
+      "bytes": 185956,
       "dimensions": [
         1600,
         900

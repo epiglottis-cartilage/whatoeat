@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="frontline-sky" x2="0" y2="1"><stop stop-color="#53636a"/><stop offset=".55" stop-color="#657376"/><stop offset="1" stop-color="#192528"/></linearGradient>
+    <radialGradient id="frontline-haze"><stop stop-color="#d1b786" stop-opacity=".55"/><stop offset="1" stop-color="#9ba5a4" stop-opacity="0"/></radialGradient>
+    <filter id="frontline-distance"><feGaussianBlur stdDeviation="13"/></filter>
+    <linearGradient id="frontline-vignette" x2="0" y2="1"><stop stop-color="#0e191d" stop-opacity=".35"/><stop offset=".6" stop-color="#0e191d" stop-opacity=".15"/><stop offset="1" stop-color="#0a1218" stop-opacity=".8"/></linearGradient>
+  </defs>
+  <path d="M0 0h1440v1000H0z" fill="url(#frontline-sky)"/>
+  <ellipse cx="1100" cy="320" rx="650" ry="510" fill="url(#frontline-haze)"/>
+  <g filter="url(#frontline-distance)">
+    <path d="M0 675 164 540 337 597 452 445 630 540 818 434 963 527 1157 432 1440 531v469H0z" fill="#3a4b50"/>
+    <path d="M0 797 215 731 370 760 578 643 789 716 1025 573 1214 677 1440 643v357H0z" fill="#253539"/>
+    <path d="M912 611V372h30v-33h37v34h32v238zm22-135h54v-78h-54z" fill="#28383b" fill-rule="evenodd" opacity=".65"/>
+  </g>
+  <path d="M0 921q245-130 520-8t920-75v162H0z" fill="#142328"/>
+  <path d="M0 0h1440v1000H0z" fill="url(#frontline-vignette)"/>
+  <g fill="#d5a06a" opacity=".5"><circle cx="140" cy="782" r="1.5"/><circle cx="272" cy="866" r="2"/><circle cx="1260" cy="752" r="1"/><circle cx="1102" cy="892" r="2"/></g>
+</svg>
