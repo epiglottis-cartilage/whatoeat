@@ -18,6 +18,8 @@ cargo run --locked --features desktop --bin whatoeat
 
 「动森 · 小岛食记」(`island`) 使用原创野餐插图、圆角食物卡片、双列菜单和生活手账式历史布局。
 
+「辐射 · 补给终端」(`terminal`) 使用单色屏幕、反白列表与原创补给线框图，手机优先呈现候选操作。
+
 桌面数据使用操作系统的本地应用目录（Linux 默认 `~/.local/share/whatoeat/whatoeat.sqlite3`）。测试时可以指定隔离目录：
 
 ```sh

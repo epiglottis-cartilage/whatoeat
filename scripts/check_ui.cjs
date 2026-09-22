@@ -23,7 +23,7 @@ const binary = path.resolve(process.env.PREVIEW_BIN || path.join(root, 'target/d
 const output = path.resolve(options.output || process.env.UI_CHECK_OUTPUT || path.join(os.tmpdir(), 'whatoeat-ui-check'));
 const browserNames = (options.browsers || process.env.UI_CHECK_BROWSERS || 'chromium').split(',');
 const oldThemes = ['poster', 'rhodes', 'rhine', 'penguin', 'kazimierz'];
-const interfaces = ['control', 'reclamation', 'expedition', 'automata', 'phantom', 'island'];
+const interfaces = ['control', 'reclamation', 'expedition', 'automata', 'phantom', 'island', 'terminal'];
 const themes = [...oldThemes, ...interfaces];
 const selectedThemes = (options.themes || process.env.UI_CHECK_THEMES)?.split(',') || themes;
 for (const theme of selectedThemes) assert.ok(themes.includes(theme), `Unknown theme: ${theme}`);
@@ -132,6 +132,14 @@ async function check(page, test, browserName) {
     && top.wordmark.top < top.picker.bottom
     && top.wordmark.bottom > top.picker.top;
   assert.ok(!headerOverlaps, 'wordmark and theme dropdown overlap');
+
+  if (interfaces.includes(test.theme) && test.width <= 760 && test.screen === 'eat' && test.state !== 'loading') {
+    const fill = await page.locator('.eat-console').evaluate((element) => ({
+      panel: element.getBoundingClientRect().width,
+      layout: element.closest('.eat-layout').getBoundingClientRect().width,
+    }));
+    assert.ok(fill.panel >= fill.layout * .95, 'mobile candidate panel leaves unused horizontal space');
+  }
 
   if (test.screen === 'eat' && ['ready', 'long', 'busy'].includes(test.state)) {
     assert.equal(await page.locator('.decision').count(), 2);

@@ -12,10 +12,11 @@ pub enum Theme {
     Automata,
     Phantom,
     Island,
+    Terminal,
 }
 
 impl Theme {
-    pub const ALL: [Self; 11] = [
+    pub const ALL: [Self; 12] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -27,6 +28,7 @@ impl Theme {
         Self::Automata,
         Self::Phantom,
         Self::Island,
+        Self::Terminal,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -36,13 +38,14 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 6] = [
+    pub const INTERFACES: [Self; 7] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
         Self::Automata,
         Self::Phantom,
         Self::Island,
+        Self::Terminal,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -63,6 +66,7 @@ impl Theme {
             Self::Automata => "automata",
             Self::Phantom => "phantom",
             Self::Island => "island",
+            Self::Terminal => "terminal",
         }
     }
 
@@ -79,6 +83,7 @@ impl Theme {
             Self::Automata => "尼尔 · 日常档案",
             Self::Phantom => "P5 · 开饭预告",
             Self::Island => "动森 · 小岛食记",
+            Self::Terminal => "辐射 · 补给终端",
         }
     }
 
@@ -95,6 +100,7 @@ impl Theme {
             Self::Automata => "把平凡的每一餐，写入档案。",
             Self::Phantom => "今天的胃口，由自己宣告。",
             Self::Island => "慢慢生活，好好吃饭。",
+            Self::Terminal => "先补给，再继续出发。",
         }
     }
 
@@ -112,6 +118,7 @@ impl Theme {
             Self::Automata => include_str!("../assets/themes/automata.css"),
             Self::Phantom => include_str!("../assets/themes/phantom.css"),
             Self::Island => include_str!("../assets/themes/island.css"),
+            Self::Terminal => include_str!("../assets/themes/terminal.css"),
             _ => "",
         }
     }
@@ -130,6 +137,7 @@ impl Theme {
     pub fn overview_svg(self) -> Option<&'static str> {
         match self {
             Self::Island => Some(include_str!("../assets/themes/island-picnic.svg")),
+            Self::Terminal => Some(include_str!("../assets/themes/terminal-ration.svg")),
             _ => None,
         }
     }

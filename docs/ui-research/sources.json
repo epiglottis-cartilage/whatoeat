@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 8,
-  "image_bytes_total": 4557595,
+  "reference_count": 9,
+  "image_bytes_total": 4583993,
   "references": [
     {
       "id": "HOME-01",
@@ -260,6 +260,30 @@
         600
       ],
       "format": "JPEG"
+    },
+    {
+      "id": "FO-01",
+      "family": "terminal",
+      "title": "Fallout 4 Pip-Boy companion app SPECIAL page",
+      "file": "references/terminal/FO-01-pipboy.png",
+      "study": "studies/07-terminal.md",
+      "kind": "official_app_screenshot",
+      "source_page": "https://bethesda.net/en/article/3FcnlLg6GcYEIGQQoWWU4S/fallout-4-pip-boy-app-now-available",
+      "original_image_url": "https://res.cloudinary.com/dewzjk72j/image/authenticated/s--BfciG7qx--/c_lfill%2Cw_744/f_auto%3Aimage%2Cq_auto/v1/contentful/rporu91m20dc/PX8HPWHSYSuKqSuiA4ymw/0e50a5cdefb94de1e659f17046d79c1e/data.images.event.47.Fallout4_Pip-BoyApp_Stats.png",
+      "page_published_at": "2015-11-05",
+      "acquired_at": "2026-09-23",
+      "transformations": "none; server serves 744px reference",
+      "limitations": [
+        "Companion application UI, not wrist-mounted in-game view; client build unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "7418dce7c1b7c648499c39558fa869520961e5bf39e563ccc9f97040a36de43b",
+      "bytes": 26398,
+      "dimensions": [
+        730,
+        575
+      ],
+      "format": "PNG"
     }
   ]
 }

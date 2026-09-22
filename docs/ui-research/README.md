@@ -6,6 +6,8 @@
 
 生活方向：[Animal Crossing 小岛食记](studies/06-island.md)。
 
+仪表方向：[Fallout Pip-Boy 补给终端](studies/07-terminal.md)。
+
 当前进度：P0–P2 静态研究完成，5 张参考图已归档；P4 结构映射及 P5–P7 三套界面首版完成。P3 原作动态取证仍未完成，本版只使用自定的轻量过渡。[实施蓝图](implementation.md)记录具体映射，[实现验收与预览](implementation-validation.md)记录测试范围及平台限制。
 
 ## 从这里阅读
