@@ -23,7 +23,7 @@ const binary = path.resolve(process.env.PREVIEW_BIN || path.join(root, 'target/d
 const output = path.resolve(options.output || process.env.UI_CHECK_OUTPUT || path.join(os.tmpdir(), 'whatoeat-ui-check'));
 const browserNames = (options.browsers || process.env.UI_CHECK_BROWSERS || 'chromium').split(',');
 const oldThemes = ['poster', 'rhodes', 'rhine', 'penguin', 'kazimierz'];
-const interfaces = ['control', 'reclamation', 'expedition', 'automata', 'phantom', 'island', 'terminal', 'strand', 'frontline', 'marathon', 'valley'];
+const interfaces = ['control', 'reclamation', 'expedition', 'automata', 'phantom', 'island', 'terminal', 'strand', 'frontline', 'marathon', 'valley', 'ink'];
 const themes = [...oldThemes, ...interfaces];
 const selectedThemes = (options.themes || process.env.UI_CHECK_THEMES)?.split(',') || themes;
 for (const theme of selectedThemes) assert.ok(themes.includes(theme), `Unknown theme: ${theme}`);

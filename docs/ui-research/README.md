@@ -71,3 +71,5 @@ docs/ui-research/
 模块方向：[Marathon 食欲协议](studies/10-marathon.md)。
 
 像素田园方向：[星露谷 田园饭点](studies/11-valley.md)。
+
+墨迹方向：[喷射战士 墨彩饭局](studies/12-ink.md)。

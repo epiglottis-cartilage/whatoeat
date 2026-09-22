@@ -439,6 +439,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             "今日作战目标：好好吃一顿。",
             "这一餐，就听自己的。",
         ),
+        Theme::Ink => (
+            "COLOR YOUR LUNCH!",
+            "好好吃饭，",
+            "涂满今天！",
+            "给平凡的一天，添点喜欢的味道。",
+            "每一次选择，都有自己的颜色。",
+        ),
         Theme::Valley => (
             "GARDEN JOURNAL / 田园食记",
             "忙里偷闲，",

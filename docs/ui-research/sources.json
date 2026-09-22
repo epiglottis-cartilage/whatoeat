@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 14,
-  "image_bytes_total": 8151165,
+  "reference_count": 15,
+  "image_bytes_total": 8382240,
   "references": [
     {
       "id": "HOME-01",
@@ -407,6 +407,30 @@
         530
       ],
       "format": "PNG"
+    },
+    {
+      "id": "SP-01",
+      "family": "ink",
+      "title": "Splatoon 2 Options screen",
+      "file": "references/ink/SP-01-options.jpg",
+      "study": "studies/12-ink.md",
+      "kind": "third_party_game_interface_archive",
+      "source_page": "https://interfaceingame.com/screenshots/splatoon-2-options/",
+      "original_image_url": "https://interfaceingame.com/wp-content/uploads/splatoon-2/splatoon-2-options.jpg",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Splatoon 2 screenshot, not Splatoon 3",
+        "Capture date and exact game build unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "8b538fb5b3a37fb35ba19ac5280449c9991da43a3ea862867e830b565df8d161",
+      "bytes": 231075,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "format": "JPEG"
     }
   ]
 }

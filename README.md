@@ -98,3 +98,5 @@ PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check_ui.cjs
 「马拉松 · 食欲协议」(`marathon`) 采用新版 Marathon 的衬线标题、技术小字、荧光模块和格状菜单，原创连接图作为概览插图。
 
 「星露谷 · 田园饭点」(`valley`) 使用多层木框、凹入物品格与原创像素菜园，保留清楚的中文与触控按钮。
+
+「喷射战士 · 墨彩饭局」(`ink`) 使用拱顶导航、粗圆字、胶囊操作和原创墨迹，桌面将决策纵排在候选左侧。

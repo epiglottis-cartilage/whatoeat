@@ -1,0 +1,1051 @@
+{
+  "started_at": "2026-09-22T17:10:17.623Z",
+  "preview_binary": "/home/epiglottis/Code/whatoeat/target/debug/preview",
+  "scope": "SSR static DOM and browser layout; no live Dioxus events or native device execution",
+  "cases": [
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-ready-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 66,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-390-ready-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 66,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-760-ready-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 66,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-1060-ready-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.640625,
+        "scroll_y": 77,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-history-360-ready-none",
+      "theme": "ink",
+      "screen": "history",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 52,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-history-390-ready-none",
+      "theme": "ink",
+      "screen": "history",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 52,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-history-760-ready-none",
+      "theme": "ink",
+      "screen": "history",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 52,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-history-1060-ready-none",
+      "theme": "ink",
+      "screen": "history",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.578125,
+        "scroll_y": 12,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-foods-360-ready-none",
+      "theme": "ink",
+      "screen": "foods",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.375,
+        "scroll_y": 110,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-foods-390-ready-none",
+      "theme": "ink",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.375,
+        "scroll_y": 110,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-foods-760-ready-none",
+      "theme": "ink",
+      "screen": "foods",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.578125,
+        "scroll_y": 91,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-foods-1060-ready-none",
+      "theme": "ink",
+      "screen": "foods",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762.375,
+        "scroll_y": 15,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-backup-360-ready-none",
+      "theme": "ink",
+      "screen": "backup",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.28125,
+        "scroll_y": 499,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-backup-390-ready-none",
+      "theme": "ink",
+      "screen": "backup",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.890625,
+        "scroll_y": 476,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-backup-760-ready-none",
+      "theme": "ink",
+      "screen": "backup",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.3125,
+        "scroll_y": 409,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-backup-1060-ready-none",
+      "theme": "ink",
+      "screen": "backup",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762.109375,
+        "scroll_y": 482,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-idle-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "idle",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary big",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-empty-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "empty",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.765625,
+        "scroll_y": 65,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-exhausted-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "exhausted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.765625,
+        "scroll_y": 8,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-accepted-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "accepted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 78,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-stale-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "stale",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-loading-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "loading",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [],
+          "skipped": [
+            "theme-select"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-long-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.5625,
+        "scroll_y": 110,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-360-busy-none",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 360,
+      "state": "busy",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 66,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "decision skip",
+            "decision skip",
+            "decision eat",
+            "decision eat"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-history-390-long-none",
+      "theme": "ink",
+      "screen": "history",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 2354,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-foods-390-long-none",
+      "theme": "ink",
+      "screen": "foods",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.5625,
+        "scroll_y": 238,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-foods-390-ready-1",
+      "theme": "ink",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "1",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.375,
+        "scroll_y": 110,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "ink-eat-390-ready-error",
+      "theme": "ink",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "error",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.78125,
+        "scroll_y": 66,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast error",
+              "ratio": 9.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 7.91,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.71,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 9.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    }
+  ],
+  "screenshots": [
+    "/tmp/whatoeat-ink-check/chromium-ink-eat-390-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-eat-1060-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-history-390-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-history-1060-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-foods-390-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-foods-1060-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-backup-390-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-backup-1060-ready-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-history-390-long-none.png",
+    "/tmp/whatoeat-ink-check/chromium-ink-eat-390-ready-error.png"
+  ],
+  "finished_at": "2026-09-22T17:10:24.368Z",
+  "passed": 28,
+  "failed": 0
+}

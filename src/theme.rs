@@ -17,10 +17,11 @@ pub enum Theme {
     Frontline,
     Marathon,
     Valley,
+    Ink,
 }
 
 impl Theme {
-    pub const ALL: [Self; 16] = [
+    pub const ALL: [Self; 17] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -37,6 +38,7 @@ impl Theme {
         Self::Frontline,
         Self::Marathon,
         Self::Valley,
+        Self::Ink,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -46,7 +48,7 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 11] = [
+    pub const INTERFACES: [Self; 12] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
@@ -58,6 +60,7 @@ impl Theme {
         Self::Frontline,
         Self::Marathon,
         Self::Valley,
+        Self::Ink,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -83,6 +86,7 @@ impl Theme {
             Self::Frontline => "frontline",
             Self::Marathon => "marathon",
             Self::Valley => "valley",
+            Self::Ink => "ink",
         }
     }
 
@@ -104,6 +108,7 @@ impl Theme {
             Self::Frontline => "战地 1 · 休整时刻",
             Self::Marathon => "马拉松 · 食欲协议",
             Self::Valley => "星露谷 · 田园饭点",
+            Self::Ink => "喷射战士 · 墨彩饭局",
         }
     }
 
@@ -125,6 +130,7 @@ impl Theme {
             Self::Frontline => "休整之后，再次出发。",
             Self::Marathon => "接入日常，准备开饭。",
             Self::Valley => "日子慢慢过，饭要好好吃。",
+            Self::Ink => "给今天，添一点好味道！",
         }
     }
 
@@ -147,6 +153,7 @@ impl Theme {
             Self::Frontline => include_str!("../assets/themes/frontline.css"),
             Self::Marathon => include_str!("../assets/themes/marathon.css"),
             Self::Valley => include_str!("../assets/themes/valley.css"),
+            Self::Ink => include_str!("../assets/themes/ink.css"),
             _ => "",
         }
     }
@@ -162,6 +169,7 @@ impl Theme {
             Self::Frontline => include_str!("../assets/themes/frontline-scene.svg"),
             Self::Marathon => include_str!("../assets/themes/marathon-scene.svg"),
             Self::Valley => include_str!("../assets/themes/valley-scene.svg"),
+            Self::Ink => include_str!("../assets/themes/ink-scene.svg"),
             _ => "",
         }
     }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="ink-dotfield" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="2" fill="#706783" opacity=".13"/></pattern></defs>
+  <path fill="#c4bdd1" d="M0 0h1440v1000H0z"/>
+  <path fill="#7156b9" d="M0 0h170c-70 62 105 73 40 122S76 91 70 171s143 100 84 155S44 271 0 351z"/>
+  <path fill="#ce318b" d="M1440 60c-52-40-78 33-58 93s-100 53-90 122 66 109 34 153-88-40-102 31 115 141 92 223 104 102 124 36z"/>
+  <path fill="#3f9fa6" d="M0 767c80-69 114 11 166 24s124-92 181-44-60 125-1 162 180-74 234-8-20 81 56 99H0z"/>
+  <g fill="#ce318b"><ellipse cx="1264" cy="151" rx="17" ry="31" transform="rotate(-34 1264 151)"/><circle cx="1200" cy="185" r="9"/><circle cx="1319" cy="783" r="18"/></g>
+  <g fill="#7156b9"><circle cx="208" cy="245" r="15"/><circle cx="238" cy="272" r="8"/></g>
+  <path fill="url(#ink-dotfield)" d="M0 0h1440v1000H0z"/>
+</svg>
