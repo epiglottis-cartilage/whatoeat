@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-09-22",
+  "path_base": "docs/ui-research",
+  "scope": "Static evidence only. No application CSS, layout, or animation redesign implemented.",
+  "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
+  "reference_count": 5,
+  "image_bytes_total": 3740485,
+  "references": [
+    {
+      "id": "HOME-01",
+      "family": "home",
+      "title": "传统主界面：简体中文历史样本",
+      "file": "references/home/home-cn-20190624.jpg",
+      "study": "studies/01-home.md",
+      "kind": "community_screenshot",
+      "source_page": "https://www.9game.cn/mrfz/3267597.html",
+      "original_image_url": "https://image.9game.cn/2019/6/24/85810427.jpg",
+      "page_published_at": "2019-06-25 09:21",
+      "page_timezone": null,
+      "date_visible_in_image": "2019/06/24 18:44",
+      "capture_date_verified": false,
+      "acquired_at": "2026-09-22",
+      "verification_clock_utc": "2026-09-22T14:36:12Z",
+      "transformations": "none; downloaded JPEG bytes retained",
+      "limitations": [
+        "第三方攻略截图，右下有九游水印",
+        "具体构建号与设备未知",
+        "历史样本不代表现行客户端",
+        "画面日期不独立证明截图时间"
+      ],
+      "motion_status": "静态图；动画未知",
+      "sha256": "c0c03fd3027893ff84259e19f01fc371353e75291930b969a892b6a3862f9e7e",
+      "bytes": 225939,
+      "dimensions": [
+        1762,
+        991
+      ],
+      "format": "JPEG"
+    },
+    {
+      "id": "HOME-02",
+      "family": "home",
+      "title": "传统主界面：日文历史样本",
+      "file": "references/home/home-jp-20200215.jpg",
+      "study": "studies/01-home.md",
+      "kind": "community_screenshot",
+      "source_page": "https://gameui.matme.info/blog/archives/63707",
+      "original_image_url": "https://gameui.matme.info/blog/wp-content/uploads/2020/02/Screenshot_20200215-031141.jpg",
+      "page_dates_displayed": [
+        "2020-02-17",
+        "2021-01-05"
+      ],
+      "date_visible_in_image": "2020/02/15 03:11",
+      "capture_date_verified": false,
+      "acquired_at": "2026-09-22",
+      "verification_clock_utc": "2026-09-22T14:36:12Z",
+      "transformations": "none; downloaded JPEG bytes retained",
+      "limitations": [
+        "社区 UI 博客截图，非官方资料",
+        "具体构建号与设备未知，来源是否缩放未知",
+        "历史样本不代表现行客户端",
+        "画面日期不独立证明截图时间"
+      ],
+      "motion_status": "静态图；动画未知",
+      "sha256": "1803eea16647ddd9ac32a07c0e744cf04a80de7e91e9cc98609cdb0e5539fa0d",
+      "bytes": 193535,
+      "dimensions": [
+        1152,
+        648
+      ],
+      "format": "JPEG"
+    },
+    {
+      "id": "RA-01",
+      "title": "生息演算「沙洲遗闻」：日开始前总览 / 读取存档后的驻扎地产出与后勤进驻",
+      "file": "references/reclamation/ra-01-day-overview.png",
+      "kind": "official_video_frame",
+      "source_page": "https://ak.hypergryph.com/ra/taleswithinthesand",
+      "source_title": "「沙洲遗闻」玩法介绍",
+      "original_image_url": null,
+      "video_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.mp4",
+      "playlist_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.m3u8",
+      "segment_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video-00007.ts",
+      "timestamp": "00:01:11.560",
+      "timestamp_seconds": 71.56,
+      "segment_seek_seconds": 6.0,
+      "extraction": "ffmpeg -i <segment.ts> -ss <segment_seek_seconds> -frames:v 1 <output.png>; full video frame, no crop/resize/retouch",
+      "acquired_at": "2026-09-22",
+      "source_credibility": "一手：明日方舟官网专题所链接的官方 CDN 玩法介绍；是演示视频而非当前客户端实机验证",
+      "version_uncertainty": "沙洲遗闻主题演示，未标客户端版本；画面生息日 43 是游戏内日期，不是版本号；不能代表 2026 当前版本",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 879739,
+      "sha256": "6ae67eedbeea38987eded1316c616c5b87ebebb0baed3b5fa28a487f3e2be691",
+      "game_viewport_approx_xywh": [
+        136,
+        117,
+        1648,
+        927
+      ],
+      "motion_status": "仅抽帧观察；未验证动画持续时间、缓动曲线或交互触发条件",
+      "family": "reclamation",
+      "study": "studies/02-reclamation.md",
+      "provenance_file": "references/reclamation/metadata.json",
+      "playlist_archive": "references/reclamation/tutorial-playlist.m3u8",
+      "source_published_at": null,
+      "capture_date_verified": false,
+      "transformations": "full-resolution video decode to PNG; no crop, resize, or retouch",
+      "limitations": [
+        "沙洲遗闻主题演示，未标客户端版本；画面生息日 43 是游戏内日期，不是版本号；不能代表 2026 当前版本",
+        "外层为视频包装，分析游戏界面时排除",
+        "日开始前总览不是活动入口",
+        "仅静态抽帧，未量化动画"
+      ],
+      "format": "PNG"
+    },
+    {
+      "id": "RA-02",
+      "title": "生息演算「沙洲遗闻」：局内区域地图 / 盐河荒滩 / 生息日 43",
+      "file": "references/reclamation/ra-02-region-map.png",
+      "kind": "official_video_frame",
+      "source_page": "https://ak.hypergryph.com/ra/taleswithinthesand",
+      "source_title": "「沙洲遗闻」玩法介绍",
+      "original_image_url": null,
+      "video_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.mp4",
+      "playlist_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.m3u8",
+      "segment_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video-00008.ts",
+      "timestamp": "00:01:15.200",
+      "timestamp_seconds": 75.2,
+      "segment_seek_seconds": 2.0,
+      "extraction": "ffmpeg -i <segment.ts> -ss <segment_seek_seconds> -frames:v 1 <output.png>; full video frame, no crop/resize/retouch",
+      "acquired_at": "2026-09-22",
+      "source_credibility": "一手：明日方舟官网专题所链接的官方 CDN 玩法介绍；是演示视频而非当前客户端实机验证",
+      "version_uncertainty": "沙洲遗闻主题演示，未标客户端版本；画面生息日 43 是游戏内日期，不是版本号；不能代表 2026 当前版本",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 2020495,
+      "sha256": "64c981b8a6539fa8ee35e66699bccef67b07e4ed2c3d9fd5d50e7a604691bf50",
+      "game_viewport_approx_xywh": [
+        136,
+        117,
+        1648,
+        927
+      ],
+      "motion_status": "仅抽帧观察；未验证动画持续时间、缓动曲线或交互触发条件",
+      "family": "reclamation",
+      "study": "studies/02-reclamation.md",
+      "provenance_file": "references/reclamation/metadata.json",
+      "playlist_archive": "references/reclamation/tutorial-playlist.m3u8",
+      "source_published_at": null,
+      "capture_date_verified": false,
+      "transformations": "full-resolution video decode to PNG; no crop, resize, or retouch",
+      "limitations": [
+        "沙洲遗闻主题演示，未标客户端版本；画面生息日 43 是游戏内日期，不是版本号；不能代表 2026 当前版本",
+        "外层为视频包装，分析游戏界面时排除",
+        "日开始前总览不是活动入口",
+        "仅静态抽帧，未量化动画"
+      ],
+      "format": "PNG"
+    },
+    {
+      "id": "IS-01",
+      "family": "integrated",
+      "title": "傀影与猩红孤钻：日服第三层路线选择",
+      "file": "references/integrated/is-01-phantom-route.png",
+      "study": "studies/03-integrated.md",
+      "kind": "community_screenshot",
+      "source_page": "https://kowaretagames.seesaa.net/article/498250689.html",
+      "original_image_url": "https://kowaretagames.up.seesaa.net/image/Screenshot_20230203-183259.png",
+      "page_published_at": "2023-02-19",
+      "capture_date_verified": false,
+      "date_hint_in_filename": "20230203-183259",
+      "acquired_at": "2026-09-22",
+      "transformations": "none; downloaded PNG bytes retained",
+      "limitations": [
+        "个人博客实机截图，非官方资料",
+        "文件名日期未核实为拍摄时间",
+        "具体客户端构建号未知，不代表现行版本"
+      ],
+      "motion_status": "静态图；动画未知",
+      "sha256": "a68a00ec17631ff45724ff8bdbb713a6eeea7e64e096c67bba4f10ffbf5f1f39",
+      "bytes": 420777,
+      "dimensions": [
+        960,
+        540
+      ],
+      "format": "PNG"
+    }
+  ]
+}

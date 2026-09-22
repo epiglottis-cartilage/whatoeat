@@ -17,6 +17,7 @@ impl Theme {
         Self::Kazimierz,
     ];
 
+    // Keep historical storage keys so existing selections survive display-name changes.
     pub fn key(self) -> &'static str {
         match self {
             Self::Poster => "poster",
@@ -30,20 +31,20 @@ impl Theme {
     pub fn label(self) -> &'static str {
         match self {
             Self::Poster => "原味海报",
-            Self::Rhodes => "罗德岛",
-            Self::Rhine => "莱茵生命",
-            Self::Penguin => "企鹅物流",
-            Self::Kazimierz => "卡西米尔",
+            Self::Rhodes => "冰蓝终端",
+            Self::Rhine => "苔绿纸页",
+            Self::Penguin => "赤橙速递",
+            Self::Kazimierz => "鎏金夜幕",
         }
     }
 
     pub fn description(self) -> &'static str {
         match self {
             Self::Poster => "奶油纸张，荧光宣言。",
-            Self::Rhodes => "深色终端，冰蓝航线。",
-            Self::Rhine => "纯白实验室，生命绿意。",
-            Self::Penguin => "午夜街头，橙色速递。",
-            Self::Kazimierz => "暗紫竞技场，金色荣光。",
+            Self::Rhodes => "深色底板，冰蓝强调。",
+            Self::Rhine => "米白纸页，沉静苔绿。",
+            Self::Penguin => "石墨底色，赤橙标记。",
+            Self::Kazimierz => "暗紫夜幕，暖金线条。",
         }
     }
 

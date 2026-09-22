@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "references": [
+    {
+      "id": "RA-01",
+      "title": "生息演算「沙洲遗闻」：日开始前总览 / 读取存档后的驻扎地产出与后勤进驻",
+      "file": "ra-01-day-overview.png",
+      "kind": "official_video_frame",
+      "source_page": "https://ak.hypergryph.com/ra/taleswithinthesand",
+      "source_title": "「沙洲遗闻」玩法介绍",
+      "original_image_url": null,
+      "video_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.mp4",
+      "playlist_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.m3u8",
+      "segment_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video-00007.ts",
+      "timestamp": "00:01:11.560",
+      "timestamp_seconds": 71.56,
+      "segment_seek_seconds": 6.0,
+      "extraction": "ffmpeg -i <segment.ts> -ss <segment_seek_seconds> -frames:v 1 <output.png>; full video frame, no crop/resize/retouch",
+      "acquired_at": "2026-09-22",
+      "source_credibility": "一手：明日方舟官网专题所链接的官方 CDN 玩法介绍；是演示视频而非当前客户端实机验证",
+      "version_uncertainty": "沙洲遗闻主题演示，未标客户端版本；画面生息日 43 是游戏内日期，不是版本号；不能代表 2026 当前版本",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 879739,
+      "sha256": "6ae67eedbeea38987eded1316c616c5b87ebebb0baed3b5fa28a487f3e2be691",
+      "game_viewport_approx_xywh": [
+        136,
+        117,
+        1648,
+        927
+      ],
+      "motion_status": "仅抽帧观察；未验证动画持续时间、缓动曲线或交互触发条件"
+    },
+    {
+      "id": "RA-02",
+      "title": "生息演算「沙洲遗闻」：局内区域地图 / 盐河荒滩 / 生息日 43",
+      "file": "ra-02-region-map.png",
+      "kind": "official_video_frame",
+      "source_page": "https://ak.hypergryph.com/ra/taleswithinthesand",
+      "source_title": "「沙洲遗闻」玩法介绍",
+      "original_image_url": null,
+      "video_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.mp4",
+      "playlist_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video.m3u8",
+      "segment_url": "https://web.hycdn.cn/arknights/ra/sandbox_1/pv/tutorial_video-00008.ts",
+      "timestamp": "00:01:15.200",
+      "timestamp_seconds": 75.2,
+      "segment_seek_seconds": 2.0,
+      "extraction": "ffmpeg -i <segment.ts> -ss <segment_seek_seconds> -frames:v 1 <output.png>; full video frame, no crop/resize/retouch",
+      "acquired_at": "2026-09-22",
+      "source_credibility": "一手：明日方舟官网专题所链接的官方 CDN 玩法介绍；是演示视频而非当前客户端实机验证",
+      "version_uncertainty": "沙洲遗闻主题演示，未标客户端版本；画面生息日 43 是游戏内日期，不是版本号；不能代表 2026 当前版本",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 2020495,
+      "sha256": "64c981b8a6539fa8ee35e66699bccef67b07e4ed2c3d9fd5d50e7a604691bf50",
+      "game_viewport_approx_xywh": [
+        136,
+        117,
+        1648,
+        927
+      ],
+      "motion_status": "仅抽帧观察；未验证动画持续时间、缓动曲线或交互触发条件"
+    }
+  ]
+}
