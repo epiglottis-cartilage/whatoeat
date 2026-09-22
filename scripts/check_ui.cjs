@@ -14,7 +14,7 @@ const { spawnSync } = require('node:child_process');
 const { pathToFileURL } = require('node:url');
 const { values: options } = require('node:util').parseArgs({ options: {
   playwright: { type: 'string' }, themes: { type: 'string' },
-  output: { type: 'string' }, browsers: { type: 'string' },
+  output: { type: 'string' }, browsers: { type: 'string' }, language: { type: 'string' },
 } });
 const playwright = require(options.playwright || process.env.PLAYWRIGHT_MODULE || 'playwright');
 
@@ -27,12 +27,15 @@ const interfaces = ['control', 'reclamation', 'expedition', 'automata', 'phantom
 const themes = [...oldThemes, ...interfaces];
 const selectedThemes = (options.themes || process.env.UI_CHECK_THEMES)?.split(',') || themes;
 for (const theme of selectedThemes) assert.ok(themes.includes(theme), `Unknown theme: ${theme}`);
+const language = options.language || 'zh-CN';
+assert.ok(['zh-CN', 'en'].includes(language), 'Unsupported test language');
 const widths = [360, 390, 760, 1060];
 const height = 840;
 const cases = new Map();
 const report = {
   started_at: new Date().toISOString(),
   preview_binary: binary,
+  language,
   scope: 'SSR static DOM and browser layout; no live Dioxus events or native device execution',
   cases: [],
   screenshots: [],
@@ -75,6 +78,7 @@ function previewFile(test) {
     maxBuffer: 8 * 1024 * 1024,
     env: {
       ...process.env,
+      WHATOEAT_PREVIEW_LANG: language,
       WHATOEAT_PREVIEW_THEME: test.theme,
       WHATOEAT_PREVIEW_SCREEN: test.screen,
       WHATOEAT_PREVIEW_STATE: test.state,
@@ -124,6 +128,18 @@ async function check(page, test, browserName) {
   assert.equal(await page.locator('.nav-item').count(), 4);
   assert.equal(await page.locator('.nav-item[aria-current="page"]').count(), 1);
 
+  assert.equal(await page.locator('.theme-root').getAttribute('lang'), language);
+  if (language === 'en') {
+    assert.equal(await page.locator('.nav-item').first().innerText().then(t => t.includes('Today')), true);
+    const untranslated = await page.locator('.brand-subtitle, .theme-select, .overview-kicker, .button, .overview-title, .overview-copy, .overview-caption, .section-title, .lede, .decision, .small-print, .toast, .footnote, .food-metrics, .toggle, .row-actions, .food-actions, .footer').allTextContents();
+    // Labels can contain a select with user-supplied food names. Check only the label copy.
+    untranslated.push(...await page.locator('label').evaluateAll(labels => labels.map(label => {
+      const copy = label.cloneNode(true);
+      copy.querySelectorAll('select, input, textarea').forEach(control => control.remove());
+      return copy.textContent;
+    })));
+    assert.ok(!untranslated.some(text => /[\u4e00-\u9fff]/.test(text)), 'untranslated English UI');
+  }
   const top = await snapshot(page);
   assert.equal(top.documentWidth, test.width, 'horizontal overflow');
   assert.ok(top.picker.left >= 0 && top.picker.right <= test.width + 1, 'theme dropdown is clipped');

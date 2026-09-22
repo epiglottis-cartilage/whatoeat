@@ -9,7 +9,7 @@ fn main() {
         .with_cfg(
             dioxus::desktop::Config::new().with_window(
                 dioxus::desktop::WindowBuilder::new()
-                    .with_title("今天吃什么 · WHAT / TO / EAT")
+                    .with_title("WHAT / TO / EAT")
                     .with_inner_size(dioxus::desktop::LogicalSize::new(1060.0, 840.0))
                     .with_min_inner_size(dioxus::desktop::LogicalSize::new(360.0, 600.0)),
             ),

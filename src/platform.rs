@@ -1,6 +1,25 @@
 use crate::domain::{AppError, Result};
 use std::path::PathBuf;
 
+/// Native preferences take precedence over the embedded browser's defaults.
+pub fn locale_preferences() -> Option<Vec<String>> {
+    #[cfg(target_os = "android")]
+    {
+        android::language().ok().map(|language| vec![language])
+    }
+    #[cfg(not(target_os = "android"))]
+    {
+        for key in ["LC_ALL", "LC_MESSAGES", "LANGUAGE", "LANG"] {
+            if let Ok(value) = std::env::var(key)
+                && !value.trim().is_empty()
+            {
+                return Some(value.split(':').map(str::to_owned).collect());
+            }
+        }
+        None
+    }
+}
+
 pub fn data_directory() -> Result<PathBuf> {
     if let Some(path) = std::env::var_os("WHATOEAT_DATA_DIR") {
         return Ok(PathBuf::from(path));
@@ -74,6 +93,31 @@ mod android {
     fn error(e: impl std::fmt::Display) -> AppError {
         AppError::Invalid(format!("安卓平台调用失败：{e}"))
     }
+    pub fn language() -> Result<String> {
+        let context = ndk_context::android_context();
+        let vm = unsafe { JavaVM::from_raw(context.vm().cast()) }.map_err(error)?;
+        let mut env = vm.attach_current_thread().map_err(error)?;
+        let locale = env
+            .call_static_method(
+                "java/util/Locale",
+                "getDefault",
+                "()Ljava/util/Locale;",
+                &[],
+            )
+            .map_err(error)?
+            .l()
+            .map_err(error)?;
+        let language = env
+            .call_method(locale, "getLanguage", "()Ljava/lang/String;", &[])
+            .map_err(error)?
+            .l()
+            .map_err(error)?;
+        let language = env
+            .get_string(&JString::from(language))
+            .map_err(error)?
+            .into();
+        Ok(language)
+    }
     pub fn files_dir() -> Result<PathBuf> {
         let context = ndk_context::android_context();
         let vm = unsafe { JavaVM::from_raw(context.vm().cast()) }.map_err(error)?;
@@ -108,7 +152,7 @@ mod android {
             .map_err(error)?
             .l()
             .map_err(error)?;
-        let label = JObject::from(env.new_string("今天吃什么").map_err(error)?);
+        let label = JObject::from(env.new_string("What to Eat").map_err(error)?);
         let text = JObject::from(env.new_string(text).map_err(error)?);
         let clip = env
             .call_static_method(

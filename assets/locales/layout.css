@@ -1,0 +1,17 @@
+/* English phrases can be longer than Chinese labels; user food names keep their own text. */
+.theme-root[lang="en"] .page-heading h1 { min-width: 0; overflow-wrap: anywhere; }
+.theme-root[lang="en"] .brand-subtitle { max-width: 260px; line-height: 1.4; }
+.theme-root[lang="en"] .overview-title { overflow-wrap: anywhere; }
+.theme-root[lang="en"] .overview-stat { min-width: 0; }
+.theme-root[lang="en"] .overview-stat span { line-height: 1.4; }
+.theme-root[lang="en"] .row-main { min-width: 0; }
+.theme-root[lang="en"] .food-controls { flex-shrink: 0; }
+@media (max-width: 760px) {
+  .theme-root[lang="en"][data-layout="interface"] .brand-subtitle { max-width: 136px; font-size: 8px; }
+  .theme-root[lang="en"][data-layout="interface"] .page-heading h1 { font-size: 27px; line-height: 1.25; letter-spacing: -.03em; }
+  .theme-root[lang="en"][data-layout="interface"] .tiny-stamp { max-width: 65px; font-size: 8px; text-align: center; line-height: 1.4; flex-shrink: 0; }
+  .theme-root[lang="en"][data-layout="interface"] .overview-title { font-size: 24px; line-height: 1.4; }
+  .theme-root[lang="en"][data-layout="interface"] .decision span { line-height: 1.5; }
+  .theme-root[lang="en"][data-layout="interface"] .theme-select { font-size: 10px; }
+  .theme-root[lang="en"][data-layout="interface"] .history-row .row-actions { gap: 8px; flex-wrap: wrap; }
+}

@@ -19,6 +19,7 @@ pub enum Command {
         name: String,
     },
     AddStarters,
+    AddEnglishStarters,
     RenameFood {
         food_id: String,
         name: String,
@@ -161,9 +162,20 @@ impl Store {
             Command::AddFood { name } => {
                 state.add_food(&name)?;
             }
-            Command::AddStarters => {
-                for name in ["牛肉面", "麻辣烫", "咖喱饭", "饺子", "寿司", "烧腊饭"]
-                {
+            starter @ (Command::AddStarters | Command::AddEnglishStarters) => {
+                let names = if matches!(starter, Command::AddEnglishStarters) {
+                    [
+                        "Beef noodles",
+                        "Mala hot pot",
+                        "Curry rice",
+                        "Dumplings",
+                        "Sushi",
+                        "Roast meat rice",
+                    ]
+                } else {
+                    ["牛肉面", "麻辣烫", "咖喱饭", "饺子", "寿司", "烧腊饭"]
+                };
+                for name in names {
                     if !state.menu().any(|f| f.name == name) {
                         state.add_food(name)?;
                     }

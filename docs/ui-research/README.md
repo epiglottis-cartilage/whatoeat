@@ -8,7 +8,9 @@
 
 仪表方向：[Fallout Pip-Boy 补给终端](studies/07-terminal.md)。
 
-当前进度：P0–P2 静态研究完成，5 张参考图已归档；P4 结构映射及 P5–P7 三套界面首版完成。P3 原作动态取证仍未完成，本版只使用自定的轻量过渡。[实施蓝图](implementation.md)记录具体映射，[实现验收与预览](implementation-validation.md)记录测试范围及平台限制。
+当前进度：14 套完整界面和 5 套保留配色已实现；主题扩展在 Android 4 Holo 完成后结束。按最新任务，已完成系统语言中英文适配与全主题字体选型。原作动态取证仍未完成，运行版使用本应用自定的轻量过渡。
+
+最新成果：[语言适配与验证](../localization.md)、[19 套主题字体选型](fonts.md)、[逐套实施记录](theme-marathon.md)。
 
 ## 从这里阅读
 

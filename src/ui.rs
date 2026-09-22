@@ -1,5 +1,6 @@
 use crate::{
     domain::*,
+    i18n::Language,
     platform,
     store::{Command, Store},
     theme::Theme,
@@ -29,6 +30,7 @@ impl Screen {
 }
 #[derive(Clone)]
 struct ViewModel {
+    language: Language,
     data: Option<Data>,
     busy: bool,
     notice: Option<Notice>,
@@ -39,6 +41,7 @@ struct ViewModel {
 impl Default for ViewModel {
     fn default() -> Self {
         Self {
+            language: Language::English,
             data: None,
             busy: false,
             notice: None,
@@ -96,15 +99,19 @@ fn input_date(time: i64) -> String {
         .map(|d| d.with_timezone(&Local).format("%Y-%m-%dT%H:%M").to_string())
         .unwrap_or_default()
 }
-fn last_label(last: Option<i64>, at: i64) -> String {
+fn last_label(lang: Language, last: Option<i64>, at: i64) -> String {
     match last {
-        None => "还没记录过，尝尝看？".into(),
+        None => lang.text("还没记录过，尝尝看？").into(),
         Some(t) => {
             let days = ((at - t).max(0) as f64 / DAY).floor() as i64;
             if days == 0 {
-                "今天已经吃过了".into()
+                lang.text("今天已经吃过了").into()
             } else {
-                format!("上次吃，是 {days} 天前。")
+                if days == 1 && lang == Language::English {
+                    lang.text("上次吃，是昨天。").into()
+                } else {
+                    lang.format("上次吃，是 {days} 天前。", &[("days", days.to_string())])
+                }
             }
         }
     }
@@ -201,10 +208,33 @@ pub fn App() -> Element {
             .map(|p| Store::new(p.join("whatoeat.sqlite3")))
             .map_err(|e| e.to_string())
     });
-    let vm = use_signal(ViewModel::default);
+    let vm = use_signal(|| ViewModel {
+        language: platform::locale_preferences()
+            .map(|tags| Language::from_preferences(tags.iter().map(String::as_str)))
+            .unwrap_or_default(),
+        ..ViewModel::default()
+    });
     let ctx = AppContext { vm, store };
     let provider = ctx.clone();
     use_context_provider(|| provider);
+    let mut language_ctx = ctx.clone();
+    use_future(move || async move {
+        let mut eval = document::eval(
+            r#"
+            const report = () => dioxus.send(navigator.languages?.length ? navigator.languages : [navigator.language || 'en']);
+            report();
+            window.addEventListener('languagechange', report);
+            document.addEventListener('visibilitychange', () => { if (!document.hidden) report(); });
+        "#,
+        );
+        while let Ok(browser_tags) = eval.recv::<Vec<String>>().await {
+            let tags = platform::locale_preferences().unwrap_or(browser_tags);
+            let language = Language::from_preferences(tags.iter().map(String::as_str));
+            if language_ctx.vm.peek().language != language {
+                language_ctx.vm.write().language = language;
+            }
+        }
+    });
     use_future(move || {
         let mut ctx = ctx.clone();
         async move {
@@ -287,6 +317,9 @@ pub fn PreviewApp() -> Element {
             _ => Screen::Eat,
         };
         ViewModel {
+            language: Language::from_preferences([std::env::var("WHATOEAT_PREVIEW_LANG")
+                .unwrap_or_else(|_| "zh-CN".into())
+                .as_str()]),
             data: (state != "loading").then_some(data),
             busy: state == "busy",
             screen,
@@ -316,6 +349,7 @@ pub fn PreviewApp() -> Element {
 
 #[component]
 fn Shell() -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let mut ctx = use_context::<AppContext>();
     let vm = ctx.vm.read().clone();
     let count = vm.data.as_ref().map(Data::eaten_count).unwrap_or(0);
@@ -326,7 +360,9 @@ fn Shell() -> Element {
         style { {CSS} }
         style { {INTERFACE_CSS} }
         style { {vm.theme.stylesheet()} }
-        div { class:"theme-root", "data-theme":vm.theme.key(), "data-layout":if interface {"interface"}else{"palette"}, "data-screen":vm.screen.key(),
+        style { {include_str!("../assets/locales/layout.css")} }
+        document::Title { {lang.text("今天吃什么 · WHAT / TO / EAT")} }
+        div { class:"theme-root", lang:lang.tag(), "data-language":lang.tag(), "data-theme":vm.theme.key(), "data-layout":if interface {"interface"}else{"palette"}, "data-screen":vm.screen.key(),
         if interface {
             // These are bundled, original decorative SVGs, never imported user content.
             div { class:"scene-backdrop", "aria-hidden":"true", dangerous_inner_html:scene }
@@ -339,30 +375,30 @@ fn Shell() -> Element {
                     if interface { span { class:"brand-symbol", "aria-hidden":"true", "W" } }
                     div {
                         div { class:"wordmark", "WHAT", span { "/" }, "TO", span { "/" }, "EAT" }
-                        if interface { div { class:"brand-subtitle", {vm.theme.description()} } }
+                        if interface { div { class:"brand-subtitle", {lang.text(vm.theme.description())} } }
                     }
                 }
                 if interface {
-                    div { class:"shell-status", span { class:"connection-dot", "aria-hidden":"true" }, span { "本地记录" }, strong { "{count:02}" } }
+                    div { class:"shell-status", span { class:"connection-dot", "aria-hidden":"true" }, span { {lang.text("本地记录")} }, strong { "{count:02}" } }
                 }
                 label { class:"theme-picker", r#for:"theme-select",
-                    span { class:"theme-picker-label", "主题" }
-                    select { id:"theme-select", class:"theme-select", "aria-label":"选择主题", value:vm.theme.key(), disabled:vm.theme_saving || vm.data.is_none(),
+                    span { class:"theme-picker-label", {lang.text("主题")} }
+                    select { id:"theme-select", class:"theme-select", "aria-label":lang.text("选择主题"), value:vm.theme.key(), disabled:vm.theme_saving || vm.data.is_none(),
                         onchange:move |event| {
                             if let Some(theme) = Theme::from_key(&event.value()) { change_theme(theme_ctx.clone(),theme); }
                         },
-                        optgroup { label:"界面主题",
-                            for theme in Theme::INTERFACES { option { value:theme.key(), selected:vm.theme == theme, {theme.label()} } }
+                        optgroup { label:lang.text("界面主题"),
+                            for theme in Theme::INTERFACES { option { value:theme.key(), selected:vm.theme == theme, {lang.text(theme.label())} } }
                         }
-                        optgroup { label:"配色样式",
-                            for theme in Theme::PALETTES { option { value:theme.key(), selected:vm.theme == theme, {theme.label()} } }
+                        optgroup { label:lang.text("配色样式"),
+                            for theme in Theme::PALETTES { option { value:theme.key(), selected:vm.theme == theme, {lang.text(theme.label())} } }
                         }
                     }
                 }
             }
             div { class:"workspace",
-                nav { class:"nav", "aria-label":"主要页面",
-                    for (screen, label, number) in [(Screen::Eat,"今天吃什么","01"),(Screen::History,"吃过的日子","02"),(Screen::Foods,"我的菜单","03"),(Screen::Backup,"复制与合并","04")] {
+                nav { class:"nav", "aria-label":lang.text("主要页面"),
+                    for (screen, label, number) in [(Screen::Eat,{lang.text("今天吃什么")},"01"),(Screen::History,{lang.text("吃过的日子")},"02"),(Screen::Foods,{lang.text("我的菜单")},"03"),(Screen::Backup,{lang.text("复制与合并")},"04")] {
                         button { disabled:vm.busy, class:if vm.screen==screen {"nav-item active"}else{"nav-item"},
                             "aria-current":if vm.screen==screen {"page"}else{"false"},
                             onclick:move |_| { let mut state=ctx.vm.write(); state.screen=screen; state.notice = None; },
@@ -370,11 +406,11 @@ fn Shell() -> Element {
                             small { {number} }, span { {label} }, span { class:"nav-arrow", "↗" }
                         }
                     }
-                    div { class:"nav-note", p { "先吃饭。" }, p { "其他的，" }, p { "等会再说。" }, span { "已有 {count} 顿好好吃饭的记录" } }
+                    div { class:"nav-note", p { {lang.text("先吃饭。")} }, p { {lang.text("其他的，")} }, p { {lang.text("等会再说。")} }, span { {lang.format("已有 {count} 顿好好吃饭的记录",&[("count",count.to_string())])} } }
                 }
                 main { class:"main", "aria-busy":vm.busy.to_string(),
                     if vm.data.is_none() {
-                        section { class:"empty", h1 { "正在摆桌…" }, p { "读取这台设备的饮食记录。" } }
+                        section { class:"empty", h1 { {lang.text("正在摆桌…")} }, p { {lang.text("读取这台设备的饮食记录。")} } }
                     } else {
                         match vm.screen {
                             Screen::Eat => rsx!{ EatScreen {} },
@@ -385,7 +421,7 @@ fn Shell() -> Element {
                     }
                 }
             }
-            footer { class:"footer", span { "少点纠结，多吃两口。" }, span { "只存在这台设备 · 离线也开饭" } }
+            footer { class:"footer", span { {lang.text("少点纠结，多吃两口。")} }, span { {lang.text("只存在这台设备 · 离线也开饭")} } }
         }
         }
     }
@@ -404,117 +440,121 @@ fn NavigationIcon(screen: Screen) -> Element {
 
 #[component]
 fn InterfaceOverview(theme: Theme, data: Data) -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let current = Local::now();
     let month = current.format("%Y / %m").to_string();
     let day = current.format("%d").to_string();
-    let date_label = format!("今天 {month} / {day}");
+    let date_label = lang.format(
+        "今天 {month} / {day}",
+        &[("month", month.clone()), ("day", day.clone())],
+    );
     let active = data.menu().filter(|food| food.enabled).count();
     let count = data.eaten_count();
     let (kicker, title, second_line, copy, caption) = match theme {
         Theme::Strand => (
             "MEAL CONNECTION / 一餐之遥",
-            "把这一餐，",
-            "送给自己。",
-            "走过很远的路，也别忘了停下来吃饭。",
-            "每一顿，都与日常重新连接。",
+            { lang.text("把这一餐，") },
+            { lang.text("送给自己。") },
+            { lang.text("走过很远的路，也别忘了停下来吃饭。") },
+            { lang.text("每一顿，都与日常重新连接。") },
         ),
         Theme::Terminal => (
             "PERSONAL SUPPLY / 个人补给",
-            "日常补给，",
-            "等你决定。",
-            "熟悉的味道，也能让今天充满能量。",
-            "生存要紧，好好吃饭。",
+            { lang.text("日常补给，") },
+            { lang.text("等你决定。") },
+            { lang.text("熟悉的味道，也能让今天充满能量。") },
+            { lang.text("生存要紧，好好吃饭。") },
         ),
         Theme::Island => (
             "ISLAND NOTEBOOK / 小岛食记",
-            "今天也有，",
-            "小小的期待。",
-            "收集喜欢的味道，把日子过得慢一点。",
-            "不赶时间，先好好吃饭。",
+            { lang.text("今天也有，") },
+            { lang.text("小小的期待。") },
+            { lang.text("收集喜欢的味道，把日子过得慢一点。") },
+            { lang.text("不赶时间，先好好吃饭。") },
         ),
         Theme::Phantom => (
             "TAKE YOUR APPETITE / 开饭预告",
-            "别再纠结，",
-            "现在开饭！",
-            "今日作战目标：好好吃一顿。",
-            "这一餐，就听自己的。",
+            { lang.text("别再纠结，") },
+            { lang.text("现在开饭！") },
+            { lang.text("今日作战目标：好好吃一顿。") },
+            { lang.text("这一餐，就听自己的。") },
         ),
         Theme::Holo => (
             "TODAY / 今日概览",
-            "今天，",
-            "吃点什么。",
-            "少一点犹豫，多一点日常。",
-            "本地记录，随时回看。",
+            { lang.text("今天，") },
+            { lang.text("吃点什么。") },
+            { lang.text("少一点犹豫，多一点日常。") },
+            { lang.text("本地记录，随时回看。") },
         ),
         Theme::Classic => (
             "DAILY / 今日窗口",
-            "打开今天，",
-            "好好吃饭。",
-            "生活里的小事，也值得按下保存。",
-            "每一餐，都留在自己的设备里。",
+            { lang.text("打开今天，") },
+            { lang.text("好好吃饭。") },
+            { lang.text("生活里的小事，也值得按下保存。") },
+            { lang.text("每一餐，都留在自己的设备里。") },
         ),
         Theme::Ink => (
             "COLOR YOUR LUNCH!",
-            "好好吃饭，",
-            "涂满今天！",
-            "给平凡的一天，添点喜欢的味道。",
-            "每一次选择，都有自己的颜色。",
+            { lang.text("好好吃饭，") },
+            { lang.text("涂满今天！") },
+            { lang.text("给平凡的一天，添点喜欢的味道。") },
+            { lang.text("每一次选择，都有自己的颜色。") },
         ),
         Theme::Valley => (
             "GARDEN JOURNAL / 田园食记",
-            "忙里偷闲，",
-            "先吃一顿。",
-            "好好照顾自己，也是今天的小小收获。",
-            "一日三餐，慢慢记录。",
+            { lang.text("忙里偷闲，") },
+            { lang.text("先吃一顿。") },
+            { lang.text("好好照顾自己，也是今天的小小收获。") },
+            { lang.text("一日三餐，慢慢记录。") },
         ),
         Theme::Marathon => (
             "APPETITE PROTOCOL",
-            "接入日常。",
-            "准备开饭。",
-            "从熟悉的菜单，找回今天的食欲。",
-            "只记录真实的一餐。",
+            { lang.text("接入日常。") },
+            { lang.text("准备开饭。") },
+            { lang.text("从熟悉的菜单，找回今天的食欲。") },
+            { lang.text("只记录真实的一餐。") },
         ),
         Theme::Frontline => (
             "REST / 日常补给",
-            "休整时刻。",
-            "好好吃饭。",
-            "把步伐放慢，留一点时间给自己。",
-            "每一餐，都是平凡生活的纪念。",
+            { lang.text("休整时刻。") },
+            { lang.text("好好吃饭。") },
+            { lang.text("把步伐放慢，留一点时间给自己。") },
+            { lang.text("每一餐，都是平凡生活的纪念。") },
         ),
         Theme::Automata => (
             "ARCHIVE : DAILY MEALS",
-            "日常记录",
-            " / 持续更新",
-            "每一个普通的日子，都有值得记住的一餐。",
-            "记录是为了生活，偶尔忘记也没有关系。",
+            { lang.text("日常记录") },
+            { lang.text(" / 持续更新") },
+            { lang.text("每一个普通的日子，都有值得记住的一餐。") },
+            { lang.text("记录是为了生活，偶尔忘记也没有关系。") },
         ),
         Theme::Reclamation => (
             "DAILY CAMP / 日常营地",
-            "休整片刻，",
-            "好好吃饭。",
-            "今天的补给，从一顿喜欢的开始。",
-            "停一停，也是一种前进。",
+            { lang.text("休整片刻，") },
+            { lang.text("好好吃饭。") },
+            { lang.text("今天的补给，从一顿喜欢的开始。") },
+            { lang.text("停一停，也是一种前进。") },
         ),
         Theme::Expedition => (
             "MEAL JOURNEY / 饮食旅程",
-            "每一顿，",
-            "都是新一站。",
-            "不必计划很远，先决定这一餐。",
-            "走过的日子，都在记录里。",
+            { lang.text("每一顿，") },
+            { lang.text("都是新一站。") },
+            { lang.text("不必计划很远，先决定这一餐。") },
+            { lang.text("走过的日子，都在记录里。") },
         ),
         _ => (
             "DAILY LIFE / 日常中枢",
-            "日常，",
-            "也值得认真。",
-            "把选择交给直觉，把今天留给生活。",
-            "用一顿好饭，为日常充能。",
+            { lang.text("日常，") },
+            { lang.text("也值得认真。") },
+            { lang.text("把选择交给直觉，把今天留给生活。") },
+            { lang.text("用一顿好饭，为日常充能。") },
         ),
     };
     rsx! {
-        aside { class:"interface-overview", "aria-label":"今日概览",
-            p { class:"overview-kicker", {kicker} }
-            h2 { class:"overview-title", {title}, br {}, span { {second_line} } }
-            p { class:"overview-copy", {copy} }
+        aside { class:"interface-overview", "aria-label":lang.text("今日概览"),
+            p { class:"overview-kicker", {lang.text(kicker)} }
+            h2 { class:"overview-title", {title}, if lang == Language::English { " " }, br {}, span { {second_line} } }
+            p { class:"overview-copy", {lang.text(copy)} }
             div { class:"overview-visual", "aria-hidden":"true",
                 if let Some(art) = theme.overview_svg() {
                     div { class:"overview-art", dangerous_inner_html:art }
@@ -530,19 +570,20 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             div { class:"day-dial", "aria-label":date_label,
                 span { class:"day-month", {month} }
                 strong { class:"day-number", {day} }
-                span { class:"day-caption", "今天" }
+                span { class:"day-caption", {lang.text("今天")} }
             }
             div { class:"overview-stats",
-                div { class:"overview-stat", strong { "{active:02}" }, span { "可选菜单" } }
-                div { class:"overview-stat", strong { "{count:02}" }, span { "已记餐次" } }
+                div { class:"overview-stat", strong { "{active:02}" }, span { {lang.text("可选菜单")} } }
+                div { class:"overview-stat", strong { "{count:02}" }, span { {lang.text("已记餐次")} } }
             }
-            p { class:"overview-caption", {caption} }
+            p { class:"overview-caption", {lang.text(caption)} }
         }
     }
 }
 
 #[component]
 fn EatScreen() -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let ctx = use_context::<AppContext>();
     let vm = ctx.vm.read().clone();
     let data = vm.data.unwrap();
@@ -552,75 +593,75 @@ fn EatScreen() -> Element {
         div { class:"eat-layout",
         if vm.theme.is_interface() { InterfaceOverview { theme:vm.theme, data:data.clone() } }
         div { class:"eat-console",
-        div { class:"page-kicker", span { "THE DAILY DILEMMA" }, span { "{today} · 今天也要吃饱" } }
-        div { class:"page-heading", h1 { "是啊，", em { "吃什么？" } }, span { class:"tiny-stamp", "听胃的！" } }
+        div { class:"page-kicker", span { "THE DAILY DILEMMA" }, span { {format!("{today} · {}",lang.text("今天也要吃饱"))} } }
+        div { class:"page-heading", h1 { {lang.text("是啊，")}, em { {lang.text("吃什么？")} } }, span { class:"tiny-stamp", {lang.text("听胃的！")} } }
         match data.decision.clone() {
             Decision::Ready { candidate, .. } if now() < candidate.shown_at || now() - candidate.shown_at >= 2*60*60*1000 => {
                 let restart_ctx=ctx.clone();
-                rsx! { section { class:"empty illustrated", h2 { "又到饭点了？" }, p { "上次的候选已超过两小时，重新挑一个吧。" },
-                    button { class:"button primary", disabled:vm.busy, onclick:move |_|dispatch(restart_ctx.clone(),Command::Start{new_round:true},""), "重新开始 ↗" }
+                rsx! { section { class:"empty illustrated", h2 { {lang.text("又到饭点了？")} }, p { {lang.text("上次的候选已超过两小时，重新挑一个吧。")} },
+                    button { class:"button primary", disabled:vm.busy, onclick:move |_|dispatch(restart_ctx.clone(),Command::Start{new_round:true},""), {lang.text("重新开始 ↗")} }
                 } }
             },
             Decision::Ready { candidate, seen, .. } => {
                 let food=data.food(&candidate.food_id).unwrap();
                 let name=food.name.clone();
                 let name_class=if name.chars().count()>5 {"food-name long"} else {"food-name"};
-                let label=last_label(candidate.last_eaten,candidate.shown_at);
+                let label=last_label(lang,candidate.last_eaten,candidate.shown_at);
                 let round=seen.len()+1;
                 let skip_ctx=ctx.clone(); let eat_ctx=ctx.clone();
                 let skip_id=candidate.id.clone(); let eat_id=candidate.id.clone();
                 rsx! {
-                    article { class:"food-ticket", key:"{candidate.id}", "data-watermark":"TODAY", "aria-label":"当前推荐",
-                        div { class:"ticket-top", span { "本轮第 {round:02} 位" }, span { "TODAY’S PICK ↙" } }
+                    article { class:"food-ticket", key:"{candidate.id}", "data-watermark":"TODAY", "aria-label":lang.text("当前推荐"),
+                        div { class:"ticket-top", span { {lang.format("本轮第 {round:02} 位",&[("round:02",format!("{round:02}"))])} }, span { "TODAY’S PICK ↙" } }
                         h2 { class:name_class, {name} }
-                        div { class:"ticket-bottom", p { {label} }, span { class:"food-sticker", "就差你点头！" } }
+                        div { class:"ticket-bottom", p { {label} }, span { class:"food-sticker", {lang.text("就差你点头！")} } }
                         span { class:"ticket-edge", "EAT WELL / FEEL GOOD / REPEAT" }
                     }
                     div { class:"decisions",
                         button { class:"decision skip", disabled:vm.busy, onclick:move |_| dispatch(skip_ctx.clone(),Command::Answer{recommendation_id:skip_id.clone(),eat:false},"这轮先跳过，看看下一位。"),
-                            strong { "不吃 ↗" }, span { "换一个，继续挑" }
+                            strong { {lang.text("不吃 ↗")} }, span { {lang.text("换一个，继续挑")} }
                         }
                         button { class:"decision eat", disabled:vm.busy, onclick:move |_| dispatch(eat_ctx.clone(),Command::Answer{recommendation_id:eat_id.clone(),eat:true},""),
-                            strong { if vm.busy {"稍等…"}else{"吃！"} }, span { "就它了，记入这顿" }
+                            strong { if vm.busy {{lang.text("稍等…")}}else{{lang.text("吃！")}} }, span { {lang.text("就它了，记入这顿")} }
                         }
                     }
-                    div { class:"small-print", span { "一次一个，凭胃决定。" }, span { "{active} 个选项 · 吃过也能撤销" } }
+                    div { class:"small-print", span { {lang.text("一次一个，凭胃决定。")} }, span { {lang.format("{active} 个选项 · 吃过也能撤销",&[("active",active.to_string())])} } }
                 }
             },
             Decision::Accepted { meal_id,food_id } => {
                 let name=data.food(&food_id).map(|f| f.name.clone()).unwrap_or_default();
                 let undo_ctx=ctx.clone(); let next_ctx=ctx.clone();
                 rsx! {
-                    section { class:"celebration", div { class:"accepted-stamp", "开饭！" }, h2 { {name} }, p { "已记入这顿。趁热吃，慢慢来。" },
+                    section { class:"celebration", div { class:"accepted-stamp", {lang.text("开饭！")} }, h2 { {name} }, p { {lang.text("已记入这顿。趁热吃，慢慢来。")} },
                         div { class:"inline-actions",
-                            button { class:"button", disabled:vm.busy, onclick:move |_| dispatch(undo_ctx.clone(),Command::RemoveMeal{meal_id:meal_id.clone()},"这次记录和学习反馈已撤销。"), "点错了，撤销" }
-                            button { class:"button primary", disabled:vm.busy, onclick:move |_| dispatch(next_ctx.clone(),Command::Start{new_round:true},""), "下一顿再挑 ↗" }
+                            button { class:"button", disabled:vm.busy, onclick:move |_| dispatch(undo_ctx.clone(),Command::RemoveMeal{meal_id:meal_id.clone()},"这次记录和学习反馈已撤销。"), {lang.text("点错了，撤销")} }
+                            button { class:"button primary", disabled:vm.busy, onclick:move |_| dispatch(next_ctx.clone(),Command::Start{new_round:true},""), {lang.text("下一顿再挑 ↗")} }
                         }
                     }
                 }
             },
             Decision::Exhausted if active>0 => {
                 let start_ctx=ctx.clone(); let mut nav_ctx=ctx.clone();
-                rsx! { section { class:"empty illustrated", span { class:"empty-eyebrow", "NO RUSH, NO PRESSURE" }, h2 { "这轮都", br {}, "不想吃。" }, p { "那就先歇一下。也可以记下菜单之外的选择。" },
+                rsx! { section { class:"empty illustrated", span { class:"empty-eyebrow", "NO RUSH, NO PRESSURE" }, h2 { {lang.text("这轮都")}, br {}, {lang.text("不想吃。")} }, p { {lang.text("那就先歇一下。也可以记下菜单之外的选择。")} },
                     div { class:"inline-actions",
-                        button { class:"button primary", disabled:vm.busy, onclick:move |_| dispatch(start_ctx.clone(),Command::Start{new_round:true},"新的一轮，重新开始。"), "再挑一轮 ↗" }
-                        button { class:"button", onclick:move |_| nav_ctx.vm.write().screen=Screen::History, "手动记一顿" }
+                        button { class:"button primary", disabled:vm.busy, onclick:move |_| dispatch(start_ctx.clone(),Command::Start{new_round:true},"新的一轮，重新开始。"), {lang.text("再挑一轮 ↗")} }
+                        button { class:"button", onclick:move |_| nav_ctx.vm.write().screen=Screen::History, {lang.text("手动记一顿")} }
                     }
                 } }
             },
             _ if active==0 => {
                 let add_ctx=ctx.clone(); let mut nav_ctx=ctx.clone();
-                rsx! { section { class:"empty illustrated", span { class:"empty-eyebrow", "YOUR MENU, YOUR RULES" }, h2 { "胃已就位。", br {}, "菜单呢？" }, p { "先放进几样你爱吃的，我们再来决定今天吃什么。" },
+                rsx! { section { class:"empty illustrated", span { class:"empty-eyebrow", "YOUR MENU, YOUR RULES" }, h2 { {lang.text("胃已就位。")}, br {}, {lang.text("菜单呢？")} }, p { {lang.text("先放进几样你爱吃的，我们再来决定今天吃什么。")} },
                     div { class:"inline-actions",
-                        button { class:"button primary", disabled:vm.busy, onclick:move |_| dispatch(add_ctx.clone(),Command::AddStarters,"已加入六个常见选项，没有生成任何饮食历史。"), "加入六个常见选项 ↗" }
-                        button { class:"button", onclick:move |_| nav_ctx.vm.write().screen=Screen::Foods, "自己写菜单" }
+                        button { class:"button primary", disabled:vm.busy, onclick:move |_| dispatch(add_ctx.clone(),if lang == Language::English { Command::AddEnglishStarters } else { Command::AddStarters },"已加入六个常见选项，没有生成任何饮食历史。"), {lang.text("加入六个常见选项 ↗")} }
+                        button { class:"button", onclick:move |_| nav_ctx.vm.write().screen=Screen::Foods, {lang.text("自己写菜单")} }
                     }
                 } }
             },
             _ => {
                 let start_ctx=ctx.clone();
-                rsx! { section { class:"empty illustrated", span { class:"empty-eyebrow", "GOOD FOOD IS A GOOD IDEA" }, h2 { "纠结暂停。", br {}, "准备开饭！" }, p { "从你的 {active} 个选项里，挑一个现在想吃的。" },
-                    button { class:"button primary big", disabled:vm.busy, onclick:move |_| dispatch(start_ctx.clone(),Command::Start{new_round:true},""), "今天就靠你了 ↗" }
+                rsx! { section { class:"empty illustrated", span { class:"empty-eyebrow", "GOOD FOOD IS A GOOD IDEA" }, h2 { {lang.text("纠结暂停。")}, br {}, {lang.text("准备开饭！")} }, p { {lang.format("从你的 {active} 个选项里，挑一个现在想吃的。",&[("active",active.to_string())])} },
+                    button { class:"button primary big", disabled:vm.busy, onclick:move |_| dispatch(start_ctx.clone(),Command::Start{new_round:true},""), {lang.text("今天就靠你了 ↗")} }
                 } }
             }
         }
@@ -631,6 +672,7 @@ fn EatScreen() -> Element {
 
 #[component]
 fn Toast(notice: Notice) -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let mut ctx = use_context::<AppContext>();
     let mut timer_ctx = ctx.clone();
     let notice_id = notice.id.clone();
@@ -657,14 +699,15 @@ fn Toast(notice: Notice) -> Element {
     rsx! {
         div { class:if is_error {"toast error"} else {"toast"}, role:if is_error {"alert"} else {"status"}, "aria-live":if is_error {"assertive"} else {"polite"}, "aria-atomic":"true",
             span { class:"toast-mark", if is_error {"!"} else {"✓"} }
-            p { "{notice.message}" }
-            button { class:"toast-close", "aria-label":"关闭提示", onclick:move |_|ctx.vm.write().notice=None, "×" }
+            p { {lang.message(&notice.message)} }
+            button { class:"toast-close", "aria-label":lang.text("关闭提示"), onclick:move |_|ctx.vm.write().notice=None, "×" }
         }
     }
 }
 
 #[component]
 fn FoodsScreen() -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let ctx = use_context::<AppContext>();
     let vm = ctx.vm.read().clone();
     let data = vm.data.unwrap();
@@ -672,28 +715,29 @@ fn FoodsScreen() -> Element {
     let add_ctx = ctx.clone();
     rsx! {
         div { class:"page-kicker", "THE GOOD FOOD LIST" }
-        h1 { class:"section-title", "我的", em { "菜单。" } }
-        p { class:"lede", "把想吃的放进来。不想被推荐时，先让它休息。" }
+        h1 { class:"section-title", {lang.text("我的")}, em { {lang.text("菜单。")} } }
+        p { class:"lede", {lang.text("把想吃的放进来。不想被推荐时，先让它休息。")} }
         form { class:"add-form", onsubmit:move |_| {
             let value=name();
             if !value.trim().is_empty() { dispatch_then(add_ctx.clone(),Command::AddFood{name:value},"菜单已更新。",move ||name.set(String::new())); }
         },
-            label { class:"sr-only", r#for:"new-food", "食物名称" }
-            input { id:"new-food", placeholder:"比如：番茄牛腩饭", maxlength:32, disabled:vm.busy, value:"{name}", oninput:move |e|name.set(e.value()) }
-            button { class:"button primary", r#type:"submit", disabled:vm.busy, "加入菜单 +" }
+            label { class:"sr-only", r#for:"new-food", {lang.text("食物名称")} }
+            input { id:"new-food", placeholder:lang.text("比如：番茄牛腩饭"), maxlength:32, disabled:vm.busy, value:"{name}", oninput:move |e|name.set(e.value()) }
+            button { class:"button primary", r#type:"submit", disabled:vm.busy, {lang.text("加入菜单 +")} }
         }
         div { class:"food-list",
-            if data.menu().next().is_none() { p { class:"quiet", "还没有用餐选项。先写下一个吧。" } }
+            if data.menu().next().is_none() { p { class:"quiet", {lang.text("还没有用餐选项。先写下一个吧。")} } }
             for (index, food) in data.menu().enumerate() {
                 FoodRow { key:"{food.id}", food:food.clone(), index }
             }
         }
-        p { class:"footnote", "参考周期表示预测想吃概率达到 70% 的时间；反馈较少时，它仍主要来自初始设定。" }
+        p { class:"footnote", {lang.text("参考周期表示预测想吃概率达到 70% 的时间；反馈较少时，它仍主要来自初始设定。")} }
     }
 }
 
 #[component]
 fn FoodRow(food: Food, index: usize) -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let ctx = use_context::<AppContext>();
     let busy = ctx.vm.read().busy;
     let mut editing = use_signal(|| false);
@@ -710,19 +754,19 @@ fn FoodRow(food: Food, index: usize) -> Element {
     let cycle = food
         .model
         .interval()
-        .map(|t| format!("约 {t:.1} 天"))
-        .unwrap_or("超出 180 天".into());
+        .map(|t| lang.format("约 {t:.1} 天", &[("t:.1", format!("{t:.1}"))]))
+        .unwrap_or_else(|| lang.text("超出 180 天").into());
     rsx! {
         article { class:if food.enabled {"food-row"}else{"food-row paused"},
             span { class:"row-number", "{index+1:02}" }
             div { class:"food-details",
                 if editing() {
                     form { class:"rename-form", onsubmit:move |_|dispatch_then(rename_ctx.clone(),Command::RenameFood{food_id:rename_id.clone(),name:draft()},"名称已更新。",move ||editing.set(false)),
-                        label { class:"sr-only", r#for:"rename-{food.id}", "新的食物名称" }
+                        label { class:"sr-only", r#for:"rename-{food.id}", {lang.text("新的食物名称")} }
                         input { id:"rename-{food.id}", maxlength:32, required:true, disabled:busy, value:"{draft}", oninput:move |e|draft.set(e.value()) }
                         div { class:"food-actions",
-                            button { class:"text-button", r#type:"submit", disabled:busy || draft().trim().is_empty(), "保存" }
-                            button { class:"text-button", r#type:"button", disabled:busy, onclick:move |_|editing.set(false), "取消" }
+                            button { class:"text-button", r#type:"submit", disabled:busy || draft().trim().is_empty(), {lang.text("保存")} }
+                            button { class:"text-button", r#type:"button", disabled:busy, onclick:move |_|editing.set(false), {lang.text("取消")} }
                         }
                     }
                 } else {
@@ -730,26 +774,26 @@ fn FoodRow(food: Food, index: usize) -> Element {
                 }
             }
             div { class:"food-metrics",
-                if samples==0 { p { "还在认识你的口味" } }
-                else { p { "参考周期 {cycle}" }, p { "{samples} 次记录" } }
+                if samples==0 { p { {lang.text("还在认识你的口味")} } }
+                else { p { {lang.format("参考周期 {cycle}",&[("cycle",cycle.clone())])} }, p { {if samples == 1 { lang.text("1 次记录").to_owned() } else { lang.format("{samples} 次记录",&[("samples",samples.to_string())]) }} } }
             }
             div { class:"food-controls",
                 button { class:"toggle", disabled:busy, "aria-pressed":food.enabled.to_string(), onclick:move |_|dispatch(toggle_ctx.clone(),Command::SetEnabled{food_id:toggle_id.clone(),enabled:!food.enabled},"推荐范围已更新。"),
-                    if food.enabled {"推荐中"}else{"已休息"}
+                    if food.enabled {{lang.text("推荐中")}}else{{lang.text("已休息")}}
                 }
                 if !editing() && !deleting() {
                     div { class:"food-actions",
-                        button { class:"text-button", disabled:busy, onclick:move |_|{draft.set(original_name.clone());editing.set(true);}, "改名" }
-                        button { class:"text-button danger", disabled:busy, onclick:move |_|deleting.set(true), "删除" }
+                        button { class:"text-button", disabled:busy, onclick:move |_|{draft.set(original_name.clone());editing.set(true);}, {lang.text("改名")} }
+                        button { class:"text-button danger", disabled:busy, onclick:move |_|deleting.set(true), {lang.text("删除")} }
                     }
                 }
             }
             if deleting() {
                 div { class:"food-delete-confirm",
-                    p { "从菜单删除？已有饮食记录会保留。" }
+                    p { {lang.text("从菜单删除？已有饮食记录会保留。")} }
                     div { class:"food-actions",
-                        button { class:"text-button danger", disabled:busy, onclick:move |_|dispatch(delete_ctx.clone(),Command::DeleteFood{food_id:delete_id.clone()},"已从菜单删除，饮食记录仍保留。"), "确认删除" }
-                        button { class:"text-button", disabled:busy, onclick:move |_|deleting.set(false), "取消" }
+                        button { class:"text-button danger", disabled:busy, onclick:move |_|dispatch(delete_ctx.clone(),Command::DeleteFood{food_id:delete_id.clone()},"已从菜单删除，饮食记录仍保留。"), {lang.text("确认删除")} }
+                        button { class:"text-button", disabled:busy, onclick:move |_|deleting.set(false), {lang.text("取消")} }
                     }
                 }
             }
@@ -759,6 +803,7 @@ fn FoodRow(food: Food, index: usize) -> Element {
 
 #[component]
 fn HistoryScreen() -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let ctx = use_context::<AppContext>();
     let vm = ctx.vm.read().clone();
     let data = vm.data.unwrap();
@@ -774,9 +819,9 @@ fn HistoryScreen() -> Element {
     let mut save_ctx = ctx.clone();
     rsx! {
         div { class:"page-kicker", "A LITTLE DIARY OF GOOD MEALS" }
-        h1 { class:"section-title", "吃过的", em { "日子。" } }
-        p { class:"lede", "每一顿都算数。忘了记也没关系，补上就好。" }
-        if data.menu().next().is_none() && editing().is_none() { p { class:"message", "先去「我的菜单」添加一个选项，再来记录。" } }
+        h1 { class:"section-title", {lang.text("吃过的")}, em { {lang.text("日子。")} } }
+        p { class:"lede", {lang.text("每一顿都算数。忘了记也没关系，补上就好。")} }
+        if data.menu().next().is_none() && editing().is_none() { p { class:"message", {lang.text("先去「我的菜单」添加一个选项，再来记录。")} } }
         else {
             form { class:"meal-form", onsubmit:move |_| {
                 let parsed=NaiveDateTime::parse_from_str(&at(),"%Y-%m-%dT%H:%M").ok().and_then(|d|Local.from_local_datetime(&d).single());
@@ -786,34 +831,34 @@ fn HistoryScreen() -> Element {
                 } else { save_ctx.vm.write().notify_error("不能记录未来的食用时间。"); } }
                 else { save_ctx.vm.write().notify_error("请选择有效的本地时间。"); }
             },
-                h2 { if editing().is_some() {"修改这一顿"}else{"补记一顿"} }
+                h2 { if editing().is_some() {{lang.text("修改这一顿")}}else{{lang.text("补记一顿")}} }
                 div { class:"form-fields",
-                    label { "吃了什么", select { value:"{food}", oninput:move |e|food.set(e.value()),
+                    label { {lang.text("吃了什么")}, select { value:"{food}", oninput:move |e|food.set(e.value()),
                         for option in data.foods.iter().filter(|f| !f.deleted || (editing().is_some() && f.id == food())) { option { value:"{option.id}", "{option.name}" } }
                     } }
-                    label { "什么时候", input { r#type:"datetime-local", step:"60", value:"{at}", max:input_date(now()), oninput:move |e|at.set(e.value()) } }
+                    label { {lang.text("什么时候")}, input { r#type:"datetime-local", step:"60", value:"{at}", max:input_date(now()), oninput:move |e|at.set(e.value()) } }
                 }
                 div { class:"inline-actions",
-                    button { class:"button primary", r#type:"submit", disabled:vm.busy, "保存这一顿 ↗" }
-                    if editing().is_some() { button { class:"button", r#type:"button", disabled:vm.busy, onclick:move |_|{editing.set(None);food.set(cancel_default.clone());at.set(input_date(now()));}, "取消修改" } }
+                    button { class:"button primary", r#type:"submit", disabled:vm.busy, {lang.text("保存这一顿 ↗")} }
+                    if editing().is_some() { button { class:"button", r#type:"button", disabled:vm.busy, onclick:move |_|{editing.set(None);food.set(cancel_default.clone());at.set(input_date(now()));}, {lang.text("取消修改")} } }
                 }
             }
         }
         div { class:"history-list",
-            if meals.is_empty() { p { class:"quiet", "第一顿记录，等你开饭。" } }
+            if meals.is_empty() { p { class:"quiet", {lang.text("第一顿记录，等你开饭。")} } }
             for meal in meals {
                 { let name=data.food(&meal.food_id).map(|f|f.name.clone()).unwrap_or_default(); let time=date(meal.eaten_at);
                   let edit_id=meal.id.clone(); let food_id=meal.food_id.clone(); let edit_at=meal.eaten_at;
                   let delete_id=meal.id.clone(); let confirmed=confirm_delete().as_deref()==Some(meal.id.as_str()); let delete_ctx=ctx.clone();
                   rsx! { article { class:"history-row", key:"{meal.id}",
                       if vm.theme.is_interface() { span { class:"history-node", "aria-hidden":"true" } }
-                      div { class:"row-main", small { {time} }, h3 { {name} }, span { class:"source", if meal.feedback_id.is_some(){"选了就吃"}else{"手动记录"} } }
+                      div { class:"row-main", small { {time} }, h3 { {name} }, span { class:"source", if meal.feedback_id.is_some(){{lang.text("选了就吃")}}else{{lang.text("手动记录")}} } }
                       div { class:"row-actions",
-                          button { class:"text-button", onclick:move |_|{editing.set(Some(edit_id.clone()));food.set(food_id.clone());at.set(input_date(edit_at));}, "修改" }
+                          button { class:"text-button", onclick:move |_|{editing.set(Some(edit_id.clone()));food.set(food_id.clone());at.set(input_date(edit_at));}, {lang.text("修改")} }
                           if confirmed {
-                              button { class:"text-button danger", disabled:vm.busy, onclick:move |_|{dispatch(delete_ctx.clone(),Command::RemoveMeal{meal_id:delete_id.clone()},"记录已删除，相关学习已重建。");confirm_delete.set(None);}, "确认删除" }
-                              button { class:"text-button", onclick:move |_|confirm_delete.set(None), "取消" }
-                          } else { button { class:"text-button", onclick:move |_|confirm_delete.set(Some(delete_id.clone())), "删除" } }
+                              button { class:"text-button danger", disabled:vm.busy, onclick:move |_|{dispatch(delete_ctx.clone(),Command::RemoveMeal{meal_id:delete_id.clone()},"记录已删除，相关学习已重建。");confirm_delete.set(None);}, {lang.text("确认删除")} }
+                              button { class:"text-button", onclick:move |_|confirm_delete.set(None), {lang.text("取消")} }
+                          } else { button { class:"text-button", onclick:move |_|confirm_delete.set(Some(delete_id.clone())), {lang.text("删除")} } }
                       }
                   } }
                 }
@@ -824,6 +869,7 @@ fn HistoryScreen() -> Element {
 
 #[component]
 fn BackupScreen() -> Element {
+    let lang = use_context::<AppContext>().vm.read().language;
     let mut ctx = use_context::<AppContext>();
     let vm = ctx.vm.read().clone();
     let mut text = use_signal(String::new);
@@ -834,11 +880,11 @@ fn BackupScreen() -> Element {
     let mut confirm_clear = use_signal(|| false);
     rsx! {
         div { class:"page-kicker", "COPY / PASTE / KEEP EATING" }
-        h1 { class:"section-title", "复制，", em { "就存好。" } }
-        p { class:"lede", "把记录复制到你喜欢的地方。换台设备，粘贴回来就能合并。" }
+        h1 { class:"section-title", {lang.text("复制，")}, em { {lang.text("就存好。")} } }
+        p { class:"lede", {lang.text("把记录复制到你喜欢的地方。换台设备，粘贴回来就能合并。")} }
         section { class:"backup-panel",
-            h2 { "复制当前记录" }
-            p { "包含菜单、饮食记录和学习反馈。" }
+            h2 { {lang.text("复制当前记录")} }
+            p { {lang.text("包含菜单、饮食记录和学习反馈。")} }
             button { class:"button primary", disabled:vm.busy || copying(), onclick:move |_| {
                 let exported=ctx.vm.peek().data.as_ref().unwrap().export_text();
                 match exported {
@@ -854,37 +900,37 @@ fn BackupScreen() -> Element {
                     }
                     Err(e)=>ctx.vm.write().notify_error(&e.to_string()),
                 }
-            }, if copying(){"正在复制…"}else{"复制当前记录 ↗"} }
+            }, if copying(){{lang.text("正在复制…")}}else{{lang.text("复制当前记录 ↗")}} }
             if !fallback().is_empty() {
-                label { r#for:"export-text", "手动复制以下文本" }
+                label { r#for:"export-text", {lang.text("手动复制以下文本")} }
                 textarea { id:"export-text", rows:5, readonly:true, value:"{fallback}" }
             }
         }
         section { class:"backup-panel",
-            h2 { "粘贴并合并" }
-            p { "默认增量覆盖：同名菜单、同名且同一分钟的记录以导入内容为准，其他本地数据保留。" }
-            label { class:"sr-only", r#for:"backup-text", "粘贴记录文本" }
-            textarea { id:"backup-text", rows:6, placeholder:"在这里粘贴复制的记录…", disabled:vm.busy, value:"{text}", oninput:move |e|text.set(e.value()) }
+            h2 { {lang.text("粘贴并合并")} }
+            p { {lang.text("默认增量覆盖：同名菜单、同名且同一分钟的记录以导入内容为准，其他本地数据保留。")} }
+            label { class:"sr-only", r#for:"backup-text", {lang.text("粘贴记录文本")} }
+            textarea { id:"backup-text", rows:6, placeholder:lang.text("在这里粘贴复制的记录…"), disabled:vm.busy, value:"{text}", oninput:move |e|text.set(e.value()) }
             button { class:"button primary", disabled:vm.busy || text().trim().is_empty(), onclick:move |_| {
                 dispatch_then(merge_ctx.clone(),Command::Merge{text:text()},"记录已增量合并，重复项已按导入内容更新。",move ||text.set(String::new()));
-            }, "合并记录 ↗" }
+            }, {lang.text("合并记录 ↗")} }
         }
         section { class:"backup-panel",
-            h2 { "清空全部数据" }
-            p { "删除这台设备的菜单、饮食记录和学习反馈，重新开始。" }
+            h2 { {lang.text("清空全部数据")} }
+            p { {lang.text("删除这台设备的菜单、饮食记录和学习反馈，重新开始。")} }
             if confirm_clear() {
                 div { class:"restore-confirm",
-                    p { "确定清空？此操作无法撤销，需要保留的记录请先复制保存。" }
+                    p { {lang.text("确定清空？此操作无法撤销，需要保留的记录请先复制保存。")} }
                     div { class:"inline-actions",
-                        button { class:"button danger-button", disabled:vm.busy || copying(), onclick:move |_|dispatch_then(clear_ctx.clone(),Command::Clear,"本机数据已清空。",move ||{text.set(String::new());fallback.set(String::new());confirm_clear.set(false);}), "确认清空全部数据" }
-                        button { class:"button", disabled:vm.busy, onclick:move |_|confirm_clear.set(false), "取消" }
+                        button { class:"button danger-button", disabled:vm.busy || copying(), onclick:move |_|dispatch_then(clear_ctx.clone(),Command::Clear,"本机数据已清空。",move ||{text.set(String::new());fallback.set(String::new());confirm_clear.set(false);}), {lang.text("确认清空全部数据")} }
+                        button { class:"button", disabled:vm.busy, onclick:move |_|confirm_clear.set(false), {lang.text("取消")} }
                     }
                 }
             } else {
-                button { class:"button danger-button", disabled:vm.busy || copying(), onclick:move |_|confirm_clear.set(true), "清空全部数据" }
+                button { class:"button danger-button", disabled:vm.busy || copying(), onclick:move |_|confirm_clear.set(true), {lang.text("清空全部数据")} }
             }
         }
-        p { class:"footnote", "名称忽略首尾空格和英文字母大小写。食用时间保存到分钟；同名、同一分钟算一条记录。支持旧版备份文本。" }
+        p { class:"footnote", {lang.text("名称忽略首尾空格和英文字母大小写。食用时间保存到分钟；同名、同一分钟算一条记录。支持旧版备份文本。")} }
     }
 }
 
