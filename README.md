@@ -96,3 +96,5 @@ PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check_ui.cjs
 「战地 1 · 休整时刻」(`frontline`) 使用原创雾化景物、水平问候、白色候选和窄幅统计卡片。
 
 「马拉松 · 食欲协议」(`marathon`) 采用新版 Marathon 的衬线标题、技术小字、荧光模块和格状菜单，原创连接图作为概览插图。
+
+「星露谷 · 田园饭点」(`valley`) 使用多层木框、凹入物品格与原创像素菜园，保留清楚的中文与触控按钮。

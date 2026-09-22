@@ -69,3 +69,5 @@ docs/ui-research/
 电影式菜单：[战地 1 休整时刻](studies/09-frontline.md)。
 
 模块方向：[Marathon 食欲协议](studies/10-marathon.md)。
+
+像素田园方向：[星露谷 田园饭点](studies/11-valley.md)。

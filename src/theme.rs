@@ -16,10 +16,11 @@ pub enum Theme {
     Strand,
     Frontline,
     Marathon,
+    Valley,
 }
 
 impl Theme {
-    pub const ALL: [Self; 15] = [
+    pub const ALL: [Self; 16] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -35,6 +36,7 @@ impl Theme {
         Self::Strand,
         Self::Frontline,
         Self::Marathon,
+        Self::Valley,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -44,7 +46,7 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 10] = [
+    pub const INTERFACES: [Self; 11] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
@@ -55,6 +57,7 @@ impl Theme {
         Self::Strand,
         Self::Frontline,
         Self::Marathon,
+        Self::Valley,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -79,6 +82,7 @@ impl Theme {
             Self::Strand => "strand",
             Self::Frontline => "frontline",
             Self::Marathon => "marathon",
+            Self::Valley => "valley",
         }
     }
 
@@ -99,6 +103,7 @@ impl Theme {
             Self::Strand => "死亡搁浅 · 一餐之遥",
             Self::Frontline => "战地 1 · 休整时刻",
             Self::Marathon => "马拉松 · 食欲协议",
+            Self::Valley => "星露谷 · 田园饭点",
         }
     }
 
@@ -119,6 +124,7 @@ impl Theme {
             Self::Strand => "把温热的一餐，送给自己。",
             Self::Frontline => "休整之后，再次出发。",
             Self::Marathon => "接入日常，准备开饭。",
+            Self::Valley => "日子慢慢过，饭要好好吃。",
         }
     }
 
@@ -140,6 +146,7 @@ impl Theme {
             Self::Strand => include_str!("../assets/themes/strand.css"),
             Self::Frontline => include_str!("../assets/themes/frontline.css"),
             Self::Marathon => include_str!("../assets/themes/marathon.css"),
+            Self::Valley => include_str!("../assets/themes/valley.css"),
             _ => "",
         }
     }
@@ -154,6 +161,7 @@ impl Theme {
             Self::Strand => include_str!("../assets/themes/strand-scene.svg"),
             Self::Frontline => include_str!("../assets/themes/frontline-scene.svg"),
             Self::Marathon => include_str!("../assets/themes/marathon-scene.svg"),
+            Self::Valley => include_str!("../assets/themes/valley-scene.svg"),
             _ => "",
         }
     }
@@ -164,6 +172,7 @@ impl Theme {
             Self::Terminal => Some(include_str!("../assets/themes/terminal-ration.svg")),
             Self::Strand => Some(include_str!("../assets/themes/strand-parcel.svg")),
             Self::Marathon => Some(include_str!("../assets/themes/marathon-nodes.svg")),
+            Self::Valley => Some(include_str!("../assets/themes/valley-garden.svg")),
             _ => None,
         }
     }

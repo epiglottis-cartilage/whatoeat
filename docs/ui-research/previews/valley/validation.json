@@ -1,0 +1,1051 @@
+{
+  "started_at": "2026-09-22T17:03:00.361Z",
+  "preview_binary": "/home/epiglottis/Code/whatoeat/target/debug/preview",
+  "scope": "SSR static DOM and browser layout; no live Dioxus events or native device execution",
+  "cases": [
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-ready-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.703125,
+        "scroll_y": 100,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-390-ready-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.703125,
+        "scroll_y": 100,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-760-ready-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.703125,
+        "scroll_y": 100,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-1060-ready-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762.375,
+        "scroll_y": 145,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-history-360-ready-none",
+      "theme": "valley",
+      "screen": "history",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.234375,
+        "scroll_y": 42,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-history-390-ready-none",
+      "theme": "valley",
+      "screen": "history",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.234375,
+        "scroll_y": 42,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-history-760-ready-none",
+      "theme": "valley",
+      "screen": "history",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.234375,
+        "scroll_y": 42,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-history-1060-ready-none",
+      "theme": "valley",
+      "screen": "history",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.9375,
+        "scroll_y": 19,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-foods-360-ready-none",
+      "theme": "valley",
+      "screen": "foods",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 96,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-foods-390-ready-none",
+      "theme": "valley",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 96,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-foods-760-ready-none",
+      "theme": "valley",
+      "screen": "foods",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.03125,
+        "scroll_y": 76,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-foods-1060-ready-none",
+      "theme": "valley",
+      "screen": "foods",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.734375,
+        "scroll_y": 12,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-backup-360-ready-none",
+      "theme": "valley",
+      "screen": "backup",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.734375,
+        "scroll_y": 494,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-backup-390-ready-none",
+      "theme": "valley",
+      "screen": "backup",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.34375,
+        "scroll_y": 470,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-backup-760-ready-none",
+      "theme": "valley",
+      "screen": "backup",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.765625,
+        "scroll_y": 404,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-backup-1060-ready-none",
+      "theme": "valley",
+      "screen": "backup",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762.46875,
+        "scroll_y": 487,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-idle-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "idle",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 17,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary big",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-empty-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "empty",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.6875,
+        "scroll_y": 119,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-exhausted-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "exhausted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.6875,
+        "scroll_y": 58,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-accepted-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "accepted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.703125,
+        "scroll_y": 134,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-stale-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "stale",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-loading-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "loading",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [],
+          "skipped": [
+            "theme-select"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-long-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 129,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-360-busy-none",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 360,
+      "state": "busy",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.703125,
+        "scroll_y": 100,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "decision skip",
+            "decision skip",
+            "decision eat",
+            "decision eat"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-history-390-long-none",
+      "theme": "valley",
+      "screen": "history",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.234375,
+        "scroll_y": 2200,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-foods-390-long-none",
+      "theme": "valley",
+      "screen": "foods",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.015625,
+        "scroll_y": 187,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-foods-390-ready-1",
+      "theme": "valley",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "1",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 96,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "valley-eat-390-ready-error",
+      "theme": "valley",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "error",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.703125,
+        "scroll_y": 100,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast error",
+              "ratio": 6.96,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 9.19,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.37,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 5.74,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    }
+  ],
+  "screenshots": [
+    "/tmp/whatoeat-valley-check/chromium-valley-eat-390-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-eat-1060-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-history-390-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-history-1060-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-foods-390-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-foods-1060-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-backup-390-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-backup-1060-ready-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-history-390-long-none.png",
+    "/tmp/whatoeat-valley-check/chromium-valley-eat-390-ready-error.png"
+  ],
+  "finished_at": "2026-09-22T17:03:05.730Z",
+  "passed": 28,
+  "failed": 0
+}
