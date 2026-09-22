@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-09-22T15:20:55.992Z",
+  "browser": "Chromium",
+  "scope": "SSR static DOM and browser layout; no live Dioxus events or native device execution",
+  "passed": 94,
+  "failed": 0,
+  "case_count": 94,
+  "new_theme_widths": [
+    360,
+    390,
+    760,
+    1060
+  ],
+  "checks": [
+    "native theme selector (8 choices)",
+    "single candidate",
+    "horizontal overflow",
+    "food/history control bounds",
+    "fixed bottom navigation",
+    "reachable footer",
+    "floating notifications do not shift layout",
+    "reduced motion",
+    "text contrast on resolvable opaque controls"
+  ],
+  "limits": [
+    "SSR does not execute Dioxus event handlers",
+    "transparent/gradient contrast needs visual review",
+    "no Android physical-device validation"
+  ],
+  "images": [
+    {
+      "file": "control-390.png",
+      "theme": "control",
+      "viewport": [
+        390,
+        840
+      ],
+      "sha256": "c50c33404e2d5945ed5287577495f27451e7ad437a2f8d153e011e37906c0655"
+    },
+    {
+      "file": "control-1060.png",
+      "theme": "control",
+      "viewport": [
+        1060,
+        840
+      ],
+      "sha256": "ae6c32c543c51b2f65a071df17e2e7a31740349c95672fc327a1619b9abe7dea"
+    },
+    {
+      "file": "reclamation-390.png",
+      "theme": "reclamation",
+      "viewport": [
+        390,
+        840
+      ],
+      "sha256": "68a5d8f1ea862917c95b209fb07ebc91efd7ab2f3f169ffb50ec11350f609ce3"
+    },
+    {
+      "file": "reclamation-1060.png",
+      "theme": "reclamation",
+      "viewport": [
+        1060,
+        840
+      ],
+      "sha256": "a2df6c07b937e02e8ff38137484808a0850c9517d12e42f370b4c54698792971"
+    },
+    {
+      "file": "expedition-390.png",
+      "theme": "expedition",
+      "viewport": [
+        390,
+        840
+      ],
+      "sha256": "4f6073161ecc081ff9aaf2bc03a43cdf3196c8c91f8f930dd61c3c225a2dae0e"
+    },
+    {
+      "file": "expedition-1060.png",
+      "theme": "expedition",
+      "viewport": [
+        1060,
+        840
+      ],
+      "sha256": "93238039fcfce89059c90da51b523934e85510cac09fa76f202d8f7cecd3bc95"
+    }
+  ]
+}

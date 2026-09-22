@@ -12,7 +12,7 @@ cargo run --locked --features desktop --bin whatoeat
 
 初次运行没有饮食记录。可自行添加菜单，或点击「加入六个常见选项」。该操作只加菜单，不生成虚假历史。支持单项推荐、吃/不吃、撤销、手动补记与修改、菜单改名/停用/删除、复制导出、粘贴合并。删除菜单项会保留已有饮食记录；改名会同步显示到历史记录。操作成功提示悬浮显示，3 秒后自动消失。
 
-右上角下拉框保留五套配色：原味海报、冰蓝终端、苔绿纸页、赤橙速递、鎏金夜幕。切换后在本机保存，重启后沿用；清空或导入饮食记录不会重置选择。这些是现有配色样式，尚未按明日方舟实际界面重新设计结构与动效。参考图、逐图分析和后续分阶段计划见 [UI 研究档案](docs/ui-research/README.md)。
+右上角下拉框分为「界面主题」和「配色样式」。新增罗德岛 · 中枢（分区与透视式白板）、生息演算 · 营地（日期圆盘与圆角简报）、集成战略 · 旅程（平面节点与历史时间线）；保留原味海报、冰蓝终端、苔绿纸页、赤橙速递、鎏金夜幕五套原有配色。切换后在本机保存，重启后沿用；清空或导入饮食记录不会重置选择。新界面使用原创 SVG 场景与分层 CSS，并针对手机重新排版；入场与按下反馈是本应用自定动效，支持系统减少动态效果。参考图、实施记录和预览见 [UI 研究档案](docs/ui-research/README.md)。
 
 桌面数据使用操作系统的本地应用目录（Linux 默认 `~/.local/share/whatoeat/whatoeat.sqlite3`）。测试时可以指定隔离目录：
 
@@ -61,6 +61,12 @@ cargo run --features preview --bin preview > /tmp/whatoeat-preview.html
 WHATOEAT_PREVIEW_SCREEN=foods WHATOEAT_PREVIEW_TOAST=1 cargo run --features preview --bin preview > /tmp/whatoeat-menu-preview.html
 # 冰蓝终端配色（沿用历史 key rhodes，也支持 poster / rhine / penguin / kazimierz）：
 WHATOEAT_PREVIEW_THEME=rhodes cargo run --features preview --bin preview > /tmp/whatoeat-theme-preview.html
+# 新界面：control / reclamation / expedition；仍可配合 SCREEN 选择页面
+WHATOEAT_PREVIEW_THEME=control cargo run --features preview --bin preview > /tmp/whatoeat-control-preview.html
+# 状态样例：ready / empty / exhausted / accepted / stale / loading / long / busy
+WHATOEAT_PREVIEW_THEME=expedition WHATOEAT_PREVIEW_SCREEN=history WHATOEAT_PREVIEW_STATE=long cargo run --features preview --bin preview > /tmp/whatoeat-history-preview.html
+# 可选布局验证，Node/Playwright 仅用于开发检查
+PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check_ui.cjs
 ```
 
 ## 代码导航
@@ -70,7 +76,8 @@ WHATOEAT_PREVIEW_THEME=rhodes cargo run --features preview --bin preview > /tmp/
 - `src/store.rs`：SQLite 事务、命令去重、迁移/合并前备份。
 - `src/transfer.rs`：无 ID 的交换格式、按名称合并和记录去重。
 - `src/platform.rs`：桌面/安卓数据目录与剪贴板。
-- `src/ui.rs`、`assets/app.css`：Dioxus RSX 与响应式海报风格界面。
+- `src/ui.rs`、`assets/app.css`：共享业务组件及保留的海报/配色样式。
+- `assets/themes/`：新界面的共享外壳、独立主题 CSS 与原创 SVG 场景。
 - [架构](docs/architecture.md) · [算法与交互](docs/design.md) · [模型对比](docs/algorithm-options.md)。
 
 这是个人实验版：数据库目前保存完整状态快照，每次反馈重放历史，适合小规模个人数据。安卓剪贴板、返回键和进程恢复仍需真机验收；Windows/macOS 尚未构建。没有云服务、账号系统、后台学习任务或正式发布签名。

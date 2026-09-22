@@ -1,0 +1,734 @@
+/* A daily camp briefing, informed by RA-01/02. No game assets or video framing. */
+.theme-root[data-theme="reclamation"] {
+  color-scheme: dark;
+  --canvas: #171910;
+  --paper: #1d2018;
+  --ink: #f2eee0;
+  --acid: #d1cc75;
+  --pink: #343829;
+  --accent-ink: #222617;
+  --secondary-ink: #ece9d7;
+  --surface: #292c22;
+  --inset: #20231a;
+  --hover: #373c2b;
+  --muted: #bdbfac;
+  --subtle: #a9ad96;
+  --divider: #454a37;
+  --stripe: #343a29;
+  --stroke: #596045;
+  --shadow: #10130c;
+  --strong: #d1cc75;
+  --strong-ink: #222617;
+  --strong-accent: #222617;
+  --inactive: #353a2d;
+  --danger: #f1a597;
+  --danger-surface: #482e28;
+  --danger-ink: #ffe0d8;
+  --warning-surface: #372822;
+  --danger-button: #913e2e;
+  --focus: #f2e8a3;
+  --line: 1px solid var(--stroke);
+  font-family: "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.theme-root[data-theme="reclamation"] .scene-backdrop {
+  background: #20271b;
+}
+.theme-root[data-theme="reclamation"] .scene-backdrop svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .84;
+}
+.theme-root[data-theme="reclamation"] .scene-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #17201629, #13180c40 35%, #13180cb3),
+    linear-gradient(0deg, #12160ee6, transparent 60%);
+}
+.theme-root[data-theme="reclamation"] .app-shell {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.theme-root[data-theme="reclamation"] .masthead {
+  padding-block: calc(20px + env(safe-area-inset-top)) 20px;
+  border-bottom: 1px solid #e3e8c418;
+  background: #171c13c9;
+  box-shadow: none;
+}
+.theme-root[data-theme="reclamation"] .brand-block {
+  align-items: center;
+  gap: 13px;
+}
+.theme-root[data-theme="reclamation"] .brand-symbol {
+  color: var(--acid);
+  border: 1px solid #d1cc754a;
+  border-radius: 50%;
+  clip-path: none;
+  background: #292d1d;
+}
+.theme-root[data-theme="reclamation"] .wordmark {
+  font-family: Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: .02em;
+}
+.theme-root[data-theme="reclamation"] .wordmark span { color: #858b70; }
+.theme-root[data-theme="reclamation"] .brand-subtitle {
+  color: #b9bb9e;
+  font-size: 9px;
+  letter-spacing: .22em;
+}
+.theme-root[data-theme="reclamation"] .shell-status {
+  color: #e4e4cf;
+  border: 0;
+  background: #10160c6b;
+  border-radius: 100px;
+  padding: 7px 16px;
+}
+.theme-root[data-theme="reclamation"] .theme-select {
+  border-color: #d0d5aa3d;
+  border-radius: 100px;
+  background: #252b1e;
+  color: #e8e7d4;
+  font-weight: 500;
+}
+.theme-root[data-theme="reclamation"] .theme-picker-label {
+  color: #b1b599;
+  letter-spacing: .06em;
+}
+.theme-root[data-theme="reclamation"] .main {
+  max-width: 1220px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 34px 36px 46px;
+}
+.theme-root[data-theme="reclamation"] .eat-layout {
+  display: grid;
+  grid-template-columns: minmax(245px, .78fr) minmax(0, 1.5fr);
+  gap: 44px;
+  align-items: center;
+  min-height: min(630px, calc(100dvh - 245px));
+}
+.theme-root[data-theme="reclamation"] .interface-overview {
+  position: relative;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 26px 0;
+}
+.theme-root[data-theme="reclamation"] .overview-kicker {
+  padding-left: 17px;
+  position: relative;
+  color: #d0ce94;
+  font-size: 10px;
+  letter-spacing: .22em;
+  line-height: 1.8;
+}
+.theme-root[data-theme="reclamation"] .overview-kicker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d1cc75;
+  box-shadow: 0 0 12px #d1cc7544;
+}
+.theme-root[data-theme="reclamation"] .overview-title {
+  margin-top: 18px;
+  font-family: Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  font-size: clamp(38px, 4.3vw, 57px);
+  letter-spacing: .08em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #f0eddc;
+  text-shadow: 0 2px 16px #12180d;
+}
+.theme-root[data-theme="reclamation"] .overview-copy {
+  max-width: 27ch;
+  margin-top: 16px;
+  color: #c4c9b3;
+  line-height: 1.9;
+  font-size: 13px;
+}
+.theme-root[data-theme="reclamation"] .overview-visual { display: none; }
+.theme-root[data-theme="reclamation"] .day-dial {
+  width: 162px;
+  height: 162px;
+  margin: 30px 0 26px;
+  flex: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(#22291b, #171e13) padding-box,
+    conic-gradient(from 218deg, #8a9b62 0deg, #619794 80deg, #cdb966 188deg, #b98348 252deg, transparent 254deg 360deg) border-box;
+  box-shadow: 0 0 0 1px #e8e1b314, 0 14px 40px #08100738;
+}
+.theme-root[data-theme="reclamation"] .day-dial::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  top: 10px;
+  right: 27px;
+  border-radius: 2px;
+  background: #f3efdb;
+  transform: rotate(39deg);
+}
+.theme-root[data-theme="reclamation"] .day-month {
+  color: #d2d6b3;
+  font-size: 11px;
+  letter-spacing: .13em;
+}
+.theme-root[data-theme="reclamation"] .day-number {
+  color: var(--acid);
+  font-family: "Arial", sans-serif;
+  font-size: 59px;
+  font-weight: 300;
+  line-height: 1.16;
+  letter-spacing: -.05em;
+}
+.theme-root[data-theme="reclamation"] .day-caption {
+  color: #c6c9b2;
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+.theme-root[data-theme="reclamation"] .overview-stats {
+  display: flex;
+  gap: 28px;
+  border-top: 1px solid #c5d09e38;
+  padding-top: 17px;
+  width: 100%;
+}
+.theme-root[data-theme="reclamation"] .overview-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+.theme-root[data-theme="reclamation"] .overview-stat strong {
+  color: #f1efdf;
+  font: 300 30px/1.25 Arial, sans-serif;
+}
+.theme-root[data-theme="reclamation"] .overview-stat span {
+  color: #b8c0a4;
+  font-size: 11px;
+}
+.theme-root[data-theme="reclamation"] .overview-caption {
+  color: #abb698;
+  font-size: 10px;
+  line-height: 1.8;
+  margin-top: 13px;
+}
+.theme-root[data-theme="reclamation"] .eat-console {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  max-width: 740px;
+}
+.theme-root[data-theme="reclamation"] .page-kicker {
+  color: #bec4a7;
+  font-size: 9px;
+  letter-spacing: .14em;
+  margin-bottom: 12px;
+}
+.theme-root[data-theme="reclamation"] .page-heading { margin-bottom: 23px; }
+.theme-root[data-theme="reclamation"] .page-heading h1,
+.theme-root[data-theme="reclamation"] .section-title {
+  font-family: Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  font-size: clamp(30px, 3.2vw, 43px);
+  line-height: 1.35;
+  letter-spacing: .04em;
+  font-weight: 600;
+}
+.theme-root[data-theme="reclamation"] .tiny-stamp {
+  padding: 7px 13px;
+  border: 1px solid #aeb87852;
+  border-radius: 40px;
+  background: #323b28;
+  color: #d8dbb3;
+  transform: none;
+  box-shadow: none;
+  font-size: 11px;
+  font-weight: 500;
+}
+.theme-root[data-theme="reclamation"] .food-ticket {
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0;
+  min-height: 300px;
+  padding: 27px 30px 47px;
+  border: 1px solid #b3be8440;
+  border-radius: 24px;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 80% 0%, #4c513031, transparent 68%), #161c12f0;
+  box-shadow: 0 16px 42px #080e093b, inset 0 1px #e9efcf0c;
+  transform: none;
+  outline: 0;
+}
+.theme-root[data-theme="reclamation"] .food-ticket::before {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -130px;
+  width: 345px;
+  height: 345px;
+  border: 1px solid #a0af6821;
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px #adba7307, 0 0 0 65px #adba7305;
+  z-index: -1;
+}
+.theme-root[data-theme="reclamation"] .food-ticket::after {
+  content: attr(data-watermark);
+  position: absolute;
+  right: 17px;
+  bottom: 19px;
+  z-index: -1;
+  max-width: calc(100% - 35px);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #a0b47808;
+  font-family: Georgia, "Noto Serif CJK SC", serif;
+  font-size: 102px;
+  line-height: 1;
+  font-weight: 600;
+}
+.theme-root[data-theme="reclamation"] .ticket-top {
+  color: #aeb79c;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+.theme-root[data-theme="reclamation"] .ticket-top span:first-child {
+  padding: 5px 11px;
+  border: 0;
+  border-radius: 40px;
+  background: #343c28;
+  color: #d7dbb2;
+}
+.theme-root[data-theme="reclamation"] .food-name {
+  margin: 39px 0 29px;
+  font-family: Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  font-size: clamp(51px, 6.5vw, 86px);
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  color: #f4f0df;
+  text-shadow: 0 3px 9px #080e0970;
+}
+.theme-root[data-theme="reclamation"] .food-name.long {
+  font-size: clamp(32px, 3.9vw, 52px);
+  letter-spacing: .015em;
+}
+.theme-root[data-theme="reclamation"] .ticket-bottom {
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.theme-root[data-theme="reclamation"] .ticket-bottom p {
+  color: #c2cab1;
+  font-size: 12px;
+  font-weight: 400;
+}
+.theme-root[data-theme="reclamation"] .food-sticker {
+  transform: none;
+  padding: 7px 12px;
+  border-radius: 40px;
+  background: #333c26;
+  color: #d1d4a2;
+  font-size: 10px;
+  font-weight: 500;
+}
+.theme-root[data-theme="reclamation"] .ticket-edge {
+  left: 30px;
+  bottom: 15px;
+  color: #939f7c;
+  font-size: 7px;
+  letter-spacing: .17em;
+}
+.theme-root[data-theme="reclamation"] .decisions {
+  grid-template-columns: .88fr 1.12fr;
+  gap: 16px;
+  margin-top: 22px;
+}
+.theme-root[data-theme="reclamation"] .decision {
+  min-height: 91px;
+  padding: 17px 27px;
+  border-radius: 100px;
+  border: 1px solid #929b6c5c;
+  box-shadow: 0 6px 18px #0a100c24;
+  text-align: center;
+}
+.theme-root[data-theme="reclamation"] .decision strong {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.theme-root[data-theme="reclamation"] .decision span {
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: .05em;
+}
+.theme-root[data-theme="reclamation"] .decision.skip {
+  background: #222b1ef5;
+  color: #e1e6d2;
+}
+.theme-root[data-theme="reclamation"] .decision.eat {
+  border-color: #e2dc947a;
+  background: #d1cc75;
+  color: #242914;
+  box-shadow: 0 6px 28px #d1cc7524;
+}
+.theme-root[data-theme="reclamation"] .decision:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px #070d084f;
+  filter: brightness(1.08);
+}
+.theme-root[data-theme="reclamation"] .decision:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+.theme-root[data-theme="reclamation"] .small-print {
+  margin-top: 19px;
+  color: #b3bda0;
+  font-size: 10px;
+}
+.theme-root[data-theme="reclamation"] .empty.illustrated,
+.theme-root[data-theme="reclamation"] .celebration {
+  padding: 30px;
+  border: 1px solid #97a46c40;
+  border-radius: 24px;
+  color: #efeedc;
+  background: radial-gradient(ellipse at 70% 0%, #4c582a42, transparent 75%), #192115f5;
+  box-shadow: 0 18px 45px #09100838;
+}
+.theme-root[data-theme="reclamation"] .empty h2 {
+  font-family: Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: .03em;
+  margin: 23px 0 18px;
+}
+.theme-root[data-theme="reclamation"] .empty-eyebrow { color: #d0cd94; }
+.theme-root[data-theme="reclamation"] .empty p { font-size: 13px; }
+.theme-root[data-theme="reclamation"] .accepted-stamp {
+  display: grid;
+  align-content: center;
+  width: 145px;
+  height: 145px;
+  margin: 2px auto 19px;
+  border-radius: 50%;
+  border: 1px solid #d1cc75aa;
+  background: #d1cc75;
+  color: #262e1b;
+  font-size: 37px;
+  font-weight: 500;
+  transform: none;
+  padding: 0;
+  box-shadow: 0 0 0 9px #d1cc750e;
+}
+.theme-root[data-theme="reclamation"] .celebration h2 {
+  font-family: Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: .03em;
+  overflow-wrap: anywhere;
+}
+.theme-root[data-theme="reclamation"] .celebration p { color: #bcc7a6; }
+
+/* The same rounded camp-panel vocabulary extends to every editable page. */
+.theme-root[data-theme="reclamation"] .lede {
+  color: #c3c9b4;
+  max-width: 65ch;
+  margin-bottom: 27px;
+}
+.theme-root[data-theme="reclamation"] input,
+.theme-root[data-theme="reclamation"] select,
+.theme-root[data-theme="reclamation"] textarea {
+  border-radius: 12px;
+  border-color: #727f514f;
+  background: #141e13c9;
+  color: #efeedc;
+  box-shadow: inset 0 1px 4px #10190b22;
+}
+.theme-root[data-theme="reclamation"] .theme-select { border-radius: 100px; }
+.theme-root[data-theme="reclamation"] input:focus,
+.theme-root[data-theme="reclamation"] select:focus,
+.theme-root[data-theme="reclamation"] textarea:focus { border-color: #c6ca84; }
+.theme-root[data-theme="reclamation"] .button {
+  border-radius: 100px;
+  border-color: #96a57152;
+  background: #2e3928;
+  color: #e9edd9;
+  box-shadow: none;
+  font-size: 12px;
+  font-weight: 500;
+  padding-inline: 21px;
+}
+.theme-root[data-theme="reclamation"] .button.primary {
+  background: #d1cc75;
+  color: #252a16;
+  border-color: #ddd691;
+  font-weight: 700;
+  box-shadow: 0 4px 18px #d1cc7515;
+}
+.theme-root[data-theme="reclamation"] .button.danger-button {
+  background: #8b4130;
+  color: #fff0e8;
+  border-color: #c4796059;
+}
+.theme-root[data-theme="reclamation"] .meal-form,
+.theme-root[data-theme="reclamation"] .backup-panel {
+  border: 1px solid #85916342;
+  border-radius: 20px;
+  padding: 25px 28px;
+  background: #1b2519eb;
+  box-shadow: 0 10px 30px #10150c21;
+}
+.theme-root[data-theme="reclamation"] .meal-form h2,
+.theme-root[data-theme="reclamation"] .backup-panel h2 {
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: .04em;
+}
+.theme-root[data-theme="reclamation"] .form-fields label { color: #cbd3b8; }
+.theme-root[data-theme="reclamation"] .food-list { border-top: 0; }
+.theme-root[data-theme="reclamation"] .food-row {
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #8f9c6638;
+  border-radius: 18px;
+  background: #202a1eeb;
+  gap: 18px;
+}
+.theme-root[data-theme="reclamation"] .row-number {
+  color: #c4c697;
+  font-size: 11px;
+}
+.theme-root[data-theme="reclamation"] .row-main h3 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+.theme-root[data-theme="reclamation"] .food-metrics { color: #bbc6a9; }
+.theme-root[data-theme="reclamation"] .toggle {
+  border-radius: 50px;
+  background: #c5c779;
+  color: #242c19;
+  border-color: #c5c779;
+  font-size: 11px;
+  font-weight: 600;
+}
+.theme-root[data-theme="reclamation"] .toggle[aria-pressed="false"] {
+  background: #333d2e;
+  color: #c4ccb6;
+  border-color: #5b6c45;
+}
+.theme-root[data-theme="reclamation"] .text-button {
+  border-bottom-color: transparent;
+  color: #d7dfc3;
+}
+.theme-root[data-theme="reclamation"] .text-button:hover { text-decoration: underline; }
+.theme-root[data-theme="reclamation"] .text-button.danger { color: #f1a597; }
+.theme-root[data-theme="reclamation"] .history-list { padding-top: 6px; }
+.theme-root[data-theme="reclamation"] .history-row {
+  border: 1px solid #83936233;
+  padding: 21px 24px;
+  border-radius: 17px;
+  margin-bottom: 11px;
+  background: #1a261af0;
+}
+.theme-root[data-theme="reclamation"] .history-row small {
+  color: #d0d1a6;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+.theme-root[data-theme="reclamation"] .history-node {
+  display: block;
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border: 1px solid #b6c18c;
+  border-radius: 50%;
+  background: #61734a;
+  box-shadow: 0 0 0 6px #8da36a0d;
+  margin-right: 6px;
+}
+.theme-root[data-theme="reclamation"] .source { color: #b4c1a2; }
+.theme-root[data-theme="reclamation"] .restore-confirm,
+.theme-root[data-theme="reclamation"] .food-delete-confirm {
+  border: 1px solid #a6664e6b;
+  border-radius: 12px;
+  background: #3d2b20;
+  color: #eed6c4;
+}
+.theme-root[data-theme="reclamation"] .message {
+  border-radius: 15px;
+  color: #e0e4c6;
+  background: #35402a;
+  border-color: #778554;
+}
+.theme-root[data-theme="reclamation"] .toast {
+  border-radius: 100px;
+  background: #d1cc75;
+  color: #222919;
+  border: 1px solid #e4e0a0;
+  box-shadow: 0 12px 35px #0d160c70;
+}
+.theme-root[data-theme="reclamation"] .toast .toast-mark { color: currentColor; }
+.theme-root[data-theme="reclamation"] .toast.error,
+.theme-root[data-theme="reclamation"] .message.error {
+  background: #482e28;
+  color: #ffe0d8;
+  border-color: #aa6a58;
+}
+.theme-root[data-theme="reclamation"] .nav {
+  border-top: 1px solid #a6b0793a;
+  background: #121a11f5;
+  box-shadow: 0 -8px 30px #0a0f0a30;
+}
+.theme-root[data-theme="reclamation"] .nav-item {
+  border-radius: 60px;
+  color: #b8c1a5;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.theme-root[data-theme="reclamation"] .nav-item small {
+  color: #cbd1af;
+  opacity: .7;
+}
+.theme-root[data-theme="reclamation"] .nav-item.active {
+  background: #3a442b;
+  color: #efeccf;
+  border-color: #aeb96945;
+  box-shadow: inset 0 0 18px #acb77308;
+}
+.theme-root[data-theme="reclamation"] .nav-item.active small { color: #e0d98a; opacity: 1; }
+.theme-root[data-theme="reclamation"] .nav-item:hover:not(.active) { background: #263220; }
+.theme-root[data-theme="reclamation"] .footer {
+  color: #abb996;
+  border-top: 1px solid #b4c38a21;
+  background: #14201057;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .03em;
+}
+.theme-root[data-theme="reclamation"] .footnote { color: #bcc8a9; }
+
+@media (min-width: 1500px) {
+  .theme-root[data-theme="reclamation"] .eat-layout { gap: 70px; }
+  .theme-root[data-theme="reclamation"] .day-dial { width: 182px; height: 182px; }
+}
+@media (max-width: 1000px) and (min-width: 761px) {
+  .theme-root[data-theme="reclamation"] .main { padding-inline: 25px; }
+  .theme-root[data-theme="reclamation"] .eat-layout { grid-template-columns: minmax(215px, .7fr) minmax(0, 1.3fr); gap: 25px; }
+  .theme-root[data-theme="reclamation"] .food-ticket { padding-inline: 22px; }
+  .theme-root[data-theme="reclamation"] .ticket-edge { left: 22px; }
+  .theme-root[data-theme="reclamation"] .food-name { font-size: 58px; }
+  .theme-root[data-theme="reclamation"] .food-name.long { font-size: 36px; }
+  .theme-root[data-theme="reclamation"] .food-row { gap: 12px; padding-inline: 16px; }
+  .theme-root[data-theme="reclamation"] .food-controls { gap: 10px; flex-direction: column; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="reclamation"] .scene-backdrop svg { width: 165%; max-width: none; }
+  .theme-root[data-theme="reclamation"] .masthead { padding: calc(15px + env(safe-area-inset-top)) 19px 15px; }
+  .theme-root[data-theme="reclamation"] .wordmark { font-size: 19px; }
+  .theme-root[data-theme="reclamation"] .brand-subtitle { font-size: 7px; letter-spacing: .16em; }
+  .theme-root[data-theme="reclamation"] .brand-block { gap: 9px; }
+  .theme-root[data-theme="reclamation"] .brand-symbol { width: 31px; height: 31px; }
+  .theme-root[data-theme="reclamation"] .main { padding: 22px 21px 31px; }
+  .theme-root[data-theme="reclamation"] .eat-layout { display: flex; flex-direction: column; align-items: stretch; gap: 24px; min-height: 0; }
+  .theme-root[data-theme="reclamation"] .interface-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 100px;
+    column-gap: 17px;
+    align-items: start;
+    min-height: 123px;
+    padding: 0 2px 18px;
+    border-bottom: 1px solid #a8b97a30;
+  }
+  .theme-root[data-theme="reclamation"] .overview-kicker { grid-column: 1; font-size: 8px; letter-spacing: .14em; }
+  .theme-root[data-theme="reclamation"] .overview-title { grid-column: 1; margin-top: 8px; font-size: 31px; letter-spacing: .08em; }
+  .theme-root[data-theme="reclamation"] .overview-title br { display: initial; }
+  .theme-root[data-theme="reclamation"] .overview-copy { display: none; }
+  .theme-root[data-theme="reclamation"] .day-dial { grid-column: 2; grid-row: 1 / 5; margin: 0; width: 100px; height: 100px; border-width: 5px; align-self: center; }
+  .theme-root[data-theme="reclamation"] .day-dial::after { top: 6px; right: 14px; width: 3px; height: 7px; }
+  .theme-root[data-theme="reclamation"] .day-month { font-size: 8px; }
+  .theme-root[data-theme="reclamation"] .day-number { font-size: 36px; }
+  .theme-root[data-theme="reclamation"] .day-caption { font-size: 8px; }
+  .theme-root[data-theme="reclamation"] .overview-stats { grid-column: 1; padding-top: 10px; border: 0; gap: 19px; }
+  .theme-root[data-theme="reclamation"] .overview-stat { gap: 6px; }
+  .theme-root[data-theme="reclamation"] .overview-stat strong { font-size: 21px; }
+  .theme-root[data-theme="reclamation"] .overview-stat span { font-size: 9px; }
+  .theme-root[data-theme="reclamation"] .overview-caption { display: none; }
+  .theme-root[data-theme="reclamation"] .eat-console { max-width: none; }
+  .theme-root[data-theme="reclamation"] .page-kicker { font-size: 8px; letter-spacing: .06em; margin-bottom: 10px; }
+  .theme-root[data-theme="reclamation"] .page-heading { margin-bottom: 17px; gap: 7px; }
+  .theme-root[data-theme="reclamation"] .page-heading h1 { font-size: 28px; letter-spacing: .015em; }
+  .theme-root[data-theme="reclamation"] .section-title { font-size: 35px; }
+  .theme-root[data-theme="reclamation"] .tiny-stamp { font-size: 10px; padding: 6px 10px; }
+  .theme-root[data-theme="reclamation"] .food-ticket { min-height: 251px; padding: 21px 23px 39px; border-radius: 22px; }
+  .theme-root[data-theme="reclamation"] .ticket-top { font-size: 8px; letter-spacing: .02em; }
+  .theme-root[data-theme="reclamation"] .ticket-top span:first-child { padding: 4px 9px; }
+  .theme-root[data-theme="reclamation"] .food-name { font-size: clamp(49px, 12vw, 75px); margin: 32px 0 23px; letter-spacing: .035em; }
+  .theme-root[data-theme="reclamation"] .food-name.long { font-size: clamp(31px, 8.2vw, 44px); letter-spacing: .01em; }
+  .theme-root[data-theme="reclamation"] .ticket-bottom { gap: 12px; }
+  .theme-root[data-theme="reclamation"] .ticket-bottom p { font-size: 11px; }
+  .theme-root[data-theme="reclamation"] .food-sticker { font-size: 9px; padding: 6px 10px; }
+  .theme-root[data-theme="reclamation"] .ticket-edge { left: 23px; bottom: 13px; font-size: 6px; }
+  .theme-root[data-theme="reclamation"] .decisions { margin-top: 17px; gap: 11px; }
+  .theme-root[data-theme="reclamation"] .decision { min-height: 80px; padding: 15px 13px; }
+  .theme-root[data-theme="reclamation"] .decision strong { font-size: 23px; }
+  .theme-root[data-theme="reclamation"] .decision span { font-size: 9px; margin-top: 6px; letter-spacing: 0; }
+  .theme-root[data-theme="reclamation"] .small-print { font-size: 9px; line-height: 1.7; margin-top: 14px; }
+  .theme-root[data-theme="reclamation"] .empty.illustrated,
+  .theme-root[data-theme="reclamation"] .celebration { padding: 25px 22px; }
+  .theme-root[data-theme="reclamation"] .empty h2 { font-size: 36px; }
+  .theme-root[data-theme="reclamation"] .empty p { font-size: 12px; }
+  .theme-root[data-theme="reclamation"] .empty .inline-actions { gap: 10px; }
+  .theme-root[data-theme="reclamation"] .empty .button { padding-inline: 15px; }
+  .theme-root[data-theme="reclamation"] .accepted-stamp { width: 119px; height: 119px; font-size: 32px; }
+  .theme-root[data-theme="reclamation"] .meal-form,
+  .theme-root[data-theme="reclamation"] .backup-panel { padding: 22px 20px; border-radius: 18px; }
+  .theme-root[data-theme="reclamation"] .add-form { gap: 9px; }
+  .theme-root[data-theme="reclamation"] .add-form .button { padding-inline: 14px; font-size: 11px; }
+  .theme-root[data-theme="reclamation"] .food-row { padding: 16px 14px; column-gap: 11px; row-gap: 7px; }
+  .theme-root[data-theme="reclamation"] .row-main h3 { font-size: 19px; letter-spacing: .02em; }
+  .theme-root[data-theme="reclamation"] .food-metrics { font-size: 10px; }
+  .theme-root[data-theme="reclamation"] .food-controls { gap: 3px; }
+  .theme-root[data-theme="reclamation"] .food-controls .food-actions { gap: 9px; }
+  .theme-root[data-theme="reclamation"] .toggle { font-size: 10px; padding-inline: 11px; }
+  .theme-root[data-theme="reclamation"] .text-button { font-size: 11px; }
+  .theme-root[data-theme="reclamation"] .history-row { padding: 18px 16px; gap: 13px; }
+  .theme-root[data-theme="reclamation"] .history-node { width: 7px; height: 7px; margin-right: 0; }
+  .theme-root[data-theme="reclamation"] .nav-item { border-radius: 15px; font-size: 10px; }
+  .theme-root[data-theme="reclamation"] .nav-item small { font-size: 8px; }
+  .theme-root[data-theme="reclamation"] .footer { font-size: 9px; padding: 14px 21px; }
+  .theme-root[data-theme="reclamation"] .toast { border-radius: 22px; }
+}
+@media (max-width: 380px) {
+  .theme-root[data-theme="reclamation"] .main { padding-inline: 17px; }
+  .theme-root[data-theme="reclamation"] .masthead { padding-inline: 17px; gap: 9px; }
+  .theme-root[data-theme="reclamation"] .wordmark { font-size: 17px; }
+  .theme-root[data-theme="reclamation"] .brand-symbol { width: 27px; height: 27px; }
+  .theme-root[data-theme="reclamation"] .overview-title { font-size: 28px; }
+  .theme-root[data-theme="reclamation"] .overview-stats { gap: 13px; }
+  .theme-root[data-theme="reclamation"] .page-heading h1 { font-size: 25px; }
+  .theme-root[data-theme="reclamation"] .tiny-stamp { font-size: 9px; padding-inline: 9px; }
+  .theme-root[data-theme="reclamation"] .food-ticket { padding-inline: 19px; }
+  .theme-root[data-theme="reclamation"] .ticket-edge { left: 19px; }
+  .theme-root[data-theme="reclamation"] .food-name { font-size: 49px; }
+  .theme-root[data-theme="reclamation"] .food-name.long { font-size: 31px; }
+  .theme-root[data-theme="reclamation"] .ticket-bottom { gap: 10px; }
+  .theme-root[data-theme="reclamation"] .food-sticker { margin-left: 0; }
+  .theme-root[data-theme="reclamation"] .food-row { gap: 8px; }
+}

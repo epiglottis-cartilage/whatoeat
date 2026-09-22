@@ -1,0 +1,108 @@
+/* HOME-01/02: asymmetry, pale projected panels, serif labels, quiet watermarks. */
+.theme-root[data-theme="control"] {
+  --canvas: #253944;
+  --paper: #182b35;
+  --surface: #e8eded;
+  --inset: #1d3440ee;
+  --ink: #f0f4f2;
+  --acid: #69cde1;
+  --accent-ink: #102c38;
+  --pink: #e9ece7;
+  --secondary-ink: #1f343e;
+  --stroke: #abc2c866;
+  --muted: #c0ced0;
+  --subtle: #b4c6cc;
+  --strong: #57bfd4;
+  --strong-ink: #102a35;
+  --strong-accent: #102a35;
+  --focus: #f5c47a;
+}
+.theme-root[data-theme="control"] .scene-backdrop { opacity: .85; }
+.theme-root[data-theme="control"] .masthead { background: #152731b3; }
+.theme-root[data-theme="control"] .theme-select { background: #213944; }
+.theme-root[data-theme="control"] .brand-symbol { background: #e3eeed; color: #253e49; }
+.theme-root[data-theme="control"] .main { padding-top: 37px; }
+.theme-root[data-theme="control"] .eat-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 48px; min-height: 560px; }
+.theme-root[data-theme="control"] .interface-overview { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding-bottom: 30px; }
+.theme-root[data-theme="control"] .overview-kicker { padding-left: 12px; border-left: 3px solid var(--acid); color: #d3e8e9; }
+.theme-root[data-theme="control"] .overview-title { font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif; font-weight: 600; line-height: 1.55; text-shadow: 0 3px 20px #00162350; }
+.theme-root[data-theme="control"] .overview-title span { color: #d6e6e6; }
+.theme-root[data-theme="control"] .overview-visual { position: absolute; width: 230px; height: 230px; right: -7px; bottom: 70px; margin: 0; opacity: .18; transform: rotate(-12deg); }
+.theme-root[data-theme="control"] .day-dial { margin-top: 66px; padding-left: 16px; border-left: 1px solid var(--acid); width: max-content; }
+.theme-root[data-theme="control"] .day-number { font-size: 48px; }
+.theme-root[data-theme="control"] .overview-stats { position: relative; padding-top: 18px; gap: 34px; margin-top: 24px; }
+.theme-root[data-theme="control"] .overview-stat { flex-direction: column; gap: 2px; }
+.theme-root[data-theme="control"] .overview-stat strong { font-size: 34px; }
+.theme-root[data-theme="control"] .overview-caption { position: relative; }
+.theme-root[data-theme="control"] .page-heading h1, .theme-root[data-theme="control"] .section-title { font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif; font-weight: 650; letter-spacing: .015em; }
+.theme-root[data-theme="control"] .page-heading h1 { font-size: clamp(26px, 3.3vw, 37px); }
+.theme-root[data-theme="control"] .tiny-stamp { background: transparent; color: #bce7ef; border: 1px solid #86c2cf66; }
+.theme-root[data-theme="control"] .food-ticket { isolation: isolate; padding: 37px 28px 40px; background: transparent; color: #24363e; border: 0; min-height: 267px; }
+.theme-root[data-theme="control"] .food-ticket::before {
+  content: "";
+  position: absolute;
+  inset: -8px 0 0;
+  z-index: -2;
+  clip-path: polygon(0 6%, 100% 0, 100% 99%, 0 97%);
+  background: linear-gradient(125deg, #f0f4f1, #d4e0df);
+  border-bottom: 4px solid #d7935f;
+}
+.theme-root[data-theme="control"] .food-ticket::after { content: attr(data-watermark); position: absolute; right: 10px; top: 43%; font: 900 clamp(65px, 9vw, 106px)/1 Arial, sans-serif; letter-spacing: -.08em; color: #253c4410; z-index: -1; transform: rotate(-3deg); pointer-events: none; }
+.theme-root[data-theme="control"] .ticket-top { color: #4d6268; }
+.theme-root[data-theme="control"] .ticket-top span:first-child { border: 0; border-left: 3px solid #4a717e; padding-left: 9px; }
+.theme-root[data-theme="control"] .food-name { font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif; font-weight: 700; letter-spacing: .025em; margin: 20px 0 24px; }
+.theme-root[data-theme="control"] .food-name.long { font-size: clamp(27px, 3.6vw, 42px); letter-spacing: 0; }
+.theme-root[data-theme="control"] .food-sticker { position: relative; background: #315562; color: #edf8f6; padding: 7px 10px; }
+.theme-root[data-theme="control"] .ticket-edge { color: #587077; }
+.theme-root[data-theme="control"] .decisions { grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: 13px; margin-top: 16px; }
+.theme-root[data-theme="control"] .decision { border: 0; border-bottom: 3px solid #a6b8bc; min-height: 104px; }
+.theme-root[data-theme="control"] .decision strong { font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif; font-size: 30px; }
+.theme-root[data-theme="control"] .decision.skip { background: #d9e3e0; color: #30464d; }
+.theme-root[data-theme="control"] .decision.eat { background: #5fc4d9; color: #12313e; border-bottom-color: #c5eff2; }
+.theme-root[data-theme="control"] .nav { background: #152630f5; padding-inline: 30px; gap: 10px; }
+.theme-root[data-theme="control"] .nav-item { color: #c1d4d9; }
+.theme-root[data-theme="control"] .nav-item.active { background: #dce7e4; color: #233c48; border-top-color: #62c9df; }
+.theme-root[data-theme="control"] .nav-icon { width: 25px; height: 25px; }
+.theme-root[data-theme="control"] .nav-item.active::after { content: ""; width: 5px; height: 5px; background: #bc7648; position: absolute; top: 9px; right: 10px; transform: rotate(45deg); }
+.theme-root[data-theme="control"] .footer { background: #152731c9; }
+.theme-root[data-theme="control"] input, .theme-root[data-theme="control"] select, .theme-root[data-theme="control"] textarea { background: #172d39; color: var(--ink); }
+.theme-root[data-theme="control"] .food-row { border-left: 3px solid #629aa8; background: #203843ed; }
+.theme-root[data-theme="control"] .row-number { font-size: 19px; color: #85b6c3; }
+.theme-root[data-theme="control"] .meal-form, .theme-root[data-theme="control"] .backup-panel { border: 0; border-left: 2px solid #6ba6b6; background: #203843ed; }
+.theme-root[data-theme="control"] .meal-form h2, .theme-root[data-theme="control"] .backup-panel h2 { font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif; font-weight: 600; }
+.theme-root[data-theme="control"] .history-row { padding-inline: 18px; background: #203843d9; margin-bottom: 8px; border-bottom-color: #5f7d86; }
+.theme-root[data-theme="control"] .empty.illustrated, .theme-root[data-theme="control"] .celebration { border: 0; border-top: 2px solid #6cb7c8; background: #18313edb; }
+.theme-root[data-theme="control"] .empty h2 { font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif; }
+.theme-root[data-theme="control"] .toast { background: #203843; }
+@media (min-width: 1200px) {
+  .theme-root[data-theme="control"] .eat-layout { gap: 75px; }
+  .theme-root[data-theme="control"] .food-ticket { min-height: 290px; }
+}
+@media (max-width: 1000px) and (min-width: 761px) {
+  .theme-root[data-theme="control"] .eat-layout { gap: 30px; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
+  .theme-root[data-theme="control"] .overview-title { font-size: 30px; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="control"] .main { padding-top: 23px; }
+  .theme-root[data-theme="control"] .eat-layout { gap: 23px; min-height: 0; }
+  .theme-root[data-theme="control"] .interface-overview { display: block; padding-bottom: 17px; }
+  .theme-root[data-theme="control"] .overview-title { font-size: 22px; padding-right: 48px; }
+  .theme-root[data-theme="control"] .overview-kicker { padding-left: 8px; font-size: 8px; margin-bottom: 12px; }
+  .theme-root[data-theme="control"] .overview-visual { display: none; }
+  .theme-root[data-theme="control"] .day-dial { margin: 0; padding: 0 0 0 10px; top: 17px; right: 0; }
+  .theme-root[data-theme="control"] .day-month { display: none; }
+  .theme-root[data-theme="control"] .day-number { font-size: 27px; }
+  .theme-root[data-theme="control"] .overview-stats { margin-top: 14px; padding-top: 0; gap: 25px; }
+  .theme-root[data-theme="control"] .overview-stat { flex-direction: row; gap: 7px; align-items: baseline; }
+  .theme-root[data-theme="control"] .overview-stat strong { font-size: 19px; }
+  .theme-root[data-theme="control"] .page-heading h1 { font-size: 28px; }
+  .theme-root[data-theme="control"] .food-ticket { min-height: 239px; padding: 31px 22px 35px; }
+  .theme-root[data-theme="control"] .food-name { font-size: 56px; margin-block: 15px 20px; }
+  .theme-root[data-theme="control"] .food-name.long { font-size: 29px; }
+  .theme-root[data-theme="control"] .food-ticket::after { font-size: 75px; }
+  .theme-root[data-theme="control"] .decisions { grid-template-columns: 1fr 1.12fr; }
+  .theme-root[data-theme="control"] .decision { min-height: 90px; }
+  .theme-root[data-theme="control"] .decision strong { font-size: 25px; }
+  .theme-root[data-theme="control"] .nav { padding-inline: 6px; gap: 5px; }
+  .theme-root[data-theme="control"] .nav-icon { width: 20px; height: 20px; }
+}

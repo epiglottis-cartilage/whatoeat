@@ -8,6 +8,10 @@ use chrono::{DateTime, Local, NaiveDateTime, TimeZone, Utc};
 use dioxus::prelude::*;
 
 const CSS: &str = include_str!("../assets/app.css");
+const INTERFACE_CSS: &str = include_str!("../assets/themes/interface.css");
+const CONTROL_CSS: &str = include_str!("../assets/themes/control.css");
+const RECLAMATION_CSS: &str = include_str!("../assets/themes/reclamation.css");
+const EXPEDITION_CSS: &str = include_str!("../assets/themes/expedition.css");
 
 #[derive(Clone, Copy, PartialEq)]
 enum Screen {
@@ -15,6 +19,16 @@ enum Screen {
     History,
     Foods,
     Backup,
+}
+impl Screen {
+    fn key(self) -> &'static str {
+        match self {
+            Self::Eat => "eat",
+            Self::History => "history",
+            Self::Foods => "foods",
+            Self::Backup => "backup",
+        }
+    }
 }
 #[derive(Clone)]
 struct ViewModel {
@@ -236,6 +250,39 @@ pub fn PreviewApp() -> Element {
             data.answer(&candidate.id, false, now(), 0.0).unwrap();
             data.start(now(), 0.0, true).unwrap();
         }
+        let state = std::env::var("WHATOEAT_PREVIEW_STATE").unwrap_or_default();
+        match state.as_str() {
+            "empty" => data = Data::default(),
+            "exhausted" => data.decision = Decision::Exhausted,
+            "idle" => data.decision = Decision::Idle,
+            "accepted" => {
+                if let Decision::Ready { candidate, .. } = data.decision.clone() {
+                    data.answer(&candidate.id, true, now(), 0.0).unwrap();
+                }
+            }
+            "stale" => {
+                if let Decision::Ready { candidate, .. } = &mut data.decision {
+                    candidate.shown_at -= 3 * 60 * 60 * 1000;
+                }
+            }
+            "long" => {
+                for index in 0..12 {
+                    let food_id = data.foods[index % 3].id.clone();
+                    data.save_meal(
+                        None,
+                        &food_id,
+                        now() - (index as i64 + 1) * 3_600_000,
+                        now(),
+                    )
+                    .unwrap();
+                }
+                for (index, food) in data.foods.iter_mut().enumerate() {
+                    food.name = format!("超长菜名测试·番茄牛腩土豆胡萝卜菌菇手工拉面套餐{index}");
+                }
+                data.start(now(), 0.0, true).unwrap();
+            }
+            _ => {}
+        }
         let screen = match std::env::var("WHATOEAT_PREVIEW_SCREEN").as_deref() {
             Ok("foods") => Screen::Foods,
             Ok("history") => Screen::History,
@@ -243,17 +290,22 @@ pub fn PreviewApp() -> Element {
             _ => Screen::Eat,
         };
         ViewModel {
-            data: Some(data),
+            data: (state != "loading").then_some(data),
+            busy: state == "busy",
             screen,
             theme: std::env::var("WHATOEAT_PREVIEW_THEME")
                 .ok()
                 .as_deref()
                 .and_then(Theme::from_key)
                 .unwrap_or_default(),
-            notice: if std::env::var("WHATOEAT_PREVIEW_TOAST").as_deref() == Ok("1") {
-                Notice::new("菜单已更新。")
-            } else {
-                None
+            notice: match std::env::var("WHATOEAT_PREVIEW_TOAST").as_deref() {
+                Ok("1") => Notice::new("菜单已更新。"),
+                Ok("error") => Some(Notice {
+                    id: id(),
+                    message: "记录未能保存，请稍后重试。".into(),
+                    is_error: true,
+                }),
+                _ => None,
             },
             ..ViewModel::default()
         }
@@ -271,36 +323,66 @@ fn Shell() -> Element {
     let vm = ctx.vm.read().clone();
     let count = vm.data.as_ref().map(Data::eaten_count).unwrap_or(0);
     let theme_ctx = ctx.clone();
+    let interface = vm.theme.is_interface();
+    let scene = match vm.theme {
+        Theme::Control => include_str!("../assets/themes/control-scene.svg"),
+        Theme::Reclamation => include_str!("../assets/themes/reclamation-scene.svg"),
+        Theme::Expedition => include_str!("../assets/themes/expedition-scene.svg"),
+        _ => "",
+    };
     rsx! {
         style { {CSS} }
-        div { class:"theme-root", "data-theme":vm.theme.key(),
+        style { {INTERFACE_CSS} }
+        style { {CONTROL_CSS} }
+        style { {RECLAMATION_CSS} }
+        style { {EXPEDITION_CSS} }
+        div { class:"theme-root", "data-theme":vm.theme.key(), "data-layout":if interface {"interface"}else{"palette"}, "data-screen":vm.screen.key(),
+        if interface {
+            // These are bundled, original decorative SVGs, never imported user content.
+            div { class:"scene-backdrop", "aria-hidden":"true", dangerous_inner_html:scene }
+        }
         // All pages share this viewport-level notification outlet.
         if let Some(notice) = vm.notice.clone() { Toast { key:"{notice.id}", notice } }
         div { class:"app-shell",
             header { class:"masthead",
-                div { class:"wordmark", "WHAT", span { "/" }, "TO", span { "/" }, "EAT" }
+                div { class:"brand-block",
+                    if interface { span { class:"brand-symbol", "aria-hidden":"true", "W" } }
+                    div {
+                        div { class:"wordmark", "WHAT", span { "/" }, "TO", span { "/" }, "EAT" }
+                        if interface { div { class:"brand-subtitle", {vm.theme.description()} } }
+                    }
+                }
+                if interface {
+                    div { class:"shell-status", span { class:"connection-dot", "aria-hidden":"true" }, span { "本地记录" }, strong { "{count:02}" } }
+                }
                 label { class:"theme-picker", r#for:"theme-select",
                     span { class:"theme-picker-label", "主题" }
                     select { id:"theme-select", class:"theme-select", "aria-label":"选择主题", value:vm.theme.key(), disabled:vm.theme_saving || vm.data.is_none(),
                         onchange:move |event| {
                             if let Some(theme) = Theme::from_key(&event.value()) { change_theme(theme_ctx.clone(),theme); }
                         },
-                        for theme in Theme::ALL { option { value:theme.key(), selected:vm.theme == theme, {theme.label()} } }
+                        optgroup { label:"界面主题",
+                            for theme in Theme::INTERFACES { option { value:theme.key(), selected:vm.theme == theme, {theme.label()} } }
+                        }
+                        optgroup { label:"配色样式",
+                            for theme in Theme::PALETTES { option { value:theme.key(), selected:vm.theme == theme, {theme.label()} } }
+                        }
                     }
                 }
             }
             div { class:"workspace",
                 nav { class:"nav", "aria-label":"主要页面",
-                    for (screen, label, number) in [(Screen::Eat,"是啊吃什么","01"),(Screen::History,"吃过的日子","02"),(Screen::Foods,"我的菜单","03"),(Screen::Backup,"复制与合并","04")] {
+                    for (screen, label, number) in [(Screen::Eat,"今天吃什么","01"),(Screen::History,"吃过的日子","02"),(Screen::Foods,"我的菜单","03"),(Screen::Backup,"复制与合并","04")] {
                         button { disabled:vm.busy, class:if vm.screen==screen {"nav-item active"}else{"nav-item"},
                             "aria-current":if vm.screen==screen {"page"}else{"false"},
                             onclick:move |_| { let mut state=ctx.vm.write(); state.screen=screen; state.notice = None; },
+                            if interface { NavigationIcon { screen } }
                             small { {number} }, span { {label} }, span { class:"nav-arrow", "↗" }
                         }
                     }
                     div { class:"nav-note", p { "先吃饭。" }, p { "其他的，" }, p { "等会再说。" }, span { "已有 {count} 顿好好吃饭的记录" } }
                 }
-                main { class:"main",
+                main { class:"main", "aria-busy":vm.busy.to_string(),
                     if vm.data.is_none() {
                         section { class:"empty", h1 { "正在摆桌…" }, p { "读取这台设备的饮食记录。" } }
                     } else {
@@ -320,6 +402,75 @@ fn Shell() -> Element {
 }
 
 #[component]
+fn NavigationIcon(screen: Screen) -> Element {
+    let path = match screen {
+        Screen::Eat => "M5 3v6m3-6v6M3 3v4a3 3 0 0 0 6 0V3M6 10v11M17 3c-3 3-4 7-4 9h5m0-9v18",
+        Screen::History => "M12 8v5l3 2M8 3H3v5M3.8 7a9 9 0 1 1-.4 9",
+        Screen::Foods => "M8 5h12M8 12h12M8 19h12M3 5h1M3 12h1M3 19h1",
+        Screen::Backup => "M4 14v6h16v-6M12 3v12m-5-7 5-5 5 5",
+    };
+    rsx! { svg { class:"nav-icon", width:"24", height:"24", view_box:"0 0 24 24", fill:"none", stroke:"currentColor", stroke_width:"1.6", stroke_linecap:"square", "aria-hidden":"true", path { d:path } } }
+}
+
+#[component]
+fn InterfaceOverview(theme: Theme, data: Data) -> Element {
+    let current = Local::now();
+    let month = current.format("%Y / %m").to_string();
+    let day = current.format("%d").to_string();
+    let date_label = format!("今天 {month} / {day}");
+    let active = data.menu().filter(|food| food.enabled).count();
+    let count = data.eaten_count();
+    let (kicker, title, second_line, copy, caption) = match theme {
+        Theme::Reclamation => (
+            "DAILY CAMP / 日常营地",
+            "休整片刻，",
+            "好好吃饭。",
+            "今天的补给，从一顿喜欢的开始。",
+            "停一停，也是一种前进。",
+        ),
+        Theme::Expedition => (
+            "MEAL JOURNEY / 饮食旅程",
+            "每一顿，",
+            "都是新一站。",
+            "不必计划很远，先决定这一餐。",
+            "走过的日子，都在记录里。",
+        ),
+        _ => (
+            "DAILY LIFE / 日常中枢",
+            "日常，",
+            "也值得认真。",
+            "把选择交给直觉，把今天留给生活。",
+            "用一顿好饭，为日常充能。",
+        ),
+    };
+    rsx! {
+        aside { class:"interface-overview", "aria-label":"今日概览",
+            p { class:"overview-kicker", {kicker} }
+            h2 { class:"overview-title", {title}, br {}, span { {second_line} } }
+            p { class:"overview-copy", {copy} }
+            div { class:"overview-visual", "aria-hidden":"true",
+                svg { view_box:"0 0 240 240", fill:"none",
+                    circle { cx:"120", cy:"120", r:"91", stroke:"currentColor", stroke_width:"1" }
+                    circle { cx:"120", cy:"120", r:"75", stroke:"currentColor", stroke_width:".5", stroke_dasharray:"2 7" }
+                    path { d:"M39 134h162c-9 36-37 58-81 58s-72-22-81-58ZM33 127h174M90 107c-17-20 16-29 0-49m30 49c-17-20 16-29 0-49m30 49c-17-20 16-29 0-49", stroke:"currentColor", stroke_width:"2.5" }
+                    path { d:"M12 120h16m184 0h16M120 12v16m0 184v16", stroke:"currentColor", stroke_width:"1" }
+                }
+            }
+            div { class:"day-dial", "aria-label":date_label,
+                span { class:"day-month", {month} }
+                strong { class:"day-number", {day} }
+                span { class:"day-caption", "今天" }
+            }
+            div { class:"overview-stats",
+                div { class:"overview-stat", strong { "{active:02}" }, span { "可选菜单" } }
+                div { class:"overview-stat", strong { "{count:02}" }, span { "已记餐次" } }
+            }
+            p { class:"overview-caption", {caption} }
+        }
+    }
+}
+
+#[component]
 fn EatScreen() -> Element {
     let ctx = use_context::<AppContext>();
     let vm = ctx.vm.read().clone();
@@ -327,8 +478,11 @@ fn EatScreen() -> Element {
     let active = data.menu().filter(|f| f.enabled).count();
     let today = Local::now().format("%m / %d").to_string();
     rsx! {
+        div { class:"eat-layout",
+        if vm.theme.is_interface() { InterfaceOverview { theme:vm.theme, data:data.clone() } }
+        div { class:"eat-console",
         div { class:"page-kicker", span { "THE DAILY DILEMMA" }, span { "{today} · 今天也要吃饱" } }
-        div { class:"page-heading", h1 { "是啊，吃什么？"  }, span { class:"tiny-stamp", "听胃的！" } }
+        div { class:"page-heading", h1 { "是啊，", em { "吃什么？" } }, span { class:"tiny-stamp", "听胃的！" } }
         match data.decision.clone() {
             Decision::Ready { candidate, .. } if now() < candidate.shown_at || now() - candidate.shown_at >= 2*60*60*1000 => {
                 let restart_ctx=ctx.clone();
@@ -345,9 +499,9 @@ fn EatScreen() -> Element {
                 let skip_ctx=ctx.clone(); let eat_ctx=ctx.clone();
                 let skip_id=candidate.id.clone(); let eat_id=candidate.id.clone();
                 rsx! {
-                    article { class:"food-ticket", key:"{candidate.id}",
+                    article { class:"food-ticket", key:"{candidate.id}", "data-watermark":"TODAY", "aria-label":"当前推荐",
                         div { class:"ticket-top", span { "本轮第 {round:02} 位" }, span { "TODAY’S PICK ↙" } }
-                        div { class:name_class, {name} }
+                        h2 { class:name_class, {name} }
                         div { class:"ticket-bottom", p { {label} }, span { class:"food-sticker", "就差你点头！" } }
                         span { class:"ticket-edge", "EAT WELL / FEEL GOOD / REPEAT" }
                     }
@@ -398,6 +552,8 @@ fn EatScreen() -> Element {
                     button { class:"button primary big", disabled:vm.busy, onclick:move |_| dispatch(start_ctx.clone(),Command::Start{new_round:true},""), "今天就靠你了 ↗" }
                 } }
             }
+        }
+        }
         }
     }
 }
@@ -579,6 +735,7 @@ fn HistoryScreen() -> Element {
                   let edit_id=meal.id.clone(); let food_id=meal.food_id.clone(); let edit_at=meal.eaten_at;
                   let delete_id=meal.id.clone(); let confirmed=confirm_delete().as_deref()==Some(meal.id.as_str()); let delete_ctx=ctx.clone();
                   rsx! { article { class:"history-row", key:"{meal.id}",
+                      if vm.theme.is_interface() { span { class:"history-node", "aria-hidden":"true" } }
                       div { class:"row-main", small { {time} }, h3 { {name} }, span { class:"source", if meal.feedback_id.is_some(){"选了就吃"}else{"手动记录"} } }
                       div { class:"row-actions",
                           button { class:"text-button", onclick:move |_|{editing.set(Some(edit_id.clone()));food.set(food_id.clone());at.set(input_date(edit_at));}, "修改" }

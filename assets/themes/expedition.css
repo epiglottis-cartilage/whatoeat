@@ -1,0 +1,571 @@
+/* Route study: flat nodes, narrow labels and an atmospheric architectural scene.
+   This is an original interpretation; only real meals receive connected nodes. */
+.theme-root[data-theme="expedition"] {
+  color-scheme: dark;
+  --canvas: #11191c;
+  --paper: #192226;
+  --ink: #f0f2ed;
+  --acid: #e8cd69;
+  --pink: #9ed5d2;
+  --accent-ink: #1b2427;
+  --secondary-ink: #f0f2ed;
+  --surface: #202c31;
+  --inset: #1a2429;
+  --hover: #304046;
+  --muted: #b8c5c4;
+  --subtle: #a3b9b8;
+  --divider: #455558;
+  --stripe: #243337;
+  --stroke: #718b8e;
+  --shadow: #0b1418;
+  --strong: #e8cd69;
+  --strong-ink: #1b2427;
+  --strong-accent: #1b2427;
+  --inactive: #2c3b40;
+  --danger: #ffb5a8;
+  --danger-surface: #482d2c;
+  --danger-ink: #ffe2da;
+  --warning-surface: #382b2a;
+  --danger-button: #973b31;
+  --focus: #a6eeeb;
+  --line: 1px solid var(--stroke);
+  font-family: "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.theme-root[data-theme="expedition"] .app-shell {
+  max-width: 1440px;
+  background: linear-gradient(90deg, #10191ba8, #10191b2e 55%, #10191b70);
+  border: 0;
+}
+.theme-root[data-theme="expedition"] .scene-backdrop { opacity: .9; }
+.theme-root[data-theme="expedition"] .masthead {
+  background: #121b21e8;
+  border-bottom: 1px solid #73888c50;
+  box-shadow: none;
+}
+.theme-root[data-theme="expedition"] .brand-symbol {
+  color: var(--acid);
+  background: transparent;
+  border: 1px solid #e8cd695c;
+  border-radius: 0;
+  clip-path: none;
+  transform: none;
+}
+.theme-root[data-theme="expedition"] .wordmark {
+  font-family: "Arial Narrow", "Noto Sans CJK SC", sans-serif;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+.theme-root[data-theme="expedition"] .brand-subtitle {
+  color: #a8c0c1;
+  letter-spacing: .2em;
+}
+.theme-root[data-theme="expedition"] .shell-status {
+  border-inline-start: 2px solid var(--pink);
+  padding-inline-start: 15px;
+}
+.theme-root[data-theme="expedition"] .theme-select {
+  background: #253239;
+  border: 1px solid #728689;
+  border-radius: 0;
+}
+.theme-root[data-theme="expedition"] .main { padding: 34px 42px 48px; }
+.theme-root[data-theme="expedition"] .eat-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, .75fr) minmax(0, 1.45fr);
+  gap: 55px;
+  align-items: center;
+  min-height: 570px;
+}
+.theme-root[data-theme="expedition"] .interface-overview {
+  position: relative;
+  align-self: stretch;
+  padding: 44px 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  border: 0;
+  background: transparent;
+}
+.theme-root[data-theme="expedition"] .overview-kicker,
+.theme-root[data-theme="expedition"] .overview-title,
+.theme-root[data-theme="expedition"] .overview-copy,
+.theme-root[data-theme="expedition"] .overview-stats,
+.theme-root[data-theme="expedition"] .overview-caption { grid-column: 1 / -1; }
+.theme-root[data-theme="expedition"] .overview-kicker {
+  display: block;
+  color: var(--pink);
+  font: 10px/1.5 monospace;
+  letter-spacing: .22em;
+  padding-bottom: 12px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #9ed5d244;
+}
+.theme-root[data-theme="expedition"] .overview-title {
+  position: relative;
+  z-index: 1;
+  max-width: 7em;
+  font: 500 clamp(30px, 4vw, 49px)/1.35 "Noto Serif CJK SC", "Songti SC", serif;
+  letter-spacing: .04em;
+  margin: 24px 0 14px;
+  text-shadow: 0 2px 20px #061016;
+}
+.theme-root[data-theme="expedition"] .overview-copy {
+  max-width: 24em;
+  margin-top: 0;
+  color: #c4d0ce;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.theme-root[data-theme="expedition"] .overview-visual {
+  grid-column: 1;
+  position: relative;
+  width: min(100%, 150px);
+  height: 110px;
+  min-height: 108px;
+  margin: 24px 0 12px;
+  border: 0;
+  background: linear-gradient(90deg, #9ed5d222 0 1px, transparent 1px) 50% 50% / 30px 44px;
+}
+.theme-root[data-theme="expedition"] .overview-visual > svg {
+  width: 76px;
+  height: 76px;
+  color: var(--pink);
+  opacity: .45;
+  position: relative;
+  left: -10px;
+  z-index: 1;
+}
+.theme-root[data-theme="expedition"] .overview-visual::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 54px;
+  height: 54px;
+  border: 1px solid #9ed5d255;
+  transform: rotate(45deg);
+}
+.theme-root[data-theme="expedition"] .overview-visual::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 22px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #9ed5d29c;
+  transform: rotate(45deg);
+}
+.theme-root[data-theme="expedition"] .day-dial {
+  grid-column: 2;
+  align-self: center;
+  position: static;
+  width: 104px;
+  height: auto;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  border: 0;
+  border-radius: 0;
+  border-top: 2px solid var(--acid);
+  padding: 7px 0 0;
+  margin-top: 20px;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.theme-root[data-theme="expedition"] .day-month {
+  color: var(--acid);
+  font: 10px/1.5 monospace;
+  white-space: nowrap;
+}
+.theme-root[data-theme="expedition"] .day-number {
+  color: var(--ink);
+  font: 46px/1 "Arial Narrow", sans-serif;
+}
+.theme-root[data-theme="expedition"] .day-caption {
+  grid-column: 1 / -1;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .12em;
+}
+.theme-root[data-theme="expedition"] .overview-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #9ed5d23d;
+}
+.theme-root[data-theme="expedition"] .overview-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.theme-root[data-theme="expedition"] .overview-stat strong {
+  color: var(--pink);
+  font: 32px/1.1 "Arial Narrow", sans-serif;
+}
+.theme-root[data-theme="expedition"] .overview-stat span { font-size: 11px; color: var(--muted); }
+.theme-root[data-theme="expedition"] .overview-caption {
+  margin-top: 20px;
+  font: 10px/1.8 monospace;
+  color: #a3b9b8;
+  letter-spacing: .1em;
+}
+.theme-root[data-theme="expedition"] .eat-console { min-width: 0; }
+.theme-root[data-theme="expedition"] .page-kicker {
+  color: var(--pink);
+  font-size: 10px;
+  letter-spacing: .12em;
+  margin-bottom: 13px;
+}
+.theme-root[data-theme="expedition"] .page-heading {
+  align-items: baseline;
+  margin-bottom: 23px;
+}
+.theme-root[data-theme="expedition"] .page-heading h1,
+.theme-root[data-theme="expedition"] .section-title {
+  font-family: "Noto Serif CJK SC", "Songti SC", serif;
+  font-size: clamp(28px, 3.7vw, 43px);
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+.theme-root[data-theme="expedition"] .tiny-stamp {
+  background: transparent;
+  color: var(--pink);
+  border: 0;
+  border-left: 2px solid var(--pink);
+  padding: 2px 0 2px 9px;
+  font-size: 11px;
+  font-weight: 500;
+  transform: none;
+  box-shadow: none;
+}
+.theme-root[data-theme="expedition"] .food-ticket {
+  isolation: isolate;
+  min-height: 278px;
+  margin: 0;
+  padding: 21px 25px 44px;
+  color: var(--ink);
+  background: linear-gradient(115deg, #26383df5, #182529f5);
+  border: 1px solid #718c90;
+  border-top: 3px solid var(--acid);
+  border-radius: 0;
+  box-shadow: 0 15px 44px #060f184d;
+  transform: none;
+  overflow: hidden;
+}
+.theme-root[data-theme="expedition"] .food-ticket::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 31px;
+  top: 74px;
+  width: 115px;
+  height: 115px;
+  border: 1px solid #e8cd6933;
+  outline: 12px solid #e8cd6908;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.theme-root[data-theme="expedition"] .food-ticket::after {
+  content: attr(data-watermark);
+  position: absolute;
+  z-index: -1;
+  right: 14px;
+  bottom: 43px;
+  color: #cbe9e712;
+  font: 800 53px/.8 "Arial Narrow", sans-serif;
+  letter-spacing: -.02em;
+  pointer-events: none;
+}
+.theme-root[data-theme="expedition"] .ticket-top {
+  color: #c2d1d0;
+  font-size: 10px;
+  letter-spacing: .09em;
+}
+.theme-root[data-theme="expedition"] .ticket-top span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--acid);
+  color: var(--accent-ink);
+  border: 0;
+  padding: 5px 10px;
+  font-weight: 700;
+}
+.theme-root[data-theme="expedition"] .ticket-top span:first-child::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.theme-root[data-theme="expedition"] .food-name {
+  font-family: "Noto Serif CJK SC", "Songti SC", serif;
+  font-weight: 700;
+  font-size: clamp(47px, 6vw, 76px);
+  letter-spacing: .04em;
+  line-height: 1.3;
+  margin: 30px 0 22px;
+  text-shadow: 0 3px 20px #09161970;
+}
+.theme-root[data-theme="expedition"] .food-name.long {
+  font-size: clamp(29px, 3.7vw, 45px);
+  letter-spacing: 0;
+}
+.theme-root[data-theme="expedition"] .ticket-bottom { align-items: center; gap: 12px; }
+.theme-root[data-theme="expedition"] .ticket-bottom p { color: #cad7d4; font-size: 12px; font-weight: 400; }
+.theme-root[data-theme="expedition"] .food-sticker {
+  background: transparent;
+  color: var(--acid);
+  border: 1px solid #e8cd6960;
+  transform: none;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 500;
+}
+.theme-root[data-theme="expedition"] .ticket-edge {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 8px 25px;
+  background: #0b1318;
+  color: #a5c0bf;
+  border-top: 1px solid #5674754d;
+  font-size: 8px;
+  letter-spacing: .18em;
+}
+.theme-root[data-theme="expedition"] .decisions { margin-top: 18px; gap: 13px; }
+.theme-root[data-theme="expedition"] .decision {
+  min-height: 86px;
+  padding: 16px 20px;
+  border: 1px solid #7c9296;
+  border-radius: 0;
+  box-shadow: none;
+  transition: background .16s, border-color .16s;
+}
+.theme-root[data-theme="expedition"] .decision strong { font-size: 26px; font-weight: 600; letter-spacing: .03em; }
+.theme-root[data-theme="expedition"] .decision span { font-size: 11px; margin-top: 8px; }
+.theme-root[data-theme="expedition"] .decision.skip { background: #213338e8; color: #bce6e1; border-left: 4px solid var(--pink); }
+.theme-root[data-theme="expedition"] .decision.eat { background: var(--acid); color: var(--accent-ink); border-color: var(--acid); }
+.theme-root[data-theme="expedition"] .decision:hover { transform: none; box-shadow: none; border-color: #e8eeee; }
+.theme-root[data-theme="expedition"] .decision:active { transform: none; box-shadow: none; }
+.theme-root[data-theme="expedition"] .decision.skip:hover { background: #314a50; }
+.theme-root[data-theme="expedition"] .decision.eat:hover { background: #f5df8f; }
+.theme-root[data-theme="expedition"] .small-print { color: #bdcdca; font-size: 11px; margin-top: 16px; }
+
+/* Every other screen uses the same flat, labelled data surfaces. */
+.theme-root[data-theme="expedition"] .lede { max-width: 58em; font-size: 13px; }
+.theme-root[data-theme="expedition"] .button,
+.theme-root[data-theme="expedition"] .toggle { box-shadow: none; border-radius: 0; font-weight: 600; }
+.theme-root[data-theme="expedition"] .button:hover,
+.theme-root[data-theme="expedition"] .button:active { transform: none; box-shadow: none; border-color: var(--pink); }
+.theme-root[data-theme="expedition"] .button.primary { border-color: var(--acid); }
+.theme-root[data-theme="expedition"] .button.primary:hover { background: #f5df8f; color: #1b2427; }
+.theme-root[data-theme="expedition"] .meal-form,
+.theme-root[data-theme="expedition"] .backup-panel {
+  background: #19262bec;
+  border: 1px solid #5f7a7e;
+  border-top: 3px solid #a3d1cb;
+  padding: 24px;
+}
+.theme-root[data-theme="expedition"] .meal-form h2,
+.theme-root[data-theme="expedition"] .backup-panel h2 { font-size: 19px; font-weight: 600; letter-spacing: .06em; }
+.theme-root[data-theme="expedition"] .food-list { border-top: 1px solid #819798; }
+.theme-root[data-theme="expedition"] .food-row {
+  background: #1c282bd9;
+  padding: 20px 16px;
+  border-bottom: 1px solid #566a6b;
+}
+.theme-root[data-theme="expedition"] .row-number { color: var(--pink); }
+.theme-root[data-theme="expedition"] .row-main h3 { font-size: 21px; font-weight: 600; letter-spacing: .02em; }
+.theme-root[data-theme="expedition"] .toggle { background: #e8cd69; border-color: #e8cd69; }
+.theme-root[data-theme="expedition"] .toggle[aria-pressed="false"] { border-color: #7a9295; background: #2b3b40; }
+.theme-root[data-theme="expedition"] .history-list { position: relative; margin-top: 30px; }
+.theme-root[data-theme="expedition"] .history-row {
+  position: relative;
+  margin-left: 27px;
+  margin-bottom: 17px;
+  padding: 17px 18px 17px 26px;
+  border: 1px solid #5c777a;
+  border-bottom: 4px solid #0c171b;
+  background: #1b2a2eea;
+  gap: 14px;
+}
+.theme-root[data-theme="expedition"] .history-row::before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: -18px;
+  bottom: -18px;
+  border-left: 1px solid #9ed5d2b3;
+}
+.theme-root[data-theme="expedition"] .history-row:first-of-type::before { top: 50%; }
+.theme-root[data-theme="expedition"] .history-row:last-of-type::before { bottom: 50%; }
+.theme-root[data-theme="expedition"] .history-row:only-of-type::before { display: none; }
+.theme-root[data-theme="expedition"] .history-node {
+  display: block;
+  position: absolute;
+  left: -28px;
+  top: calc(50% - 6px);
+  width: 11px;
+  height: 11px;
+  background: var(--pink);
+  border: 2px solid #15262a;
+  outline: 1px solid var(--pink);
+  transform: rotate(45deg);
+}
+.theme-root[data-theme="expedition"] .history-node::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: -6px;
+  width: 17px;
+  height: 1px;
+  background: #9ed5d2b3;
+  transform: rotate(-45deg);
+  transform-origin: left;
+}
+.theme-root[data-theme="expedition"] .history-row small { color: var(--pink); font-size: 11px; }
+.theme-root[data-theme="expedition"] .history-row .source { color: #afc0bd; }
+.theme-root[data-theme="expedition"] .empty.illustrated {
+  border: 1px solid #6e8c8c;
+  border-top: 3px solid var(--pink);
+  background: #1c2a30ee;
+  padding: 30px;
+}
+.theme-root[data-theme="expedition"] .empty-eyebrow { color: var(--pink); }
+.theme-root[data-theme="expedition"] .empty h2 {
+  font-family: "Noto Serif CJK SC", "Songti SC", serif;
+  font-size: clamp(29px, 4vw, 45px);
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+.theme-root[data-theme="expedition"] .celebration {
+  border: 1px solid #798b6e;
+  border-top: 3px solid var(--acid);
+  background: linear-gradient(120deg, #273733ee, #19282bee);
+  padding: 30px 24px;
+}
+.theme-root[data-theme="expedition"] .accepted-stamp {
+  border: 1px solid #e8cd69;
+  background: transparent;
+  color: var(--acid);
+  font: 600 44px/1.4 "Noto Serif CJK SC", "Songti SC", serif;
+  transform: none;
+  box-shadow: none;
+  padding: 10px 28px;
+  margin: 12px 0 21px;
+}
+.theme-root[data-theme="expedition"] .celebration h2 { font-size: 29px; font-weight: 500; }
+.theme-root[data-theme="expedition"] .nav {
+  background: #131e23f5;
+  border-top: 1px solid #637c80;
+  box-shadow: 0 -10px 25px #09151b24;
+}
+.theme-root[data-theme="expedition"] .nav-item {
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: #c8d3d0;
+}
+.theme-root[data-theme="expedition"] .nav-item.active {
+  border: 1px solid #dbc768;
+  border-top: 3px solid var(--acid);
+  background: #394137;
+  color: #f3e3a3;
+  font-weight: 800;
+}
+.theme-root[data-theme="expedition"] .nav-item.active small { opacity: 1; color: var(--acid); }
+.theme-root[data-theme="expedition"] .footer {
+  background: #0f1a20c7;
+  border-top: 1px solid #637c8052;
+  color: #b3c6c4;
+  font-weight: 400;
+}
+.theme-root[data-theme="expedition"] .toast { box-shadow: 0 8px 32px #07131b70; border-color: #f4e09a; }
+
+@media (min-width: 1200px) {
+  .theme-root[data-theme="expedition"] .main { padding: 40px 64px 54px; }
+  .theme-root[data-theme="expedition"] .eat-layout { gap: 82px; }
+}
+@media (max-width: 960px) {
+  .theme-root[data-theme="expedition"] .main { padding-inline: 28px; }
+  .theme-root[data-theme="expedition"] .eat-layout { grid-template-columns: minmax(180px, .7fr) minmax(0, 1.3fr); gap: 25px; }
+  .theme-root[data-theme="expedition"] .overview-stat { flex-direction: column; gap: 5px; }
+  .theme-root[data-theme="expedition"] .food-ticket { padding-inline: 21px; }
+  .theme-root[data-theme="expedition"] .food-name { font-size: 52px; }
+  .theme-root[data-theme="expedition"] .page-heading h1 { font-size: 30px; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="expedition"] .main { padding: 23px 22px 34px; }
+  .theme-root[data-theme="expedition"] .eat-layout { display: block; min-height: 0; }
+  .theme-root[data-theme="expedition"] .interface-overview {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 14px;
+    padding: 0 0 18px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #91ada244;
+  }
+  .theme-root[data-theme="expedition"] .overview-kicker { grid-column: 1; border: 0; padding: 0; font-size: 9px; letter-spacing: .12em; }
+  .theme-root[data-theme="expedition"] .overview-title { grid-column: 1; font-size: 25px; max-width: none; margin: 7px 0 0; }
+  .theme-root[data-theme="expedition"] .overview-title br { display: initial; }
+  .theme-root[data-theme="expedition"] .overview-title span { white-space: nowrap; }
+  .theme-root[data-theme="expedition"] .overview-copy { display: none; }
+  .theme-root[data-theme="expedition"] .overview-visual { display: none; }
+  .theme-root[data-theme="expedition"] .overview-visual::before,
+  .theme-root[data-theme="expedition"] .overview-visual::after { display: none; }
+  .theme-root[data-theme="expedition"] .day-dial { grid-column: 2; grid-row: 1 / 3; position: static; width: 73px; min-height: 0; gap: 1px; padding: 4px 0 0; margin: 0; }
+  .theme-root[data-theme="expedition"] .day-month { font-size: 10px; }
+  .theme-root[data-theme="expedition"] .day-number { font-size: 32px; }
+  .theme-root[data-theme="expedition"] .day-caption { font-size: 8px; letter-spacing: 0; }
+  .theme-root[data-theme="expedition"] .overview-stats { grid-column: 1 / -1; display: flex; gap: 22px; border: 0; margin-top: 12px; padding: 0; }
+  .theme-root[data-theme="expedition"] .overview-stat { flex-direction: row; align-items: baseline; gap: 6px; }
+  .theme-root[data-theme="expedition"] .overview-stat strong { font-size: 19px; }
+  .theme-root[data-theme="expedition"] .overview-stat span { font-size: 10px; }
+  .theme-root[data-theme="expedition"] .overview-caption { display: none; }
+  .theme-root[data-theme="expedition"] .page-kicker { font-size: 8px; letter-spacing: .05em; gap: 8px; }
+  .theme-root[data-theme="expedition"] .page-heading { margin-bottom: 18px; }
+  .theme-root[data-theme="expedition"] .page-heading h1,
+  .theme-root[data-theme="expedition"] .section-title { font-size: 29px; }
+  .theme-root[data-theme="expedition"] .food-ticket { min-height: 254px; padding: 18px 19px 44px; }
+  .theme-root[data-theme="expedition"] .food-ticket::before { right: 27px; top: 71px; width: 95px; height: 95px; }
+  .theme-root[data-theme="expedition"] .food-name { font-size: clamp(44px, 11vw, 70px); margin: 27px 0 22px; }
+  .theme-root[data-theme="expedition"] .food-name.long { font-size: 31px; }
+  .theme-root[data-theme="expedition"] .ticket-top { font-size: 9px; letter-spacing: 0; }
+  .theme-root[data-theme="expedition"] .ticket-top span:first-child { padding: 5px 7px; gap: 5px; }
+  .theme-root[data-theme="expedition"] .ticket-bottom { flex-wrap: wrap; gap: 12px; }
+  .theme-root[data-theme="expedition"] .ticket-bottom p { font-size: 11px; }
+  .theme-root[data-theme="expedition"] .ticket-edge { padding-inline: 19px; }
+  .theme-root[data-theme="expedition"] .decision { padding: 14px 16px; min-height: 86px; }
+  .theme-root[data-theme="expedition"] .decision strong { font-size: 25px; }
+  .theme-root[data-theme="expedition"] .decision span { font-size: 10px; }
+  .theme-root[data-theme="expedition"] .small-print { font-size: 10px; }
+  .theme-root[data-theme="expedition"] .food-row { padding: 18px 12px; column-gap: 8px; }
+  .theme-root[data-theme="expedition"] .row-main h3 { font-size: 19px; }
+  .theme-root[data-theme="expedition"] .food-metrics { font-size: 11px; }
+  .theme-root[data-theme="expedition"] .food-controls .food-actions { gap: 9px; }
+  .theme-root[data-theme="expedition"] .meal-form,
+  .theme-root[data-theme="expedition"] .backup-panel { padding: 19px; }
+  .theme-root[data-theme="expedition"] .history-row { padding: 16px 12px 16px 16px; margin-left: 25px; gap: 9px; }
+  .theme-root[data-theme="expedition"] .history-row::before { left: -21px; }
+  .theme-root[data-theme="expedition"] .history-node { left: -26px; }
+  .theme-root[data-theme="expedition"] .empty.illustrated { padding: 24px; }
+  .theme-root[data-theme="expedition"] .empty h2 { font-size: 34px; }
+  .theme-root[data-theme="expedition"] .nav-item { padding-block: 8px; }
+  .theme-root[data-theme="expedition"] .footer { font-size: 9px; }
+}
+@media (max-width: 380px) {
+  .theme-root[data-theme="expedition"] .main { padding-inline: 17px; }
+  .theme-root[data-theme="expedition"] .page-heading h1 { font-size: 27px; }
+  .theme-root[data-theme="expedition"] .tiny-stamp { font-size: 10px; padding-left: 7px; }
+  .theme-root[data-theme="expedition"] .food-row { padding-inline: 10px; }
+  .theme-root[data-theme="expedition"] .food-ticket { padding-inline: 16px; }
+  .theme-root[data-theme="expedition"] .ticket-top { font-size: 8px; }
+  .theme-root[data-theme="expedition"] .decision { padding-inline: 13px; }
+  .theme-root[data-theme="expedition"] .food-name.long { font-size: 28px; }
+}
