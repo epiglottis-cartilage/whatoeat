@@ -4,6 +4,8 @@
 
 后续扩展不局限于明日方舟，按选取、分析、实施、验证逐套推进，见[持续工作记录](theme-marathon.md)。新增研究：[NieR:Automata 日常档案](studies/04-automata.md)、[Persona 5 开饭预告](studies/05-phantom.md)。各套独立保存来源、截图和验证结果。
 
+生活方向：[Animal Crossing 小岛食记](studies/06-island.md)。
+
 当前进度：P0–P2 静态研究完成，5 张参考图已归档；P4 结构映射及 P5–P7 三套界面首版完成。P3 原作动态取证仍未完成，本版只使用自定的轻量过渡。[实施蓝图](implementation.md)记录具体映射，[实现验收与预览](implementation-validation.md)记录测试范围及平台限制。
 
 ## 从这里阅读

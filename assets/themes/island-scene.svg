@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="island-specks" width="85" height="85" patternUnits="userSpaceOnUse"><path d="m13 12 3 7-7-1zm53 39 5 5-8 3z" fill="#e6f0d6" opacity=".55"/></pattern></defs>
+  <path fill="#cce4cd" d="M0 0h1440v1000H0z"/>
+  <path fill="url(#island-specks)" d="M0 0h1440v1000H0z"/>
+  <path fill="#b2d9c9" d="M0 790q230-160 440-60t430-3 570-68v341H0z"/>
+  <path fill="#f4e9c8" d="M0 918q260-128 484-55t406-37 550 84v90H0z"/>
+  <g fill="none" stroke="#fff" opacity=".28" stroke-width="3"><path d="M1140 170q15-15 30 0t30 0M80 350q15-15 30 0t30 0M1230 780q15-15 30 0t30 0"/></g>
+</svg>

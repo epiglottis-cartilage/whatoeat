@@ -16,6 +16,8 @@ cargo run --locked --features desktop --bin whatoeat
 
 持续扩展的完整界面包括「尼尔 · 日常档案」(`automata`) 的网格档案与横向信息栏，以及「P5 · 开饭预告」(`phantom`) 的红黑剪贴构图与斜切标题。每套的来源分析、手机/桌面预览与验证见[主题扩展记录](docs/ui-research/theme-marathon.md)。
 
+「动森 · 小岛食记」(`island`) 使用原创野餐插图、圆角食物卡片、双列菜单和生活手账式历史布局。
+
 桌面数据使用操作系统的本地应用目录（Linux 默认 `~/.local/share/whatoeat/whatoeat.sqlite3`）。测试时可以指定隔离目录：
 
 ```sh

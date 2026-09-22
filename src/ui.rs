@@ -411,6 +411,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
     let active = data.menu().filter(|food| food.enabled).count();
     let count = data.eaten_count();
     let (kicker, title, second_line, copy, caption) = match theme {
+        Theme::Island => (
+            "ISLAND NOTEBOOK / 小岛食记",
+            "今天也有，",
+            "小小的期待。",
+            "收集喜欢的味道，把日子过得慢一点。",
+            "不赶时间，先好好吃饭。",
+        ),
         Theme::Phantom => (
             "TAKE YOUR APPETITE / 开饭预告",
             "别再纠结，",
@@ -453,11 +460,15 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             h2 { class:"overview-title", {title}, br {}, span { {second_line} } }
             p { class:"overview-copy", {copy} }
             div { class:"overview-visual", "aria-hidden":"true",
+                if let Some(art) = theme.overview_svg() {
+                    div { class:"overview-art", dangerous_inner_html:art }
+                } else {
                 svg { view_box:"0 0 240 240", fill:"none",
                     circle { cx:"120", cy:"120", r:"91", stroke:"currentColor", stroke_width:"1" }
                     circle { cx:"120", cy:"120", r:"75", stroke:"currentColor", stroke_width:".5", stroke_dasharray:"2 7" }
                     path { d:"M39 134h162c-9 36-37 58-81 58s-72-22-81-58ZM33 127h174M90 107c-17-20 16-29 0-49m30 49c-17-20 16-29 0-49m30 49c-17-20 16-29 0-49", stroke:"currentColor", stroke_width:"2.5" }
                     path { d:"M12 120h16m184 0h16M120 12v16m0 184v16", stroke:"currentColor", stroke_width:"1" }
+                }
                 }
             }
             div { class:"day-dial", "aria-label":date_label,

@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 7,
-  "image_bytes_total": 4473650,
+  "reference_count": 8,
+  "image_bytes_total": 4557595,
   "references": [
     {
       "id": "HOME-01",
@@ -235,6 +235,29 @@
       "dimensions": [
         1280,
         720
+      ],
+      "format": "JPEG"
+    },
+    {
+      "id": "AC-01",
+      "family": "island",
+      "title": "Nook Miles 列表与详情官方拼版",
+      "file": "references/island/AC-01-nook-miles.jpg",
+      "study": "studies/06-island.md",
+      "kind": "official_promotional_screenshot_collage",
+      "source_page": "https://play.nintendo.com/news-tips/tips-tricks/animal-crossing-new-horizons-discover-tips/",
+      "original_image_url": "https://play.nintendo.com/images/PLAY-4646-ACNHtips05_2x1_NookMiles_v02.59d69599.jpg",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Promotional outer frame is not in-game UI; client build unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "85f332c5aca6cf4f35c960a4e8a350d5b2d285e81f09e24be60eafb2169ec481",
+      "bytes": 83945,
+      "dimensions": [
+        1200,
+        600
       ],
       "format": "JPEG"
     }

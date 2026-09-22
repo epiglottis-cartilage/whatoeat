@@ -11,10 +11,11 @@ pub enum Theme {
     Expedition,
     Automata,
     Phantom,
+    Island,
 }
 
 impl Theme {
-    pub const ALL: [Self; 10] = [
+    pub const ALL: [Self; 11] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -25,6 +26,7 @@ impl Theme {
         Self::Expedition,
         Self::Automata,
         Self::Phantom,
+        Self::Island,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -34,12 +36,13 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 5] = [
+    pub const INTERFACES: [Self; 6] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
         Self::Automata,
         Self::Phantom,
+        Self::Island,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -59,6 +62,7 @@ impl Theme {
             Self::Expedition => "expedition",
             Self::Automata => "automata",
             Self::Phantom => "phantom",
+            Self::Island => "island",
         }
     }
 
@@ -74,6 +78,7 @@ impl Theme {
             Self::Expedition => "集成战略 · 旅程",
             Self::Automata => "尼尔 · 日常档案",
             Self::Phantom => "P5 · 开饭预告",
+            Self::Island => "动森 · 小岛食记",
         }
     }
 
@@ -89,6 +94,7 @@ impl Theme {
             Self::Expedition => "每一顿，都是旅途的一站。",
             Self::Automata => "把平凡的每一餐，写入档案。",
             Self::Phantom => "今天的胃口，由自己宣告。",
+            Self::Island => "慢慢生活，好好吃饭。",
         }
     }
 
@@ -105,6 +111,7 @@ impl Theme {
             Self::Expedition => include_str!("../assets/themes/expedition.css"),
             Self::Automata => include_str!("../assets/themes/automata.css"),
             Self::Phantom => include_str!("../assets/themes/phantom.css"),
+            Self::Island => include_str!("../assets/themes/island.css"),
             _ => "",
         }
     }
@@ -115,7 +122,15 @@ impl Theme {
             Self::Reclamation => include_str!("../assets/themes/reclamation-scene.svg"),
             Self::Expedition => include_str!("../assets/themes/expedition-scene.svg"),
             Self::Phantom => include_str!("../assets/themes/phantom-scene.svg"),
+            Self::Island => include_str!("../assets/themes/island-scene.svg"),
             _ => "",
+        }
+    }
+
+    pub fn overview_svg(self) -> Option<&'static str> {
+        match self {
+            Self::Island => Some(include_str!("../assets/themes/island-picnic.svg")),
+            _ => None,
         }
     }
 }

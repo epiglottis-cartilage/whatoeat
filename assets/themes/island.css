@@ -1,0 +1,148 @@
+/* AC-01: gentle stationery and collectible cards, adapted to real meal records.
+   Island scenery and picnic illustration are original SVG drawings. */
+.theme-root[data-theme="island"] {
+  color-scheme: light;
+  --canvas: #cce4cd; --paper: #fffaf0; --ink: #395647;
+  --acid: #d4e8ce; --pink: #f2dcaa; --accent-ink: #38543d;
+  --secondary-ink: #395647; --surface: #fffdf5; --inset: #f3f3df;
+  --hover: #e5eedb; --muted: #5b705b; --subtle: #677761;
+  --divider: #c9d4b9; --stripe: #eaf0dc; --stroke: #b2c5a6;
+  --shadow: #6b9e7638; --strong: #397764; --strong-ink: #fffdf4;
+  --strong-accent: #fffdf4; --inactive: #e6e8d6; --focus: #276a73;
+  --danger: #9a4931; --danger-surface: #ffe6ce; --danger-ink: #793b26;
+  --warning-surface: #f8e7ce; --danger-button: #99513b;
+  --line: 1px solid var(--stroke);
+  font-family: "Nunito", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+}
+.theme-root[data-theme="island"] .app-shell { max-width: 1380px; background: transparent; }
+.theme-root[data-theme="island"] .masthead { background: #fffaf0f2; border: 0; border-radius: 0 0 28px 28px; box-shadow: 0 5px 0 #90b49525; }
+.theme-root[data-theme="island"] .brand-symbol { clip-path: none; background: #397764; color: #fffaf0; border-radius: 13px 18px 13px 18px; transform: rotate(-8deg); }
+.theme-root[data-theme="island"] .wordmark { letter-spacing: -.03em; font-weight: 800; }
+.theme-root[data-theme="island"] .brand-subtitle { color: #67765e; letter-spacing: .05em; }
+.theme-root[data-theme="island"] .connection-dot { background: #397764; }
+.theme-root[data-theme="island"] .theme-select { border: 1px solid #b2c5a6; border-radius: 24px; color: #395647; background-color: #edf1df; padding-left: 15px; }
+.theme-root[data-theme="island"] .main { max-width: 1160px; padding: 35px 40px 45px; }
+.theme-root[data-theme="island"] .eat-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 52px; }
+.theme-root[data-theme="island"] .interface-overview { text-align: center; background: #fbf9e8; border-radius: 70px 70px 28px 28px; padding: 32px 22px 23px; border: 7px solid #fffdf6; box-shadow: 0 8px 0 #6b9e761c; }
+.theme-root[data-theme="island"] .overview-kicker { color: #4e705d; font: 700 9px/1.5 monospace; letter-spacing: .1em; margin-bottom: 17px; }
+.theme-root[data-theme="island"] .overview-title { font-size: clamp(28px, 3.1vw, 39px); font-weight: 700; line-height: 1.65; letter-spacing: .04em; }
+.theme-root[data-theme="island"] .overview-title span { color: #387463; }
+.theme-root[data-theme="island"] .overview-copy { font-size: 11px; margin-top: 11px; }
+.theme-root[data-theme="island"] .overview-visual { opacity: 1; width: 100%; height: 215px; margin: 13px auto 5px; }
+.theme-root[data-theme="island"] .day-dial { display: inline-flex; align-items: center; gap: 9px; padding: 8px 18px; border-radius: 26px; background: #e5efda; }
+.theme-root[data-theme="island"] .day-month { font-size: 10px; }
+.theme-root[data-theme="island"] .day-number { font: 800 33px Arial, sans-serif; color: #387463; }
+.theme-root[data-theme="island"] .day-caption { font-size: 10px; }
+.theme-root[data-theme="island"] .overview-stats { justify-content: center; margin-top: 20px; border-top: 2px dashed #c9d4b9; padding-top: 17px; gap: 26px; }
+.theme-root[data-theme="island"] .overview-stat { gap: 6px; }
+.theme-root[data-theme="island"] .overview-stat strong { color: #397764; font-size: 25px; font-weight: 800; }
+.theme-root[data-theme="island"] .overview-stat span { font-size: 10px; }
+.theme-root[data-theme="island"] .overview-caption { font-size: 10px; letter-spacing: .04em; }
+.theme-root[data-theme="island"] .eat-console { padding: 7px 0; }
+.theme-root[data-theme="island"] .page-kicker { color: #43604d; font-size: 9px; font-weight: 600; }
+.theme-root[data-theme="island"] .page-heading { align-items: center; margin-bottom: 24px; }
+.theme-root[data-theme="island"] .page-heading h1,
+.theme-root[data-theme="island"] .section-title { font-size: clamp(29px, 3.5vw, 42px); font-weight: 750; letter-spacing: .01em; }
+.theme-root[data-theme="island"] .page-heading h1 em,
+.theme-root[data-theme="island"] .section-title em { color: #2f715e; }
+.theme-root[data-theme="island"] .tiny-stamp { border: 0; padding: 10px 12px; border-radius: 50% 50% 45% 45%; background: #f5dc94; color: #5c5734; font-weight: 700; transform: rotate(8deg); }
+.theme-root[data-theme="island"] .food-ticket { background: #fffdf5; border: 7px solid #fffdf5; border-radius: 22px; padding: 0 22px 38px; box-shadow: 0 8px 0 #6b9e7628; min-height: 278px; }
+.theme-root[data-theme="island"] .ticket-top { background: #deedd3; margin: 0 -22px; border-radius: 15px 15px 0 0; padding: 12px 15px; color: #446049; font-size: 9px; }
+.theme-root[data-theme="island"] .ticket-top span:first-child { border: 0; background: #fffdf5; border-radius: 20px; padding: 5px 9px; font-size: 10px; }
+.theme-root[data-theme="island"] .food-name { font-size: clamp(49px, 6vw, 74px); font-weight: 850; letter-spacing: .02em; margin: 27px 0; color: #3d6050; }
+.theme-root[data-theme="island"] .food-name.long { font-size: 31px; line-height: 1.6; }
+.theme-root[data-theme="island"] .ticket-bottom { padding-top: 15px; border-top: 2px dashed #d6dfc6; }
+.theme-root[data-theme="island"] .food-sticker { background: #f5e6c1; color: #67532c; border-radius: 20px; font-size: 10px; }
+.theme-root[data-theme="island"] .ticket-edge { left: 22px; color: #637962; font-size: 7px; letter-spacing: .08em; }
+.theme-root[data-theme="island"] .decisions { gap: 15px; margin-top: 25px; }
+.theme-root[data-theme="island"] .decision { border: 0; border-radius: 25px; padding: 20px; box-shadow: 0 5px 0 #6290713d; min-height: 100px; }
+.theme-root[data-theme="island"] .decision strong { font-weight: 750; font-size: 29px; }
+.theme-root[data-theme="island"] .decision.skip { background: #fffaf0; color: #456048; }
+.theme-root[data-theme="island"] .decision.eat { background: #397764; color: #fffdf4; }
+.theme-root[data-theme="island"] .decision:hover { transform: translateY(-3px); box-shadow: 0 8px 0 #62907135; }
+.theme-root[data-theme="island"] .decision:active { transform: translateY(3px); box-shadow: 0 1px 0 #62907135; }
+.theme-root[data-theme="island"] .small-print { color: #44604b; }
+.theme-root[data-theme="island"] .nav { border: 0; border-radius: 24px 24px 0 0; background: #fffaf0; padding-inline: 24px; box-shadow: 0 -5px 0 #c0d6ad70; }
+.theme-root[data-theme="island"] .nav-item { border: 0; gap: 10px; background: transparent; color: #526b55; }
+.theme-root[data-theme="island"] .nav-item small { display: none; }
+.theme-root[data-theme="island"] .nav-icon { box-sizing: content-box; background: #e7ecd7; color: #597756; border-radius: 14px; padding: 8px; width: 22px; height: 22px; }
+.theme-root[data-theme="island"] .nav-item.active { background: transparent; color: #2d6b57; font-weight: 800; }
+.theme-root[data-theme="island"] .nav-item.active .nav-icon { color: #fffdf4; background: #397764; box-shadow: 0 3px 0 #29604c; }
+.theme-root[data-theme="island"] .nav-item:nth-child(2):not(.active) .nav-icon { background: #f2e4bf; color: #796338; }
+.theme-root[data-theme="island"] .nav-item:nth-child(3):not(.active) .nav-icon { background: #dcebd8; color: #527547; }
+.theme-root[data-theme="island"] .nav-item:nth-child(4):not(.active) .nav-icon { background: #d9e8e6; color: #4b7475; }
+.theme-root[data-theme="island"] .footer { background: #f5efd9; color: #5d7056; border: 0; padding-block: 17px; }
+.theme-root[data-theme="island"] .button { border: 0; border-radius: 24px; padding-inline: 20px; font-weight: 700; box-shadow: 0 3px 0 #6b9e7630; }
+.theme-root[data-theme="island"] input,
+.theme-root[data-theme="island"] select,
+.theme-root[data-theme="island"] textarea { border-radius: 13px; border: 1px solid #b2c5a6; }
+.theme-root[data-theme="island"] .food-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 19px; }
+.theme-root[data-theme="island"] .food-row { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; padding: 22px; margin: 0; background: #fffaf0; border: 5px solid #fffdf5; border-radius: 20px; box-shadow: 0 5px 0 #6b9e761c; align-content: start; }
+.theme-root[data-theme="island"] .food-row > .row-number { display: grid; place-items: center; grid-column: 1; grid-row: 1; background: #e4edce; width: 26px; height: 26px; border-radius: 50%; color: #4e6b44; font-size: 10px; }
+.theme-root[data-theme="island"] .food-details { grid-column: 2; grid-row: 1; }
+.theme-root[data-theme="island"] .food-row .row-main h3 { font-size: 22px; font-weight: 700; }
+.theme-root[data-theme="island"] .food-metrics { grid-column: 1/-1; grid-row: 2; padding: 8px 0 13px; border-bottom: 2px dashed #d6dfc6; font-size: 11px; }
+.theme-root[data-theme="island"] .food-controls { grid-column: 1/-1; grid-row: 3; flex-direction: row; justify-content: space-between; flex-wrap: wrap; gap: 9px; }
+.theme-root[data-theme="island"] .food-delete-confirm { grid-column: 1/-1; border-radius: 14px; }
+.theme-root[data-theme="island"] .toggle { background: #deecd1; color: #3c5f3a; border: 0; border-radius: 22px; }
+.theme-root[data-theme="island"] .toggle[aria-pressed="false"] { background: #e6e8d6; color: #596050; }
+.theme-root[data-theme="island"] .meal-form,
+.theme-root[data-theme="island"] .backup-panel { background: #fffaf0; border: 0; border-radius: 24px; box-shadow: 0 5px 0 #6b9e7624; }
+.theme-root[data-theme="island"] .meal-form h2,
+.theme-root[data-theme="island"] .backup-panel h2 { color: #397764; font-weight: 750; }
+.theme-root[data-theme="island"] .history-row { padding: 20px; background: #fffaf0; border: 0; margin-bottom: 15px; border-radius: 20px; }
+.theme-root[data-theme="island"] .history-node { display: block; width: 13px; height: 13px; border: 3px solid #82aa7b; border-radius: 50%; flex-shrink: 0; }
+.theme-root[data-theme="island"] .history-row small { color: #587354; }
+.theme-root[data-theme="island"] .toast { background: #fffaf0; color: #395647; border: 2px solid #83ac8b; border-radius: 24px; box-shadow: 0 6px 0 #6b9e7624; }
+.theme-root[data-theme="island"] .toast-mark { color: #397764; }
+.theme-root[data-theme="island"] .toast.error { border-color: #a26746; }
+.theme-root[data-theme="island"] .empty.illustrated,
+.theme-root[data-theme="island"] .celebration { border: 5px solid #fffdf5; border-radius: 28px; background: #f8f5e5; box-shadow: 0 5px 0 #6b9e761c; }
+.theme-root[data-theme="island"] .accepted-stamp { border: 3px dashed #6f9a77; border-radius: 50%; color: #397764; padding: 24px; font-size: 39px; transform: rotate(-7deg); }
+@media (min-width: 1001px) {
+  .theme-root[data-theme="island"][data-screen="history"] .main { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: 0 28px; align-items: start; }
+  .theme-root[data-theme="island"][data-screen="history"] .main > .page-kicker,
+  .theme-root[data-theme="island"][data-screen="history"] .section-title,
+  .theme-root[data-theme="island"][data-screen="history"] .lede { grid-column: 1/-1; }
+  .theme-root[data-theme="island"] .meal-form .form-fields { grid-template-columns: 1fr; }
+}
+@media (max-width: 1000px) and (min-width: 761px) {
+  .theme-root[data-theme="island"] .eat-layout { gap: 28px; }
+  .theme-root[data-theme="island"] .overview-title { font-size: 28px; }
+  .theme-root[data-theme="island"] .food-row { padding: 16px; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="island"] .main { padding: 23px 20px 35px; }
+  .theme-root[data-theme="island"] .masthead { border-radius: 0 0 20px 20px; }
+  .theme-root[data-theme="island"] .eat-layout { gap: 24px; }
+  .theme-root[data-theme="island"] .interface-overview { text-align: left; padding: 18px 16px 14px; border: 4px solid #fffdf6; border-radius: 24px; }
+  .theme-root[data-theme="island"] .overview-kicker { font-size: 8px; margin-bottom: 9px; }
+  .theme-root[data-theme="island"] .overview-title { font-size: 23px; max-width: 74%; line-height: 1.5; letter-spacing: 0; }
+  .theme-root[data-theme="island"] .overview-title br { display: block; }
+  .theme-root[data-theme="island"] .overview-copy,
+  .theme-root[data-theme="island"] .overview-caption { display: none; }
+  .theme-root[data-theme="island"] .overview-visual { display: block; position: absolute; width: 99px; height: 78px; right: 2px; top: 22px; margin: 0; }
+  .theme-root[data-theme="island"] .day-dial { position: absolute; top: auto; right: 12px; bottom: 16px; flex-direction: row; margin: 0; padding: 5px 8px; gap: 4px; }
+  .theme-root[data-theme="island"] .day-number { font-size: 22px; }
+  .theme-root[data-theme="island"] .day-month,
+  .theme-root[data-theme="island"] .day-caption { font-size: 9px; }
+  .theme-root[data-theme="island"] .overview-stats { justify-content: flex-start; margin-top: 12px; padding-top: 10px; gap: 13px; padding-right: 106px; flex-wrap: wrap; }
+  .theme-root[data-theme="island"] .overview-stat strong { font-size: 21px; }
+  .theme-root[data-theme="island"] .page-heading h1 { font-size: 30px; }
+  .theme-root[data-theme="island"] .food-ticket { min-height: 230px; border-width: 5px; padding: 0 17px 32px; border-radius: 20px; }
+  .theme-root[data-theme="island"] .ticket-top { margin-inline: -17px; padding: 10px 12px; font-size: 8px; }
+  .theme-root[data-theme="island"] .food-name { font-size: 51px; margin: 23px 0; }
+  .theme-root[data-theme="island"] .food-name.long { font-size: 28px; }
+  .theme-root[data-theme="island"] .ticket-bottom { gap: 10px; }
+  .theme-root[data-theme="island"] .ticket-bottom p { font-size: 11px; }
+  .theme-root[data-theme="island"] .ticket-edge { left: 17px; }
+  .theme-root[data-theme="island"] .decision { border-radius: 22px; padding: 17px 14px; min-height: 94px; }
+  .theme-root[data-theme="island"] .decision strong { font-size: 27px; }
+  .theme-root[data-theme="island"] .nav { border-radius: 20px 20px 0 0; padding-inline: 6px; }
+  .theme-root[data-theme="island"] .nav-item { gap: 4px; font-size: 10px; padding-block: 6px; }
+  .theme-root[data-theme="island"] .nav-icon { width: 19px; height: 19px; padding: 5px; border-radius: 10px; }
+  .theme-root[data-theme="island"] .food-list { grid-template-columns: 1fr; gap: 15px; }
+  .theme-root[data-theme="island"] .food-row { padding: 17px; grid-template-columns: 26px minmax(0, 1fr); }
+  .theme-root[data-theme="island"] .history-row { padding: 18px 13px; gap: 10px; }
+  .theme-root[data-theme="island"] .history-row h3 { font-size: 20px; }
+}
