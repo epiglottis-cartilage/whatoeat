@@ -9,9 +9,6 @@ use dioxus::prelude::*;
 
 const CSS: &str = include_str!("../assets/app.css");
 const INTERFACE_CSS: &str = include_str!("../assets/themes/interface.css");
-const CONTROL_CSS: &str = include_str!("../assets/themes/control.css");
-const RECLAMATION_CSS: &str = include_str!("../assets/themes/reclamation.css");
-const EXPEDITION_CSS: &str = include_str!("../assets/themes/expedition.css");
 
 #[derive(Clone, Copy, PartialEq)]
 enum Screen {
@@ -324,18 +321,11 @@ fn Shell() -> Element {
     let count = vm.data.as_ref().map(Data::eaten_count).unwrap_or(0);
     let theme_ctx = ctx.clone();
     let interface = vm.theme.is_interface();
-    let scene = match vm.theme {
-        Theme::Control => include_str!("../assets/themes/control-scene.svg"),
-        Theme::Reclamation => include_str!("../assets/themes/reclamation-scene.svg"),
-        Theme::Expedition => include_str!("../assets/themes/expedition-scene.svg"),
-        _ => "",
-    };
+    let scene = vm.theme.scene_svg();
     rsx! {
         style { {CSS} }
         style { {INTERFACE_CSS} }
-        style { {CONTROL_CSS} }
-        style { {RECLAMATION_CSS} }
-        style { {EXPEDITION_CSS} }
+        style { {vm.theme.stylesheet()} }
         div { class:"theme-root", "data-theme":vm.theme.key(), "data-layout":if interface {"interface"}else{"palette"}, "data-screen":vm.screen.key(),
         if interface {
             // These are bundled, original decorative SVGs, never imported user content.
@@ -421,6 +411,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
     let active = data.menu().filter(|food| food.enabled).count();
     let count = data.eaten_count();
     let (kicker, title, second_line, copy, caption) = match theme {
+        Theme::Automata => (
+            "ARCHIVE : DAILY MEALS",
+            "日常记录",
+            " / 持续更新",
+            "每一个普通的日子，都有值得记住的一餐。",
+            "记录是为了生活，偶尔忘记也没有关系。",
+        ),
         Theme::Reclamation => (
             "DAILY CAMP / 日常营地",
             "休整片刻，",

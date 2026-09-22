@@ -19,8 +19,10 @@ const binary = path.resolve(process.env.PREVIEW_BIN || path.join(root, 'target/d
 const output = path.resolve(process.env.UI_CHECK_OUTPUT || path.join(os.tmpdir(), 'whatoeat-ui-check'));
 const browserNames = (process.env.UI_CHECK_BROWSERS || 'chromium').split(',');
 const oldThemes = ['poster', 'rhodes', 'rhine', 'penguin', 'kazimierz'];
-const interfaces = ['control', 'reclamation', 'expedition'];
+const interfaces = ['control', 'reclamation', 'expedition', 'automata'];
 const themes = [...oldThemes, ...interfaces];
+const selectedThemes = process.env.UI_CHECK_THEMES?.split(',') || themes;
+for (const theme of selectedThemes) assert.ok(themes.includes(theme), `Unknown theme: ${theme}`);
 const widths = [360, 390, 760, 1060];
 const height = 840;
 const cases = new Map();
@@ -33,6 +35,7 @@ const report = {
 };
 
 function add(theme, screen, width, state = 'ready', toast = '') {
+  if (!selectedThemes.includes(theme)) return;
   const key = [theme, screen, width, state, toast || 'none'].join('-');
   cases.set(key, { key, theme, screen, width, state, toast });
 }

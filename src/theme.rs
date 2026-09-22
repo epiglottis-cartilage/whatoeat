@@ -9,10 +9,11 @@ pub enum Theme {
     Control,
     Reclamation,
     Expedition,
+    Automata,
 }
 
 impl Theme {
-    pub const ALL: [Self; 8] = [
+    pub const ALL: [Self; 9] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -21,6 +22,7 @@ impl Theme {
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
+        Self::Automata,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -30,10 +32,15 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 3] = [Self::Control, Self::Reclamation, Self::Expedition];
+    pub const INTERFACES: [Self; 4] = [
+        Self::Control,
+        Self::Reclamation,
+        Self::Expedition,
+        Self::Automata,
+    ];
 
     pub fn is_interface(self) -> bool {
-        matches!(self, Self::Control | Self::Reclamation | Self::Expedition)
+        Self::INTERFACES.contains(&self)
     }
 
     // Keep historical storage keys so existing selections survive display-name changes.
@@ -47,6 +54,7 @@ impl Theme {
             Self::Control => "control",
             Self::Reclamation => "reclamation",
             Self::Expedition => "expedition",
+            Self::Automata => "automata",
         }
     }
 
@@ -60,6 +68,7 @@ impl Theme {
             Self::Control => "罗德岛 · 中枢",
             Self::Reclamation => "生息演算 · 营地",
             Self::Expedition => "集成战略 · 旅程",
+            Self::Automata => "尼尔 · 日常档案",
         }
     }
 
@@ -73,10 +82,32 @@ impl Theme {
             Self::Control => "日常中枢，悬浮面板。",
             Self::Reclamation => "休整片刻，再次出发。",
             Self::Expedition => "每一顿，都是旅途的一站。",
+            Self::Automata => "把平凡的每一餐，写入档案。",
         }
     }
 
     pub fn from_key(key: &str) -> Option<Self> {
         Self::ALL.into_iter().find(|theme| theme.key() == key)
+    }
+
+    /// Only the selected interface stylesheet enters the DOM. All assets remain
+    /// local and bundled, including when switching themes without a connection.
+    pub fn stylesheet(self) -> &'static str {
+        match self {
+            Self::Control => include_str!("../assets/themes/control.css"),
+            Self::Reclamation => include_str!("../assets/themes/reclamation.css"),
+            Self::Expedition => include_str!("../assets/themes/expedition.css"),
+            Self::Automata => include_str!("../assets/themes/automata.css"),
+            _ => "",
+        }
+    }
+
+    pub fn scene_svg(self) -> &'static str {
+        match self {
+            Self::Control => include_str!("../assets/themes/control-scene.svg"),
+            Self::Reclamation => include_str!("../assets/themes/reclamation-scene.svg"),
+            Self::Expedition => include_str!("../assets/themes/expedition-scene.svg"),
+            _ => "",
+        }
     }
 }

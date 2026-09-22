@@ -1,0 +1,135 @@
+/* NA-01 study: flat archival bands, restrained symbols, warm monitor grid.
+   Original implementation; text and controls never inherit optical distortion. */
+.theme-root[data-theme="automata"] {
+  color-scheme: light;
+  --canvas: #d0ccba; --paper: #dcd8c7; --ink: #34372f;
+  --acid: #45493f; --pink: #d0cbb5; --accent-ink: #f4f0de;
+  --secondary-ink: #34372f; --surface: #e8e3cf; --inset: #dedac5;
+  --hover: #c4c2b0; --muted: #565a4c; --subtle: #626555;
+  --divider: #9b9d89; --stripe: #cbc7b4; --stroke: #6e7261;
+  --shadow: #b1b09b; --strong: #45493f; --strong-ink: #f4f0de;
+  --strong-accent: #f4f0de; --inactive: #ccc8b7; --focus: #74502b;
+  --danger: #914532; --danger-surface: #ead0ba; --danger-ink: #672d20;
+  --warning-surface: #ead5bb; --danger-button: #81402e;
+  --line: 1px solid var(--stroke);
+  background-color: var(--canvas);
+  background-image: linear-gradient(#53594908 1px, transparent 1px), linear-gradient(90deg, #53594908 1px, transparent 1px);
+  background-size: 5px 5px;
+  font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+.theme-root[data-theme="automata"] .app-shell { max-width: 1400px; background: radial-gradient(ellipse at 50% 40%, transparent 40%, #54594512); }
+.theme-root[data-theme="automata"] .masthead { background: transparent; border: 0; padding-top: calc(30px + env(safe-area-inset-top)); position: relative; }
+.theme-root[data-theme="automata"] .masthead::before,
+.theme-root[data-theme="automata"] .nav::before {
+  content: ""; position: absolute; left: 24px; right: 24px; top: 8px; height: 9px;
+  background: radial-gradient(circle at 6px 5px, #666951 1.2px, transparent 1.5px) 0 0 / 22px 8px;
+  border-top: 1px solid var(--stroke); pointer-events: none;
+}
+.theme-root[data-theme="automata"] .brand-symbol { width: 27px; height: 27px; clip-path: none; font-size: 18px; }
+.theme-root[data-theme="automata"] .wordmark { letter-spacing: .18em; font-weight: 500; }
+.theme-root[data-theme="automata"] .brand-subtitle { letter-spacing: .14em; }
+.theme-root[data-theme="automata"] .theme-select { background: #dedac5; border: 1px solid #747965; color: #34372f; }
+.theme-root[data-theme="automata"] .connection-dot { border-radius: 0; }
+.theme-root[data-theme="automata"] .shell-status { border-bottom: 1px solid var(--stroke); padding: 4px 0; }
+.theme-root[data-theme="automata"] .main { max-width: 1200px; padding: 25px 40px 40px; }
+.theme-root[data-theme="automata"] .eat-layout { display: block; }
+.theme-root[data-theme="automata"] .interface-overview {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px 30px;
+  border-block: 1px solid var(--stroke); padding: 17px 0; margin-bottom: 28px;
+}
+.theme-root[data-theme="automata"] .overview-kicker { grid-column: 1; margin: 0; font-size: 10px; color: var(--muted); letter-spacing: .16em; }
+.theme-root[data-theme="automata"] .overview-title { grid-column: 1; grid-row: 2; font-size: 20px; line-height: 1.6; font-weight: 500; letter-spacing: .08em; }
+.theme-root[data-theme="automata"] .overview-title br { display: none; }
+.theme-root[data-theme="automata"] .overview-title span { font-size: 12px; color: var(--muted); }
+.theme-root[data-theme="automata"] .overview-copy,
+.theme-root[data-theme="automata"] .overview-visual,
+.theme-root[data-theme="automata"] .overview-caption { display: none; }
+.theme-root[data-theme="automata"] .day-dial { grid-column: 2; grid-row: 1/3; position: static; display: flex; align-items: center; gap: 7px; }
+.theme-root[data-theme="automata"] .day-month { max-width: 42px; font-size: 10px; line-height: 1.8; }
+.theme-root[data-theme="automata"] .day-number { font: 300 44px/1 Arial, sans-serif; }
+.theme-root[data-theme="automata"] .day-caption { writing-mode: vertical-rl; font-size: 10px; letter-spacing: .2em; }
+.theme-root[data-theme="automata"] .overview-stats { grid-column: 3; grid-row: 1/3; margin: 0; padding: 0 0 0 22px; border: 0; border-left: 1px solid var(--divider); align-items: center; gap: 20px; }
+.theme-root[data-theme="automata"] .overview-stat { flex-direction: column; gap: 2px; align-items: flex-start; }
+.theme-root[data-theme="automata"] .overview-stat strong { font: 300 25px Arial, sans-serif; }
+.theme-root[data-theme="automata"] .eat-console { display: grid; grid-template-columns: minmax(0, 1fr) minmax(210px, .42fr); column-gap: 25px; align-items: stretch; }
+.theme-root[data-theme="automata"] .page-kicker,
+.theme-root[data-theme="automata"] .page-heading,
+.theme-root[data-theme="automata"] .small-print,
+.theme-root[data-theme="automata"] .empty,
+.theme-root[data-theme="automata"] .celebration { grid-column: 1/-1; }
+.theme-root[data-theme="automata"] .page-heading { padding-bottom: 15px; border-bottom: 4px double var(--stroke); }
+.theme-root[data-theme="automata"] .page-heading h1,
+.theme-root[data-theme="automata"] .section-title { font-size: clamp(29px, 3.7vw, 44px); font-weight: 400; letter-spacing: .1em; }
+.theme-root[data-theme="automata"] .tiny-stamp { border: 0; border-left: 5px solid var(--ink); background: #c7c5ae; }
+.theme-root[data-theme="automata"] .food-ticket { padding: 0 24px 38px; min-height: 310px; border: 0; border-bottom: 1px solid var(--stroke); box-shadow: 5px 5px 0 #a2a58f38; background: #e5e1cd; animation: archive-appear .3s ease-out both; }
+.theme-root[data-theme="automata"] .ticket-top { background: #45493f; color: #f4f0de; margin: 0 -24px; padding: 10px 16px; letter-spacing: .15em; }
+.theme-root[data-theme="automata"] .ticket-top span:first-child { border: 0; padding: 0; }
+.theme-root[data-theme="automata"] .food-name { font-weight: 400; letter-spacing: .08em; font-size: clamp(48px, 6.5vw, 82px); margin: 30px 0 25px; }
+.theme-root[data-theme="automata"] .food-name::before { content: "■"; font: 18px sans-serif; display: inline-block; margin-right: 15px; vertical-align: middle; }
+.theme-root[data-theme="automata"] .food-name.long { font-size: 34px; line-height: 1.55; letter-spacing: .02em; }
+.theme-root[data-theme="automata"] .ticket-bottom { border-top: 1px solid var(--divider); padding-top: 16px; }
+.theme-root[data-theme="automata"] .food-sticker { background: none; border-left: 2px solid var(--stroke); color: var(--ink); padding: 3px 8px; }
+.theme-root[data-theme="automata"] .ticket-edge { font-size: 8px; left: 24px; color: var(--muted); }
+.theme-root[data-theme="automata"] .decisions { grid-template-columns: 1fr; gap: 14px; margin: 0; align-content: start; }
+.theme-root[data-theme="automata"] .decision { min-height: 124px; padding: 23px 22px; border: 0; border-left: 5px solid var(--stroke); }
+.theme-root[data-theme="automata"] .decision strong { font-size: 30px; font-weight: 400; letter-spacing: .08em; }
+.theme-root[data-theme="automata"] .decision span { letter-spacing: .08em; }
+.theme-root[data-theme="automata"] .decision:hover { transform: translateX(3px); box-shadow: none; }
+.theme-root[data-theme="automata"] .decision.eat { order: -1; }
+.theme-root[data-theme="automata"] .decision.skip { background: #c8c7b2; }
+.theme-root[data-theme="automata"] .small-print { border-block: 1px solid var(--divider); padding: 12px 0; letter-spacing: .08em; }
+.theme-root[data-theme="automata"] .nav { background: #d7d3be; border: 0; padding: 18px 26px env(safe-area-inset-bottom); box-shadow: 0 -8px 18px #45493f0a; }
+.theme-root[data-theme="automata"] .nav::before { top: 0; }
+.theme-root[data-theme="automata"] .nav-item { border: 0; padding: 10px 13px; gap: 12px; min-height: 0; }
+.theme-root[data-theme="automata"] .nav-item.active { background: #45493f; color: #f4f0de; }
+.theme-root[data-theme="automata"] .nav-item small { position: static; font-size: 10px; }
+.theme-root[data-theme="automata"] .nav-icon { width: 17px; height: 17px; }
+.theme-root[data-theme="automata"] .footer { color: var(--muted); background: transparent; margin: 0 36px; padding: 14px 4px; border-top: 1px solid var(--divider); }
+.theme-root[data-theme="automata"] .food-row { border: 0; border-bottom: 1px solid var(--divider); box-shadow: inset 4px 0 0 #93987d; background: #dfdbc8; margin: 0 0 3px; }
+.theme-root[data-theme="automata"] .food-row .row-main h3 { font-weight: 400; letter-spacing: .07em; }
+.theme-root[data-theme="automata"] .toggle { color: #f4f0de; background: #45493f; border: 1px solid #45493f; }
+.theme-root[data-theme="automata"] .toggle[aria-pressed="false"] { color: #45493f; background: #c9c7b2; }
+.theme-root[data-theme="automata"] .meal-form,
+.theme-root[data-theme="automata"] .backup-panel { border: 0; border-top: 7px solid #7d826c; box-shadow: 4px 4px 0 #555f4014; }
+.theme-root[data-theme="automata"] .meal-form h2,
+.theme-root[data-theme="automata"] .backup-panel h2 { font-weight: 400; letter-spacing: .09em; }
+.theme-root[data-theme="automata"] .history-row { padding: 19px 17px; background: #dedac7; margin-bottom: 4px; }
+.theme-root[data-theme="automata"] .history-node { display: block; width: 6px; height: 6px; background: #6e7261; flex-shrink: 0; }
+.theme-root[data-theme="automata"] .history-row h3 { font-weight: 400; letter-spacing: .04em; }
+.theme-root[data-theme="automata"] .button { border: 0; border-left: 4px solid var(--stroke); }
+.theme-root[data-theme="automata"] .toast { background: #e8e3cf; border: 1px solid #45493f; border-left-width: 7px; box-shadow: 5px 5px 0 #45493f30; }
+.theme-root[data-theme="automata"] .accepted-stamp { font-weight: 400; padding: 12px 30px; border: 4px double #45493f; }
+@keyframes archive-appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+  .theme-root[data-theme="automata"] .masthead { padding: calc(26px + env(safe-area-inset-top)) 18px 16px; }
+  .theme-root[data-theme="automata"] .wordmark { font-size: 13px; letter-spacing: .03em; }
+  .theme-root[data-theme="automata"] .brand-subtitle { letter-spacing: 0; font-size: 8px; }
+  .theme-root[data-theme="automata"] .main { padding: 12px 20px 28px; }
+  .theme-root[data-theme="automata"] .interface-overview { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; margin-bottom: 23px; padding: 13px 0; }
+  .theme-root[data-theme="automata"] .overview-title { font-size: 16px; }
+  .theme-root[data-theme="automata"] .overview-title span { display: block; font-size: 10px; }
+  .theme-root[data-theme="automata"] .overview-kicker { font-size: 8px; letter-spacing: .08em; }
+  .theme-root[data-theme="automata"] .day-dial { flex-direction: row; gap: 5px; }
+  .theme-root[data-theme="automata"] .day-number { font-size: 36px; }
+  .theme-root[data-theme="automata"] .day-month { font-size: 8px; max-width: 34px; }
+  .theme-root[data-theme="automata"] .overview-stats { grid-column: 1/-1; grid-row: 3; border: 0; border-top: 1px solid var(--divider); padding: 9px 0 0; margin-top: 7px; gap: 22px; }
+  .theme-root[data-theme="automata"] .overview-stat { flex-direction: row; align-items: baseline; gap: 7px; }
+  .theme-root[data-theme="automata"] .overview-stat strong { font-size: 18px; }
+  .theme-root[data-theme="automata"] .eat-console { display: block; }
+  .theme-root[data-theme="automata"] .page-heading h1 { font-size: 30px; }
+  .theme-root[data-theme="automata"] .food-ticket { min-height: 245px; padding-inline: 20px; }
+  .theme-root[data-theme="automata"] .ticket-top { margin-inline: -20px; padding-inline: 15px; font-size: 9px; }
+  .theme-root[data-theme="automata"] .food-name { font-size: 54px; margin: 25px 0; }
+  .theme-root[data-theme="automata"] .food-name.long { font-size: 28px; }
+  .theme-root[data-theme="automata"] .food-name::before { font-size: 12px; margin-right: 9px; }
+  .theme-root[data-theme="automata"] .decisions { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+  .theme-root[data-theme="automata"] .decision { min-height: 96px; padding: 16px 12px; }
+  .theme-root[data-theme="automata"] .decision strong { font-size: 25px; }
+  .theme-root[data-theme="automata"] .decision.eat { order: initial; }
+  .theme-root[data-theme="automata"] .decision span { letter-spacing: 0; font-size: 10px; }
+  .theme-root[data-theme="automata"] .nav { padding: 15px 8px env(safe-area-inset-bottom); gap: 2px; }
+  .theme-root[data-theme="automata"] .nav-item { padding: 5px 2px; gap: 5px; font-size: 10px; }
+  .theme-root[data-theme="automata"] .nav-item small { display: none; }
+  .theme-root[data-theme="automata"] .nav-icon { width: 17px; height: 17px; }
+  .theme-root[data-theme="automata"] .footer { margin: 0 20px; font-size: 8px; }
+}

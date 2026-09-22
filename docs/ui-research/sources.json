@@ -2,10 +2,10 @@
   "schema_version": 1,
   "research_date": "2026-09-22",
   "path_base": "docs/ui-research",
-  "scope": "Static evidence only. No application CSS, layout, or animation redesign implemented.",
+  "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 5,
-  "image_bytes_total": 3740485,
+  "reference_count": 6,
+  "image_bytes_total": 4372453,
   "references": [
     {
       "id": "HOME-01",
@@ -188,6 +188,30 @@
       "dimensions": [
         960,
         540
+      ],
+      "format": "PNG"
+    },
+    {
+      "id": "NA-01",
+      "family": "automata",
+      "title": "NieR:Automata 武器详情",
+      "file": "references/automata/NA-01-weapon.png",
+      "study": "studies/04-automata.md",
+      "kind": "official_developer_screenshot",
+      "source_page": "https://www.platinumgames.co.jp/dev-nier-automata/article/183",
+      "original_image_url": "https://www.platinumgames.co.jp/dev-nier-automata/wp-content/uploads/sites/11/2017/08/UI_weapon.png",
+      "page_published_at": "2017-08-25",
+      "acquired_at": "2026-09-22",
+      "transformations": "none",
+      "motion_status": "static screenshot; no animation timing measured",
+      "limitations": [
+        "Specific client build unknown; local research only, not bundled into the app"
+      ],
+      "sha256": "d2053e8975e7a99986b62234e1c12653e66e3065a16383046a1e8461b20bdf78",
+      "bytes": 631968,
+      "dimensions": [
+        1600,
+        900
       ],
       "format": "PNG"
     }

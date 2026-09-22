@@ -1,0 +1,1045 @@
+{
+  "started_at": "2026-09-22T15:56:59.811Z",
+  "preview_binary": "/home/epiglottis/Code/whatoeat/target/debug/preview",
+  "scope": "SSR static DOM and browser layout; no live Dioxus events or native device execution",
+  "cases": [
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-ready-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.28125,
+        "scroll_y": 76,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-390-ready-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.28125,
+        "scroll_y": 76,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-760-ready-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.28125,
+        "scroll_y": 76,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-1060-ready-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762.203125,
+        "scroll_y": 56,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-history-360-ready-none",
+      "theme": "automata",
+      "screen": "history",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 1,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-history-390-ready-none",
+      "theme": "automata",
+      "screen": "history",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 1,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-history-760-ready-none",
+      "theme": "automata",
+      "screen": "history",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 1,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-history-1060-ready-none",
+      "theme": "automata",
+      "screen": "history",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-foods-360-ready-none",
+      "theme": "automata",
+      "screen": "foods",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.421875,
+        "scroll_y": 53,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-foods-390-ready-none",
+      "theme": "automata",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.421875,
+        "scroll_y": 53,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-foods-760-ready-none",
+      "theme": "automata",
+      "screen": "foods",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.625,
+        "scroll_y": 34,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-foods-1060-ready-none",
+      "theme": "automata",
+      "screen": "foods",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-backup-360-ready-none",
+      "theme": "automata",
+      "screen": "backup",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.328125,
+        "scroll_y": 441,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-backup-390-ready-none",
+      "theme": "automata",
+      "screen": "backup",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.328125,
+        "scroll_y": 441,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-backup-760-ready-none",
+      "theme": "automata",
+      "screen": "backup",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.359375,
+        "scroll_y": 351,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-backup-1060-ready-none",
+      "theme": "automata",
+      "screen": "backup",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762.125,
+        "scroll_y": 437,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-idle-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "idle",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary big",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-empty-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "empty",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.65625,
+        "scroll_y": 36,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-exhausted-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "exhausted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-accepted-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "accepted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-stale-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "stale",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-loading-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "loading",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [],
+          "skipped": [
+            "theme-select"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-long-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.453125,
+        "scroll_y": 123,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-360-busy-none",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 360,
+      "state": "busy",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.28125,
+        "scroll_y": 76,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "decision skip",
+            "decision skip",
+            "decision eat",
+            "decision eat"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-history-390-long-none",
+      "theme": "automata",
+      "screen": "history",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.828125,
+        "scroll_y": 2171,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-foods-390-long-none",
+      "theme": "automata",
+      "screen": "foods",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.609375,
+        "scroll_y": 145,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-foods-390-ready-1",
+      "theme": "automata",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "1",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.421875,
+        "scroll_y": 53,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast",
+              "ratio": 9.41,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "automata-eat-390-ready-error",
+      "theme": "automata",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "error",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.28125,
+        "scroll_y": 76,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast error",
+              "ratio": 7.21,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 8.62,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 7.08,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 8.06,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    }
+  ],
+  "screenshots": [
+    "/tmp/whatoeat-automata-check/chromium-automata-eat-390-ready-none.png",
+    "/tmp/whatoeat-automata-check/chromium-automata-eat-1060-ready-none.png",
+    "/tmp/whatoeat-automata-check/chromium-automata-history-390-long-none.png",
+    "/tmp/whatoeat-automata-check/chromium-automata-eat-390-ready-error.png"
+  ],
+  "finished_at": "2026-09-22T15:57:04.741Z",
+  "passed": 28,
+  "failed": 0
+}
