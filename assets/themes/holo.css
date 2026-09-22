@@ -1,0 +1,111 @@
+/* HO-01: Holo dark action bar, cyan rails, section dividers and flat list rows. */
+.theme-root[data-theme="holo"] {
+  --canvas: #14181b; --paper: #111416; --ink: #eeeeee; --acid: #33b5e5;
+  --pink: #313b40; --accent-ink: #081d25; --secondary-ink: #eee;
+  --surface: #282d31; --inset: #20262a; --hover: #3b444a;
+  --muted: #bec5c9; --subtle: #b7bfc3; --divider: #444b50;
+  --stripe: #252c30; --stroke: #69757c; --shadow: #07090a;
+  --strong: #33b5e5; --strong-ink: #081d25; --strong-accent: #081d25;
+  --inactive: #3d454a; --focus: #75d6f5; --danger: #ffb5a6;
+  --danger-surface: #492a27; --danger-ink: #ffe4df; --warning-surface: #402e2a;
+  --danger-button: #9b4537; --line: 1px solid #69757c;
+  background: linear-gradient(#080a0b, #20282d);
+  font-family: Roboto, "Noto Sans CJK SC", "Droid Sans", Arial, sans-serif;
+}
+.theme-root[data-theme="holo"] .masthead { min-height: 72px; background: #080a0b; border-bottom: 2px solid #33b5e5; padding-block: 13px; }
+.theme-root[data-theme="holo"] .brand-symbol { clip-path: none; width: 31px; height: 31px; border: 1px solid #82949c; border-radius: 2px; background: linear-gradient(#4c6470,#172d39); color: #75d6f5; font: 400 20px sans-serif; }
+.theme-root[data-theme="holo"] .wordmark { font: 400 21px Roboto,Arial,sans-serif; letter-spacing: -.03em; }
+.theme-root[data-theme="holo"] .brand-subtitle { color: #bec5c9; font-size: 9px; letter-spacing: 0; }
+.theme-root[data-theme="holo"] .theme-select { width: 171px; background-color: #11171b; border: 0; border-bottom: 1px solid #69757c; font-size: 11px; font-weight: 400; }
+.theme-root[data-theme="holo"] .shell-status { color: #bec5c9; }
+.theme-root[data-theme="holo"] .shell-status strong { font-weight: 300; color: #33b5e5; }
+.theme-root[data-theme="holo"] .main { max-width: 1080px; padding: 32px 38px 40px; }
+.theme-root[data-theme="holo"] .eat-layout { grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: 43px; align-items: start; }
+.theme-root[data-theme="holo"] .interface-overview { padding: 0; }
+.theme-root[data-theme="holo"] .overview-kicker { color: #bec5c9; font: 500 11px/1.6 Roboto,Arial,sans-serif; letter-spacing: 0; text-transform: uppercase; border-bottom: 2px solid #555e64; padding-bottom: 6px; margin-bottom: 23px; }
+.theme-root[data-theme="holo"] .overview-title { font-size: 38px; font-weight: 300; line-height: 1.5; letter-spacing: -.02em; }
+.theme-root[data-theme="holo"] .overview-copy { color: #bec5c9; font-size: 12px; }
+.theme-root[data-theme="holo"] .overview-visual { display: none; }
+.theme-root[data-theme="holo"] .day-dial { margin-top: 31px; padding: 16px 0; border-block: 1px solid #444b50; gap: 12px; }
+.theme-root[data-theme="holo"] .day-number { font: 200 72px/1.1 Roboto,Arial,sans-serif; color: #eee; }
+.theme-root[data-theme="holo"] .day-month,
+.theme-root[data-theme="holo"] .day-caption { color: #bec5c9; font-size: 11px; }
+.theme-root[data-theme="holo"] .overview-stats { display: grid; grid-template-columns: 1fr; margin-top: 8px; padding: 0; border: 0; gap: 0; }
+.theme-root[data-theme="holo"] .overview-stat { justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #444b50; }
+.theme-root[data-theme="holo"] .overview-stat strong { font: 300 30px Roboto,Arial,sans-serif; order: 2; color: #75d6f5; }
+.theme-root[data-theme="holo"] .overview-stat span { font-size: 12px; color: #eee; }
+.theme-root[data-theme="holo"] .overview-caption { color: #bec5c9; font-size: 10px; letter-spacing: 0; }
+.theme-root[data-theme="holo"] .page-kicker { color: #bec5c9; font: 10px/1.7 Roboto,Arial,sans-serif; letter-spacing: 0; }
+.theme-root[data-theme="holo"] .page-heading { margin-bottom: 22px; border-bottom: 2px solid #33b5e5; padding-bottom: 15px; }
+.theme-root[data-theme="holo"] .page-heading h1,
+.theme-root[data-theme="holo"] .section-title { font-size: 34px; font-weight: 300; letter-spacing: -.02em; }
+.theme-root[data-theme="holo"] .tiny-stamp { border: 0; padding: 4px 0 4px 9px; border-left: 1px solid #69757c; color: #75d6f5; background: transparent; font-size: 10px; }
+.theme-root[data-theme="holo"] .food-ticket { border: 0; background: transparent; border-bottom: 1px solid #555e64; padding: 0 0 32px; min-height: 234px; animation-duration: .18s; }
+.theme-root[data-theme="holo"] .ticket-top { color: #bec5c9; padding: 7px 0; border-bottom: 1px solid #444b50; font: 10px/1.7 Roboto,Arial,sans-serif; }
+.theme-root[data-theme="holo"] .ticket-top span:first-child { border: 0; padding: 0; font-size: 11px; color: #75d6f5; }
+.theme-root[data-theme="holo"] .food-name { font-weight: 300; font-size: clamp(48px,6vw,72px); line-height: 1.5; letter-spacing: -.02em; margin: 26px 0; }
+.theme-root[data-theme="holo"] .food-name.long { font-size: 30px; line-height: 1.6; letter-spacing: 0; }
+.theme-root[data-theme="holo"] .ticket-bottom p { color: #bec5c9; font-size: 12px; }
+.theme-root[data-theme="holo"] .food-sticker { background: #283d48; color: #75d6f5; font-size: 10px; padding: 5px 9px; }
+.theme-root[data-theme="holo"] .ticket-edge { left: 0; color: #b7bfc3; font-size: 7px; letter-spacing: .06em; }
+.theme-root[data-theme="holo"] .decisions { gap: 12px; margin-top: 22px; }
+.theme-root[data-theme="holo"] .decision { min-height: 85px; padding: 16px; border: 1px solid #626b71; background: linear-gradient(#3b4248,#30373c); color: #eee; }
+.theme-root[data-theme="holo"] .decision strong { font-size: 27px; font-weight: 400; }
+.theme-root[data-theme="holo"] .decision span { font-size: 10px; }
+.theme-root[data-theme="holo"] .decision.eat { border-bottom: 3px solid #33b5e5; }
+.theme-root[data-theme="holo"] .decision:hover { transform: none; background: #284b5b; box-shadow: inset 0 0 0 1px #33b5e5; }
+.theme-root[data-theme="holo"] .decision:active { transform: none; background: #176384; }
+.theme-root[data-theme="holo"] .small-print { color: #bec5c9; font-size: 10px; border-bottom: 1px solid #444b50; padding-bottom: 14px; }
+.theme-root[data-theme="holo"] .nav { background: #080a0b; border: 0; border-top: 1px solid #444b50; box-shadow: none; gap: 0; padding-inline: 20px; }
+.theme-root[data-theme="holo"] .nav-item { background: transparent; color: #bec5c9; border: 0; border-bottom: 4px solid transparent; border-right: 1px solid #333b40; font-weight: 400; gap: 11px; }
+.theme-root[data-theme="holo"] .nav-item:last-child { border-right: 0; }
+.theme-root[data-theme="holo"] .nav-item.active { color: #eee; background: #17232a; border-bottom-color: #33b5e5; }
+.theme-root[data-theme="holo"] .nav-item small { display: none; }
+.theme-root[data-theme="holo"] .nav-icon { stroke-width: 1.5; }
+.theme-root[data-theme="holo"] .footer { background: transparent; border-top: 1px solid #444b50; color: #bec5c9; }
+.theme-root[data-theme="holo"] .food-row { background: transparent; border: 0; border-bottom: 1px solid #444b50; padding: 18px 8px; margin: 0; }
+.theme-root[data-theme="holo"] .food-row .row-main h3 { font-size: 23px; font-weight: 400; }
+.theme-root[data-theme="holo"] .food-metrics { color: #bec5c9; }
+.theme-root[data-theme="holo"] .toggle { color: #081d25; background: #33b5e5; border: 0; min-width: 81px; font-size: 11px; font-weight: 600; box-shadow: inset 8px 0 0 #25627b; }
+.theme-root[data-theme="holo"] .toggle[aria-pressed="false"] { color: #eee; background: #434c52; box-shadow: inset 8px 0 0 #292f34; }
+.theme-root[data-theme="holo"] .meal-form,
+.theme-root[data-theme="holo"] .backup-panel { background: transparent; border: 0; border-block: 1px solid #555e64; padding-inline: 0; }
+.theme-root[data-theme="holo"] .meal-form h2,
+.theme-root[data-theme="holo"] .backup-panel h2 { font-weight: 400; font-size: 24px; color: #75d6f5; }
+.theme-root[data-theme="holo"] input,
+.theme-root[data-theme="holo"] select,
+.theme-root[data-theme="holo"] textarea { background-color: #151b1f; border: 0; border-bottom: 2px solid #33b5e5; font-family: inherit; border-radius: 0; }
+.theme-root[data-theme="holo"] .button { background: linear-gradient(#3b4248,#30373c); color: #eee; border: 1px solid #626b71; font-weight: 400; box-shadow: none; }
+.theme-root[data-theme="holo"] .button.primary { border-bottom: 3px solid #33b5e5; }
+.theme-root[data-theme="holo"] .button.danger { background: #6e3931; color: #ffe4df; }
+.theme-root[data-theme="holo"] .history-row { background: transparent; border-bottom: 1px solid #444b50; padding: 22px 8px; }
+.theme-root[data-theme="holo"] .history-row h3 { font-weight: 400; }
+.theme-root[data-theme="holo"] .history-row small { color: #bec5c9; }
+.theme-root[data-theme="holo"] .toast { background: #343b40; color: #eee; border: 0; border-radius: 2px; box-shadow: 0 3px 9px #0008; }
+.theme-root[data-theme="holo"] .toast-mark { color: #75d6f5; }
+.theme-root[data-theme="holo"] .empty.illustrated,
+.theme-root[data-theme="holo"] .celebration { background: #1b2227; border: 0; border-top: 2px solid #33b5e5; padding: 24px; }
+.theme-root[data-theme="holo"] .accepted-stamp { border: 0; border-bottom: 1px solid #33b5e5; color: #75d6f5; font-weight: 300; }
+@media (max-width: 760px) {
+  .theme-root[data-theme="holo"] .masthead { min-height: 71px; padding-inline: 16px; }
+  .theme-root[data-theme="holo"] .wordmark { font-size: 15px; }
+  .theme-root[data-theme="holo"] .brand-subtitle { font-size: 8px; }
+  .theme-root[data-theme="holo"] .theme-select { width: 143px; font-size: 10px; }
+  .theme-root[data-theme="holo"] .main { padding: 24px 22px 31px; }
+  .theme-root[data-theme="holo"] .eat-layout { gap: 25px; align-items: stretch; }
+  .theme-root[data-theme="holo"] .interface-overview { padding: 0; border: 0; }
+  .theme-root[data-theme="holo"] .overview-kicker { font-size: 9px; margin-bottom: 11px; }
+  .theme-root[data-theme="holo"] .overview-title { font-size: 27px; font-weight: 300; }
+  .theme-root[data-theme="holo"] .overview-title br { display: none; }
+  .theme-root[data-theme="holo"] .day-dial { display: none; }
+  .theme-root[data-theme="holo"] .overview-stats { display: flex; gap: 24px; margin-top: 10px; border-bottom: 1px solid #444b50; }
+  .theme-root[data-theme="holo"] .overview-stat { padding: 7px 0 11px; border: 0; gap: 10px; }
+  .theme-root[data-theme="holo"] .overview-stat strong { font-size: 23px; }
+  .theme-root[data-theme="holo"] .overview-stat span { font-size: 10px; }
+  .theme-root[data-theme="holo"] .page-heading h1 { font-size: 30px; }
+  .theme-root[data-theme="holo"] .food-ticket { min-height: 235px; }
+  .theme-root[data-theme="holo"] .food-name { font-size: 55px; margin-block: 26px; }
+  .theme-root[data-theme="holo"] .food-name.long { font-size: 29px; }
+  .theme-root[data-theme="holo"] .nav { padding-inline: 0; }
+  .theme-root[data-theme="holo"] .nav-item { font-size: 10px; padding: 9px 3px 5px; gap: 5px; }
+}

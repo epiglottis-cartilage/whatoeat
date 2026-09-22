@@ -19,10 +19,11 @@ pub enum Theme {
     Valley,
     Ink,
     Classic,
+    Holo,
 }
 
 impl Theme {
-    pub const ALL: [Self; 18] = [
+    pub const ALL: [Self; 19] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -41,6 +42,7 @@ impl Theme {
         Self::Valley,
         Self::Ink,
         Self::Classic,
+        Self::Holo,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -50,7 +52,7 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 13] = [
+    pub const INTERFACES: [Self; 14] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
@@ -64,6 +66,7 @@ impl Theme {
         Self::Valley,
         Self::Ink,
         Self::Classic,
+        Self::Holo,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -91,6 +94,7 @@ impl Theme {
             Self::Valley => "valley",
             Self::Ink => "ink",
             Self::Classic => "classic",
+            Self::Holo => "holo",
         }
     }
 
@@ -114,6 +118,7 @@ impl Theme {
             Self::Valley => "星露谷 · 田园饭点",
             Self::Ink => "喷射战士 · 墨彩饭局",
             Self::Classic => "经典 Mac · 开饭窗口",
+            Self::Holo => "Android 4 · Holo",
         }
     }
 
@@ -137,6 +142,7 @@ impl Theme {
             Self::Valley => "日子慢慢过，饭要好好吃。",
             Self::Ink => "给今天，添一点好味道！",
             Self::Classic => "打开今天，保存这一餐。",
+            Self::Holo => "简单选择，认真生活。",
         }
     }
 
@@ -161,6 +167,7 @@ impl Theme {
             Self::Valley => include_str!("../assets/themes/valley.css"),
             Self::Ink => include_str!("../assets/themes/ink.css"),
             Self::Classic => include_str!("../assets/themes/classic.css"),
+            Self::Holo => include_str!("../assets/themes/holo.css"),
             _ => "",
         }
     }

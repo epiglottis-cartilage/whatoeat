@@ -75,3 +75,5 @@ docs/ui-research/
 墨迹方向：[喷射战士 墨彩饭局](studies/12-ink.md)。
 
 经典桌面：[Mac 开饭窗口](studies/13-classic.md)。
+
+Android 历史界面：[Android 4 Holo](studies/14-holo.md)。

@@ -439,6 +439,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             "今日作战目标：好好吃一顿。",
             "这一餐，就听自己的。",
         ),
+        Theme::Holo => (
+            "TODAY / 今日概览",
+            "今天，",
+            "吃点什么。",
+            "少一点犹豫，多一点日常。",
+            "本地记录，随时回看。",
+        ),
         Theme::Classic => (
             "DAILY / 今日窗口",
             "打开今天，",
