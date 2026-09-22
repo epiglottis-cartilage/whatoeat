@@ -90,3 +90,5 @@ PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check_ui.cjs
 - [架构](docs/architecture.md) · [算法与交互](docs/design.md) · [模型对比](docs/algorithm-options.md)。
 
 这是个人实验版：数据库目前保存完整状态快照，每次反馈重放历史，适合小规模个人数据。安卓剪贴板、返回键和进程恢复仍需真机验收；Windows/macOS 尚未构建。没有云服务、账号系统、后台学习任务或正式发布签名。
+
+「死亡搁浅 · 一餐之遥」(`strand`) 使用清单、原创餐盒、候选三栏布局，蓝色选中条与细线信息层级。

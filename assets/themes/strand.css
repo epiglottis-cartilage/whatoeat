@@ -1,0 +1,131 @@
+/* DS-01: manifest / object / details, thin aligned rails, selected cyan strips.
+   The reference's magenta tutorial annotation is deliberately not a UI token. */
+.theme-root[data-theme="strand"] {
+  color-scheme: dark;
+  --canvas: #192b35; --paper: #1a2b35; --ink: #e3f3f4;
+  --acid: #79d7ea; --pink: #405d6b; --accent-ink: #112832;
+  --secondary-ink: #e3f3f4; --surface: #203744; --inset: #1b303d;
+  --hover: #314e5d; --muted: #b2cdd4; --subtle: #a8c5cd;
+  --divider: #4c6a78; --stripe: #274351; --stroke: #759caa;
+  --shadow: #0c1c26; --strong: #a1e3ef; --strong-ink: #153240;
+  --strong-accent: #153240; --inactive: #2b4551; --focus: #f2d994;
+  --danger: #ffcaac; --danger-surface: #51362e; --danger-ink: #ffe4cf;
+  --warning-surface: #41372c; --danger-button: #91563c;
+  --line: 1px solid var(--stroke);
+  font-family: "Arial Narrow", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+.theme-root[data-theme="strand"] .app-shell { background: transparent; max-width: 1440px; }
+.theme-root[data-theme="strand"] .masthead { background: #142631a3; border: 0; border-bottom: 1px solid #638e9c60; min-height: 80px; }
+.theme-root[data-theme="strand"] .brand-symbol { clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #a1e3ef; color: #153240; width: 34px; height: 34px; font: 500 18px sans-serif; }
+.theme-root[data-theme="strand"] .wordmark { font-weight: 400; font-size: 20px; letter-spacing: .13em; }
+.theme-root[data-theme="strand"] .brand-subtitle { color: #b2cdd4; font-size: 9px; letter-spacing: .12em; }
+.theme-root[data-theme="strand"] .shell-status { border-bottom: 1px solid #638e9c; padding-bottom: 4px; }
+.theme-root[data-theme="strand"] .theme-select { border: 0; border-bottom: 1px solid #759caa; color: #e3f3f4; background-color: #203744; font-weight: 400; width: 185px; }
+.theme-root[data-theme="strand"] .main { max-width: 1290px; padding: 38px 40px 45px; }
+.theme-root[data-theme="strand"] .eat-layout { gap: 35px; align-items: start; }
+.theme-root[data-theme="strand"] .interface-overview { padding: 0; }
+.theme-root[data-theme="strand"] .overview-kicker { color: #9dcbd7; font: 9px/1.7 monospace; letter-spacing: .12em; margin: 0 0 20px; border-top: 1px solid #638e9c; padding-top: 10px; }
+.theme-root[data-theme="strand"] .overview-title { font-size: 28px; font-weight: 300; line-height: 1.8; letter-spacing: .08em; }
+.theme-root[data-theme="strand"] .overview-copy { font-size: 11px; color: #b2cdd4; line-height: 2; }
+.theme-root[data-theme="strand"] .overview-visual { width: 100%; height: 260px; opacity: 1; margin: 0; }
+.theme-root[data-theme="strand"] .day-dial { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin-top: 24px; padding: 10px 0; border-top: 1px solid #638e9c; }
+.theme-root[data-theme="strand"] .day-month { grid-column: 1/-1; color: #9dcbd7; font-size: 9px; }
+.theme-root[data-theme="strand"] .day-number { font: 300 46px/1.3 sans-serif; }
+.theme-root[data-theme="strand"] .day-caption { align-self: end; padding-bottom: 9px; font-size: 11px; color: #b2cdd4; }
+.theme-root[data-theme="strand"] .overview-stats { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 10px 0 0; padding: 0; border: 0; }
+.theme-root[data-theme="strand"] .overview-stat { justify-content: space-between; padding: 7px 9px; border-left: 3px solid #79d7ea; background: #1b567368; }
+.theme-root[data-theme="strand"] .overview-stat strong { font: 300 26px sans-serif; order: 2; }
+.theme-root[data-theme="strand"] .overview-stat span { color: #cbe4e9; font-size: 10px; }
+.theme-root[data-theme="strand"] .overview-caption { font-size: 10px; letter-spacing: .08em; line-height: 2; color: #9dcbd7; margin-top: 17px; }
+.theme-root[data-theme="strand"] .page-kicker { color: #b2cdd4; font-size: 9px; letter-spacing: .08em; }
+.theme-root[data-theme="strand"] .page-heading { border-bottom: 1px solid #759caa; padding-bottom: 17px; margin-bottom: 24px; }
+.theme-root[data-theme="strand"] .page-heading h1,
+.theme-root[data-theme="strand"] .section-title { font-weight: 300; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: .06em; }
+.theme-root[data-theme="strand"] .tiny-stamp { border: 0; border-left: 2px solid #79d7ea; background: #275064; color: #d7eef3; padding: 5px 8px; font-size: 9px; }
+.theme-root[data-theme="strand"] .food-ticket { border: 0; border-left: 2px solid #83c3d6; background: #173649c9; padding: 0 20px 38px; min-height: 278px; position: relative; }
+.theme-root[data-theme="strand"] .food-ticket::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 8px; border-block: 2px solid #bce4ec; border-right: 1px dotted #7faeba; pointer-events: none; }
+.theme-root[data-theme="strand"] .ticket-top { background: linear-gradient(90deg, #197daf, #17688670); margin: 0 -20px; padding: 11px 16px; font-size: 9px; color: #edfaff; letter-spacing: .05em; }
+.theme-root[data-theme="strand"] .ticket-top span:first-child { border: 0; padding: 0; font-size: 10px; }
+.theme-root[data-theme="strand"] .food-name { font-weight: 350; font-size: clamp(45px, 5.5vw, 74px); line-height: 1.5; letter-spacing: .02em; margin: 26px 0 18px; color: #edfaff; }
+.theme-root[data-theme="strand"] .food-name.long { font-size: 30px; line-height: 1.6; letter-spacing: 0; }
+.theme-root[data-theme="strand"] .ticket-bottom { border-top: 1px dotted #759caa; padding-top: 17px; gap: 10px; }
+.theme-root[data-theme="strand"] .ticket-bottom p { color: #d0e7ec; font-size: 12px; }
+.theme-root[data-theme="strand"] .food-sticker { background: #e3c680; color: #27313b; font-size: 9px; padding: 6px 8px; }
+.theme-root[data-theme="strand"] .ticket-edge { left: 20px; color: #a8c5cd; font-size: 7px; letter-spacing: .12em; }
+.theme-root[data-theme="strand"] .decisions { margin-top: 18px; gap: 13px; }
+.theme-root[data-theme="strand"] .decision { min-height: 95px; border: 1px solid #759caa; padding: 18px 16px; }
+.theme-root[data-theme="strand"] .decision strong { font-weight: 400; font-size: 29px; }
+.theme-root[data-theme="strand"] .decision span { font-size: 10px; }
+.theme-root[data-theme="strand"] .decision.skip { color: #d0e7ec; background: #203744; }
+.theme-root[data-theme="strand"] .decision.eat { background: #a1e3ef; color: #153240; border-color: #a1e3ef; }
+.theme-root[data-theme="strand"] .decision:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #86cddd30; }
+.theme-root[data-theme="strand"] .small-print { font-size: 9px; color: #b2cdd4; border-bottom: 1px solid #638e9c; padding-bottom: 13px; }
+.theme-root[data-theme="strand"] .nav { background: #162d39; border-top: 1px solid #759caa; gap: 8px; padding-inline: 30px; box-shadow: 0 -12px 30px #051b2540; }
+.theme-root[data-theme="strand"] .nav-item { border: 0; color: #afccd5; font-weight: 400; gap: 11px; }
+.theme-root[data-theme="strand"] .nav-item.active { color: #ecfaff; background: #175b7c; border-bottom: 3px solid #9ce6ef; }
+.theme-root[data-theme="strand"] .nav-item small { color: #b2cdd4; top: 8px; left: 13px; font-size: 8px; }
+.theme-root[data-theme="strand"] .nav-icon { stroke-width: 1.2; }
+.theme-root[data-theme="strand"] .footer { background: #172d3880; border-top: 1px solid #638e9c60; color: #b2cdd4; letter-spacing: .08em; }
+.theme-root[data-theme="strand"] .food-row { background: #16394b94; border: 0; border-bottom: 1px dotted #638e9c; border-left: 3px solid #78b9cf; margin: 0 0 5px; padding-block: 17px; }
+.theme-root[data-theme="strand"] .food-row .row-main h3 { font-weight: 400; font-size: 22px; }
+.theme-root[data-theme="strand"] .food-metrics { color: #b6d8e0; }
+.theme-root[data-theme="strand"] .toggle { color: #edfaff; background: #1a6685; border: 1px solid #75b5c7; }
+.theme-root[data-theme="strand"] .toggle[aria-pressed="false"] { color: #c4dce2; background: #293f4b; }
+.theme-root[data-theme="strand"] .meal-form,
+.theme-root[data-theme="strand"] .backup-panel { background: #1b303dde; border: 0; border-top: 1px solid #8ebccc; border-bottom: 1px dotted #638e9c; }
+.theme-root[data-theme="strand"] .meal-form h2,
+.theme-root[data-theme="strand"] .backup-panel h2 { font-weight: 400; font-size: 23px; letter-spacing: .06em; border-left: 3px solid #79d7ea; padding-left: 13px; }
+.theme-root[data-theme="strand"] .history-row { padding: 21px 16px; background: #1534469c; border: 0; border-left: 1px solid #759caa; border-bottom: 1px dotted #638e9c; }
+.theme-root[data-theme="strand"] .history-node { display: block; width: 8px; height: 8px; border: 1px solid #9ce6ef; background: #244c60; transform: rotate(45deg); flex-shrink: 0; }
+.theme-root[data-theme="strand"] .history-row h3 { font-weight: 400; }
+.theme-root[data-theme="strand"] .button { border: 1px solid #8bb8c6; font-weight: 400; }
+.theme-root[data-theme="strand"] .toast { border: 1px solid #9ce6ef; border-left-width: 4px; background: #173e52; color: #e3f3f4; box-shadow: 0 5px 28px #061a2360; }
+.theme-root[data-theme="strand"] .accepted-stamp { color: #d9f6f6; border: 1px solid #79d7ea; font-weight: 300; letter-spacing: .14em; }
+@media (min-width: 1001px) {
+  .theme-root[data-theme="strand"] .eat-layout { grid-template-columns: 165px minmax(180px, .75fr) minmax(0, 1.5fr); gap: 15px 24px; align-content: center; min-height: 575px; }
+  .theme-root[data-theme="strand"] .interface-overview { display: contents; }
+  .theme-root[data-theme="strand"] .overview-kicker { grid-column: 1; grid-row: 1; margin-bottom: 0; }
+  .theme-root[data-theme="strand"] .overview-title { grid-column: 1; grid-row: 2; font-size: 25px; }
+  .theme-root[data-theme="strand"] .overview-copy { grid-column: 1; grid-row: 3; margin-top: 0; }
+  .theme-root[data-theme="strand"] .overview-visual { grid-column: 2; grid-row: 1/7; height: 100%; min-height: 350px; align-self: stretch; }
+  .theme-root[data-theme="strand"] .day-dial { grid-column: 1; grid-row: 4; margin: 0; }
+  .theme-root[data-theme="strand"] .overview-stats { grid-column: 1; grid-row: 5; margin: 0; }
+  .theme-root[data-theme="strand"] .overview-caption { grid-column: 1; grid-row: 6; margin: 0; }
+  .theme-root[data-theme="strand"] .eat-console { grid-column: 3; grid-row: 1/7; align-self: start; }
+  .theme-root[data-theme="strand"] .page-heading h1 { font-size: 34px; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="strand"] .masthead { min-height: 74px; padding-inline: 17px; gap: 8px; }
+  .theme-root[data-theme="strand"] .wordmark { font-size: 14px; letter-spacing: .03em; }
+  .theme-root[data-theme="strand"] .brand-subtitle { font-size: 8px; letter-spacing: 0; }
+  .theme-root[data-theme="strand"] .theme-select { width: 155px; font-size: 10px; }
+  .theme-root[data-theme="strand"] .main { padding: 23px 21px 32px; }
+  .theme-root[data-theme="strand"] .eat-layout { display: flex; align-items: stretch; gap: 25px; }
+  .theme-root[data-theme="strand"] .interface-overview { display: grid; grid-template-columns: minmax(0, 1fr) 92px; gap: 8px 15px; border-bottom: 1px solid #638e9c; padding: 0 0 15px; }
+  .theme-root[data-theme="strand"] .overview-kicker { grid-column: 1/-1; margin: 0; padding-top: 6px; font-size: 8px; }
+  .theme-root[data-theme="strand"] .overview-title { grid-column: 1; grid-row: 2; font-size: 23px; letter-spacing: .04em; line-height: 1.7; }
+  .theme-root[data-theme="strand"] .overview-title br { display: block; }
+  .theme-root[data-theme="strand"] .overview-copy,
+  .theme-root[data-theme="strand"] .overview-caption { display: none; }
+  .theme-root[data-theme="strand"] .overview-visual { display: block; grid-column: 2; grid-row: 2/4; height: 126px; margin: -10px 0 0; }
+  .theme-root[data-theme="strand"] .day-dial { grid-column: 1; grid-row: 3; position: static; display: flex; flex-direction: row; margin: 0; padding: 0; border: 0; align-items: baseline; gap: 7px; }
+  .theme-root[data-theme="strand"] .day-number { font-size: 26px; }
+  .theme-root[data-theme="strand"] .day-month { font-size: 9px; }
+  .theme-root[data-theme="strand"] .day-caption { padding: 0; font-size: 9px; }
+  .theme-root[data-theme="strand"] .overview-stats { grid-column: 1/-1; grid-row: 4; display: flex; margin: 2px 0 0; gap: 12px; }
+  .theme-root[data-theme="strand"] .overview-stat { flex: 1; padding: 6px 9px; }
+  .theme-root[data-theme="strand"] .overview-stat strong { font-size: 19px; }
+  .theme-root[data-theme="strand"] .page-heading h1 { font-size: 31px; }
+  .theme-root[data-theme="strand"] .page-heading { margin-bottom: 20px; padding-bottom: 12px; }
+  .theme-root[data-theme="strand"] .food-ticket { min-height: 233px; padding-inline: 17px; }
+  .theme-root[data-theme="strand"] .ticket-top { margin-inline: -17px; padding-inline: 13px; }
+  .theme-root[data-theme="strand"] .food-name { font-size: 52px; margin: 21px 0; }
+  .theme-root[data-theme="strand"] .food-name.long { font-size: 28px; }
+  .theme-root[data-theme="strand"] .ticket-edge { left: 17px; }
+  .theme-root[data-theme="strand"] .decision { padding: 16px 14px; min-height: 91px; }
+  .theme-root[data-theme="strand"] .decision strong { font-size: 27px; }
+  .theme-root[data-theme="strand"] .nav { padding-inline: 6px; gap: 3px; }
+  .theme-root[data-theme="strand"] .nav-item { font-size: 10px; gap: 6px; }
+  .theme-root[data-theme="strand"] .nav-item.active { border-bottom-width: 2px; }
+  .theme-root[data-theme="strand"] .history-row { padding-inline: 12px; }
+}

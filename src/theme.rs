@@ -13,10 +13,11 @@ pub enum Theme {
     Phantom,
     Island,
     Terminal,
+    Strand,
 }
 
 impl Theme {
-    pub const ALL: [Self; 12] = [
+    pub const ALL: [Self; 13] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -29,6 +30,7 @@ impl Theme {
         Self::Phantom,
         Self::Island,
         Self::Terminal,
+        Self::Strand,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -38,7 +40,7 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 7] = [
+    pub const INTERFACES: [Self; 8] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
@@ -46,6 +48,7 @@ impl Theme {
         Self::Phantom,
         Self::Island,
         Self::Terminal,
+        Self::Strand,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -67,6 +70,7 @@ impl Theme {
             Self::Phantom => "phantom",
             Self::Island => "island",
             Self::Terminal => "terminal",
+            Self::Strand => "strand",
         }
     }
 
@@ -84,6 +88,7 @@ impl Theme {
             Self::Phantom => "P5 · 开饭预告",
             Self::Island => "动森 · 小岛食记",
             Self::Terminal => "辐射 · 补给终端",
+            Self::Strand => "死亡搁浅 · 一餐之遥",
         }
     }
 
@@ -101,6 +106,7 @@ impl Theme {
             Self::Phantom => "今天的胃口，由自己宣告。",
             Self::Island => "慢慢生活，好好吃饭。",
             Self::Terminal => "先补给，再继续出发。",
+            Self::Strand => "把温热的一餐，送给自己。",
         }
     }
 
@@ -119,6 +125,7 @@ impl Theme {
             Self::Phantom => include_str!("../assets/themes/phantom.css"),
             Self::Island => include_str!("../assets/themes/island.css"),
             Self::Terminal => include_str!("../assets/themes/terminal.css"),
+            Self::Strand => include_str!("../assets/themes/strand.css"),
             _ => "",
         }
     }
@@ -130,6 +137,7 @@ impl Theme {
             Self::Expedition => include_str!("../assets/themes/expedition-scene.svg"),
             Self::Phantom => include_str!("../assets/themes/phantom-scene.svg"),
             Self::Island => include_str!("../assets/themes/island-scene.svg"),
+            Self::Strand => include_str!("../assets/themes/strand-scene.svg"),
             _ => "",
         }
     }
@@ -138,6 +146,7 @@ impl Theme {
         match self {
             Self::Island => Some(include_str!("../assets/themes/island-picnic.svg")),
             Self::Terminal => Some(include_str!("../assets/themes/terminal-ration.svg")),
+            Self::Strand => Some(include_str!("../assets/themes/strand-parcel.svg")),
             _ => None,
         }
     }

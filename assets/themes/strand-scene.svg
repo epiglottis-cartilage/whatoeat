@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs><linearGradient id="strand-atmosphere" x2="0" y2="1"><stop stop-color="#18252e"/><stop offset=".7" stop-color="#263e4b"/><stop offset="1" stop-color="#172b34"/></linearGradient><radialGradient id="strand-light"><stop stop-color="#8ebac8" stop-opacity=".16"/><stop offset="1" stop-color="#8ebac8" stop-opacity="0"/></radialGradient></defs>
+  <path fill="url(#strand-atmosphere)" d="M0 0h1440v1000H0z"/>
+  <ellipse cx="690" cy="470" rx="650" ry="420" fill="url(#strand-light)"/>
+  <g fill="none" stroke="#a0d4e2" opacity=".13" stroke-width="1"><path d="M-30 890q290-190 470-88t430-3 600-100M-30 917q290-190 470-88t430-3 600-100M-30 944q290-190 470-88t430-3 600-100M-30 971q290-190 470-88t430-3 600-100"/><path d="M95 125v615m1260-555v390M330 75h810m-865 780h990" stroke-dasharray="2 10"/></g>
+  <g fill="#b3e3ec" opacity=".3"><path d="M91 116h8v2h-8zm1260 58h8v2h-8zM330 71h2v8h-2zm808 0h2v8h-2zM1260 851h2v8h-2z"/></g>
+</svg>
