@@ -73,3 +73,5 @@ docs/ui-research/
 像素田园方向：[星露谷 田园饭点](studies/11-valley.md)。
 
 墨迹方向：[喷射战士 墨彩饭局](studies/12-ink.md)。
+
+经典桌面：[Mac 开饭窗口](studies/13-classic.md)。

@@ -44,8 +44,14 @@
 
 | 9 | 喷射战士 · 墨彩饭局 | [研究与预览](studies/12-ink.md)；28 布局，4 偏好测试 | `ykvoqxxm` | 09-23 01:11 |
 
+| 10 | 经典 Mac · 开饭窗口 | [研究与预览](studies/13-classic.md)；28 布局，4 偏好测试 | `opsoovyx` | 09-23 01:18 |
+
 未完成的候选不是功能承诺；截止后在这里记录实际完成范围。
 
 ## 阶段回归：完成马拉松后
 
 全部 15 套（10 界面 + 5 配色）共 290 个 Chromium 场景通过，[报告](previews/regression/through-marathon.json)。39 项 Rust 测试及包含 preview 的 all-targets Clippy（warnings denied）通过。新增移动候选全宽断言也覆盖原有界面，未发现回归。
+
+## 用户更新工作顺序
+
+完成正在研究的复古 Macintosh 桌面，再增加接近 Android 4 Holo 的界面；此后停止扩展主题，切换为跟随系统语言的英文适配，以及各主题字体选型（来源、许可与中英文回退）。保留逐项验证及 jj 保存流程。

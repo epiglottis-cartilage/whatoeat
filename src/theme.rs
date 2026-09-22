@@ -18,10 +18,11 @@ pub enum Theme {
     Marathon,
     Valley,
     Ink,
+    Classic,
 }
 
 impl Theme {
-    pub const ALL: [Self; 17] = [
+    pub const ALL: [Self; 18] = [
         Self::Poster,
         Self::Rhodes,
         Self::Rhine,
@@ -39,6 +40,7 @@ impl Theme {
         Self::Marathon,
         Self::Valley,
         Self::Ink,
+        Self::Classic,
     ];
 
     pub const PALETTES: [Self; 5] = [
@@ -48,7 +50,7 @@ impl Theme {
         Self::Penguin,
         Self::Kazimierz,
     ];
-    pub const INTERFACES: [Self; 12] = [
+    pub const INTERFACES: [Self; 13] = [
         Self::Control,
         Self::Reclamation,
         Self::Expedition,
@@ -61,6 +63,7 @@ impl Theme {
         Self::Marathon,
         Self::Valley,
         Self::Ink,
+        Self::Classic,
     ];
 
     pub fn is_interface(self) -> bool {
@@ -87,6 +90,7 @@ impl Theme {
             Self::Marathon => "marathon",
             Self::Valley => "valley",
             Self::Ink => "ink",
+            Self::Classic => "classic",
         }
     }
 
@@ -109,6 +113,7 @@ impl Theme {
             Self::Marathon => "马拉松 · 食欲协议",
             Self::Valley => "星露谷 · 田园饭点",
             Self::Ink => "喷射战士 · 墨彩饭局",
+            Self::Classic => "经典 Mac · 开饭窗口",
         }
     }
 
@@ -131,6 +136,7 @@ impl Theme {
             Self::Marathon => "接入日常，准备开饭。",
             Self::Valley => "日子慢慢过，饭要好好吃。",
             Self::Ink => "给今天，添一点好味道！",
+            Self::Classic => "打开今天，保存这一餐。",
         }
     }
 
@@ -154,6 +160,7 @@ impl Theme {
             Self::Marathon => include_str!("../assets/themes/marathon.css"),
             Self::Valley => include_str!("../assets/themes/valley.css"),
             Self::Ink => include_str!("../assets/themes/ink.css"),
+            Self::Classic => include_str!("../assets/themes/classic.css"),
             _ => "",
         }
     }

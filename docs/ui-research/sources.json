@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 15,
-  "image_bytes_total": 8382240,
+  "reference_count": 16,
+  "image_bytes_total": 8384926,
   "references": [
     {
       "id": "HOME-01",
@@ -431,6 +431,29 @@
         720
       ],
       "format": "JPEG"
+    },
+    {
+      "id": "MC-01",
+      "family": "classic",
+      "title": "Classic Macintosh System desktop",
+      "file": "references/classic/MC-01-desktop.png",
+      "study": "studies/13-classic.md",
+      "kind": "encyclopedia_hosted_system_screenshot",
+      "source_page": "https://en.wikipedia.org/wiki/System_1",
+      "original_image_url": "https://upload.wikimedia.org/wikipedia/en/5/50/Apple_Macintosh_Desktop.png",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Historical System 1 illustration; exact capture setup unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "3e84fd904018a2abdbcf014185e3925d3078dc86a8002eefae3be6ff1eaa8a1a",
+      "bytes": 2686,
+      "dimensions": [
+        512,
+        342
+      ],
+      "format": "PNG"
     }
   ]
 }

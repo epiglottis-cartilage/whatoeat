@@ -439,6 +439,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             "今日作战目标：好好吃一顿。",
             "这一餐，就听自己的。",
         ),
+        Theme::Classic => (
+            "DAILY / 今日窗口",
+            "打开今天，",
+            "好好吃饭。",
+            "生活里的小事，也值得按下保存。",
+            "每一餐，都留在自己的设备里。",
+        ),
         Theme::Ink => (
             "COLOR YOUR LUNCH!",
             "好好吃饭，",
