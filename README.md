@@ -1,6 +1,6 @@
 # 今天吃什么 · WHAT / TO / EAT
 
-一个用 **Dioxus 0.7 + Rust + SQLite** 实验跨平台应用和在线学习的本地优先项目。一次只推荐一个用餐选项：吃，就记录；不吃，就换一个。Linux 桌面已编译启动；安卓已使用 JDK 26 + SDK 37 构建 ARM64 调试 APK 并通过签名检查，尚未完成真机运行验证。
+一个用 **Dioxus 0.7 + Rust + SQLite** 实验跨平台应用和在线学习的本地优先项目。一次只推荐一个用餐选项：吃，就记录；不吃，就换一个。Linux 桌面已编译启动；安卓已使用 JDK 26 + SDK 37 构建 ARM64 debug/release APK 并通过签名检查，尚未完成真机运行验证。
 
 ## 运行桌面版
 
@@ -27,11 +27,14 @@ WHATOEAT_DATA_DIR=/tmp/whatoeat-demo cargo run --features desktop --bin whatoeat
 ```sh
 cargo install dioxus-cli --version 0.7.10 --locked
 rustup target add aarch64-linux-android
-# 使用当前 JDK、SDK 37 和已安装的 NDK 构建：
-python3 scripts/build_android.py
+# 使用当前 JDK、SDK 37 和已安装的 NDK 构建小体积自用包：
+python3 scripts/build_android.py --release
+# 开发调试时去掉 --release
 # 连接已开启 USB 调试的手机后：
-adb install -r target/android-build/whatoeat-debug.apk
+adb install -r target/android-build/whatoeat-release.apk
 ```
+
+release 使用 Rust 体积优化、符号裁剪及 Android 代码/资源裁剪，本次实测 APK 从 debug 的 65.94 MiB 降至 3.25 MiB。默认沿用本机调试证书，适合自用安装。正式签名可先用 `--release --unsigned` 输出未签名包；依赖已缓存时支持 `--offline`。构建结果与校验信息保存在 `target/android-build/`。
 
 手机与桌面各自保存，不自动同步。在「复制与合并」页面点「复制当前记录」，把文本粘贴保存；导入时粘贴文本，点「合并记录」即可，不再选择文件或覆盖整库。
 
