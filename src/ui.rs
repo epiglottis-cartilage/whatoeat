@@ -439,6 +439,13 @@ fn InterfaceOverview(theme: Theme, data: Data) -> Element {
             "今日作战目标：好好吃一顿。",
             "这一餐，就听自己的。",
         ),
+        Theme::Marathon => (
+            "APPETITE PROTOCOL",
+            "接入日常。",
+            "准备开饭。",
+            "从熟悉的菜单，找回今天的食欲。",
+            "只记录真实的一餐。",
+        ),
         Theme::Frontline => (
             "REST / 日常补给",
             "休整时刻。",

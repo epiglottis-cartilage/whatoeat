@@ -94,3 +94,5 @@ PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check_ui.cjs
 「死亡搁浅 · 一餐之遥」(`strand`) 使用清单、原创餐盒、候选三栏布局，蓝色选中条与细线信息层级。
 
 「战地 1 · 休整时刻」(`frontline`) 使用原创雾化景物、水平问候、白色候选和窄幅统计卡片。
+
+「马拉松 · 食欲协议」(`marathon`) 采用新版 Marathon 的衬线标题、技术小字、荧光模块和格状菜单，原创连接图作为概览插图。

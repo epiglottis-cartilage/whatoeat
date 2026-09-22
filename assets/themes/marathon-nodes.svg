@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+  <defs><pattern id="marathon-node-grid" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 0h2v2H0z" fill="#070a0b" opacity=".2"/></pattern></defs>
+  <path d="M0 0h400v180H0z" fill="#bded16"/>
+  <g fill="none" stroke="#182608" stroke-width="2">
+    <path d="M-30 10C80 10 70 160 185 160S298 10 430 10M-30 24C80 24 70 146 185 146S298 24 430 24M-30 38C80 38 70 132 185 132S298 38 430 38M-30 52C80 52 70 118 185 118S298 52 430 52M-30 66C80 66 70 104 185 104S298 66 430 66M-30 80C80 80 70 90 185 90S298 80 430 80"/>
+  </g>
+  <path d="M0 0h400v180H0z" fill="url(#marathon-node-grid)"/>
+  <g fill="#10120c" stroke="#bded16" stroke-width="3"><rect x="42" y="62" width="48" height="48" rx="7"/><rect x="174" y="96" width="48" height="48" rx="7"/><rect x="302" y="24" width="48" height="48" rx="7"/></g>
+  <g stroke="#bded16" stroke-width="2.5" fill="none"><path d="M52 82h28c-2 10-7 15-14 15s-12-5-14-15zm8-12v7m11-7v7M185 123l8 8 16-20M316 43h20m-10-10v20"/></g>
+</svg>

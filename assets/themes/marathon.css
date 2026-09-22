@@ -1,0 +1,132 @@
+/* MR-01/02: serif headings, compact technical labels, neon modules and dark grid. */
+.theme-root[data-theme="marathon"] {
+  --canvas: #090a0e; --paper: #121318; --ink: #eeeeef;
+  --acid: #c6f52b; --pink: #af83e9; --accent-ink: #111606;
+  --secondary-ink: #171223; --surface: #202127; --inset: #18191f;
+  --hover: #35363f; --muted: #b5b5c0; --subtle: #aeafb9;
+  --divider: #41424b; --stripe: #2c2d37; --stroke: #777884;
+  --shadow: #000; --strong: #c6f52b; --strong-ink: #111606;
+  --strong-accent: #111606; --inactive: #34343e; --focus: #00e5bb;
+  --danger: #ffb49f; --danger-surface: #4b292b; --danger-ink: #ffe3dc;
+  --warning-surface: #412d30; --danger-button: #aa453b;
+  --line: 1px solid var(--stroke);
+  font-family: "Arial", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+.theme-root[data-theme="marathon"] .masthead { min-height: 80px; padding-block: 14px; background: #121318; border-bottom: 6px solid #050609; }
+.theme-root[data-theme="marathon"] .brand-symbol { clip-path: none; background: #e1e1e6; color: #16171d; width: 50px; height: 37px; border-radius: 20px 3px 3px 20px; font: 900 23px Arial, sans-serif; }
+.theme-root[data-theme="marathon"] .wordmark { font-weight: 900; letter-spacing: -.09em; font-size: 24px; }
+.theme-root[data-theme="marathon"] .brand-subtitle { font: 9px monospace; color: #b5b5c0; margin-top: 7px; }
+.theme-root[data-theme="marathon"] .shell-status { background: #202127; padding: 7px 10px; border-radius: 3px; color: #b5b5c0; }
+.theme-root[data-theme="marathon"] .shell-status strong { color: #00e5bb; font-family: monospace; }
+.theme-root[data-theme="marathon"] .theme-select { border: 0; border-radius: 4px; color: #e1e1e6; background-color: #2a2b33; font-weight: 600; width: 174px; }
+.theme-root[data-theme="marathon"] .main { max-width: 1240px; padding: 37px 38px 42px; }
+.theme-root[data-theme="marathon"] .eat-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: stretch; gap: 30px; }
+.theme-root[data-theme="marathon"] .interface-overview { padding: 5px 0; }
+.theme-root[data-theme="marathon"] .overview-kicker { background: #e1e1e6; color: #15161c; width: fit-content; padding: 6px 9px; border-radius: 3px; font: 900 10px/1.2 Arial,sans-serif; letter-spacing: -.02em; margin: 0 0 24px; }
+.theme-root[data-theme="marathon"] .overview-title { font: 500 clamp(32px, 4vw, 49px)/1.5 "Noto Serif CJK SC", "Songti SC", "SimSun", serif; letter-spacing: -.03em; }
+.theme-root[data-theme="marathon"] .overview-copy { font: 12px/1.8 monospace; color: #b5b5c0; }
+.theme-root[data-theme="marathon"] .overview-visual { width: 100%; height: auto; aspect-ratio: 400/180; opacity: 1; margin: 28px 0 22px; border-radius: 5px; overflow: hidden; }
+.theme-root[data-theme="marathon"] .day-dial { background: #24252c; display: inline-flex; padding: 8px 14px; border-radius: 30px 4px 4px 30px; gap: 12px; }
+.theme-root[data-theme="marathon"] .day-number { font: 700 28px/1 monospace; color: #00e5bb; }
+.theme-root[data-theme="marathon"] .day-month { font: 10px monospace; color: #eeeef1; }
+.theme-root[data-theme="marathon"] .day-caption { font: 10px monospace; }
+.theme-root[data-theme="marathon"] .overview-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 0; border: 0; margin-top: 14px; }
+.theme-root[data-theme="marathon"] .overview-stat { flex-direction: column; gap: 6px; background: #23242c; border-radius: 5px; padding: 11px 14px; border-bottom: 4px solid #00e5bb; }
+.theme-root[data-theme="marathon"] .overview-stat:nth-child(2) { border-bottom-color: #af83e9; }
+.theme-root[data-theme="marathon"] .overview-stat strong { font: 500 30px monospace; }
+.theme-root[data-theme="marathon"] .overview-stat span { color: #b5b5c0; font: 10px monospace; }
+.theme-root[data-theme="marathon"] .overview-caption { font: 10px monospace; color: #b5b5c0; letter-spacing: .05em; }
+.theme-root[data-theme="marathon"] .eat-console { background: #15161bbf; padding: 22px; border-radius: 7px; border: 1px solid #41424b; }
+.theme-root[data-theme="marathon"] .page-kicker { font: 9px/1.7 monospace; color: #b5b5c0; }
+.theme-root[data-theme="marathon"] .page-heading { margin-bottom: 23px; }
+.theme-root[data-theme="marathon"] .page-heading h1,
+.theme-root[data-theme="marathon"] .section-title { font-family: "Noto Serif CJK SC", "Songti SC", "SimSun", serif; font-weight: 500; letter-spacing: -.04em; font-size: 35px; }
+.theme-root[data-theme="marathon"] .tiny-stamp { color: #13190c; background: #c6f52b; border: 0; border-radius: 3px; font: 600 9px/1.3 monospace; }
+.theme-root[data-theme="marathon"] .food-ticket { position: relative; background: #23242c; border: 0; border-radius: 5px; padding: 0 22px 38px; min-height: 260px; }
+.theme-root[data-theme="marathon"] .ticket-top { margin-inline: -22px; padding: 9px 12px; border-top: 5px solid #08090d; background: repeating-linear-gradient(135deg,#34353d 0 6px,#23242c 6px 13px); color: #e1e1e6; font: 9px/1.4 monospace; }
+.theme-root[data-theme="marathon"] .ticket-top span:first-child { color: #111606; background: #c6f52b; border: 0; padding: 4px 7px; font: 600 10px monospace; }
+.theme-root[data-theme="marathon"] .food-name { font: 800 clamp(44px, 5vw, 66px)/1.35 "Arial", "Noto Sans CJK SC",sans-serif; letter-spacing: -.07em; margin: 26px 0; }
+.theme-root[data-theme="marathon"] .food-name.long { font-size: 28px; line-height: 1.6; letter-spacing: 0; }
+.theme-root[data-theme="marathon"] .ticket-bottom { padding-top: 13px; border-top: 1px solid #626371; gap: 9px; }
+.theme-root[data-theme="marathon"] .ticket-bottom p { font: 11px/1.8 monospace; }
+.theme-root[data-theme="marathon"] .food-sticker { background: #af83e9; color: #171223; border-radius: 3px; font: 600 9px monospace; padding: 6px; }
+.theme-root[data-theme="marathon"] .ticket-edge { color: #aeafb9; font: 7px monospace; letter-spacing: .05em; left: 22px; }
+.theme-root[data-theme="marathon"] .decisions { gap: 9px; margin-top: 11px; }
+.theme-root[data-theme="marathon"] .decision { border: 0; border-radius: 5px; min-height: 94px; padding: 17px; }
+.theme-root[data-theme="marathon"] .decision strong { font-weight: 900; font-size: 29px; letter-spacing: -.05em; }
+.theme-root[data-theme="marathon"] .decision span { font: 10px/1.5 monospace; margin-top: 8px; }
+.theme-root[data-theme="marathon"] .decision.skip { background: #35363f; color: #eeeeef; }
+.theme-root[data-theme="marathon"] .decision.eat { background: #c6f52b; color: #111606; }
+.theme-root[data-theme="marathon"] .decision:hover { transform: translateY(-1px); box-shadow: inset 0 0 0 2px #eeeeef; }
+.theme-root[data-theme="marathon"] .small-print { font: 9px/1.8 monospace; color: #b5b5c0; margin-top: 15px; }
+.theme-root[data-theme="marathon"] .nav { background: #14151b; border: 0; border-top: 5px solid #07080c; gap: 5px; padding-inline: 24px; }
+.theme-root[data-theme="marathon"] .nav-item { border: 0; color: #b5b5c0; font-weight: 700; margin-block: 9px; padding: 9px 12px; border-radius: 5px; }
+.theme-root[data-theme="marathon"] .nav-item.active { color: #111606; background: #c6f52b; }
+.theme-root[data-theme="marathon"] .nav-item small { display: none; }
+.theme-root[data-theme="marathon"] .footer { background: #101116; border-top: 1px solid #41424b; color: #b5b5c0; font-family: monospace; }
+.theme-root[data-theme="marathon"] .food-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; padding: 8px; background: #050609; }
+.theme-root[data-theme="marathon"] .food-row { display: grid; grid-template-columns: 33px minmax(0,1fr); align-content: start; gap: 10px; background: #23242c; border: 0; border-radius: 3px; margin: 0; padding: 17px; }
+.theme-root[data-theme="marathon"] .food-row > .row-number { display: grid; place-items: center; width: 33px; height: 26px; grid-column: 1; grid-row: 1; background: #00e5bb; color: #091b17; font: 600 11px monospace; }
+.theme-root[data-theme="marathon"] .food-row:nth-child(even) > .row-number { background: #af83e9; color: #171223; }
+.theme-root[data-theme="marathon"] .food-details { grid-column: 2; grid-row: 1; }
+.theme-root[data-theme="marathon"] .food-row .row-main h3 { font-weight: 800; font-size: 22px; }
+.theme-root[data-theme="marathon"] .food-metrics { grid-column: 1/-1; grid-row: 2; border-block: 1px solid #41424b; padding: 10px 0; font: 11px/1.8 monospace; }
+.theme-root[data-theme="marathon"] .food-controls { grid-column: 1/-1; grid-row: 3; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.theme-root[data-theme="marathon"] .food-delete-confirm { grid-column: 1/-1; border-radius: 4px; }
+.theme-root[data-theme="marathon"] .toggle { background: #c6f52b; color: #111606; border: 0; border-radius: 4px; }
+.theme-root[data-theme="marathon"] .toggle[aria-pressed="false"] { background: #3a3b45; color: #dedee4; }
+.theme-root[data-theme="marathon"] .meal-form,
+.theme-root[data-theme="marathon"] .backup-panel { border: 0; border-radius: 7px; background: #1c1d24; }
+.theme-root[data-theme="marathon"] .meal-form h2,
+.theme-root[data-theme="marathon"] .backup-panel h2 { font-family: "Noto Serif CJK SC", "Songti SC", "SimSun", serif; font-weight: 500; font-size: 28px; }
+.theme-root[data-theme="marathon"] input,
+.theme-root[data-theme="marathon"] select,
+.theme-root[data-theme="marathon"] textarea { border-width: 1px; border-radius: 4px; font-family: monospace; }
+.theme-root[data-theme="marathon"] .button { border: 0; border-radius: 4px; font-weight: 700; }
+.theme-root[data-theme="marathon"] .history-row { border: 0; border-left: 5px solid #af83e9; background: #202127; border-radius: 4px; margin-bottom: 9px; padding: 22px 18px; }
+.theme-root[data-theme="marathon"] .history-row:nth-child(even) { border-left-color: #00e5bb; }
+.theme-root[data-theme="marathon"] .history-row small { font: 10px/1.6 monospace; color: #b5b5c0; }
+.theme-root[data-theme="marathon"] .toast { background: #23242c; color: #eeeeef; border: 0; border-left: 7px solid #c6f52b; border-radius: 5px; }
+.theme-root[data-theme="marathon"] .toast.error { border-left-color: #ffb49f; }
+.theme-root[data-theme="marathon"] .empty.illustrated,
+.theme-root[data-theme="marathon"] .celebration { border: 0; border-radius: 5px; background: #23242c; }
+.theme-root[data-theme="marathon"] .accepted-stamp { border: 0; border-radius: 4px; background: #c6f52b; color: #111606; font-weight: 900; }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .theme-root[data-theme="marathon"] .eat-layout { grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: 22px; }
+  .theme-root[data-theme="marathon"] .overview-title { font-size: 32px; }
+}
+@media (max-width: 760px) {
+  .theme-root[data-theme="marathon"] .masthead { padding-inline: 17px; min-height: 74px; }
+  .theme-root[data-theme="marathon"] .wordmark { font-size: 17px; }
+  .theme-root[data-theme="marathon"] .brand-subtitle { font-size: 8px; }
+  .theme-root[data-theme="marathon"] .theme-select { width: 150px; font-size: 10px; }
+  .theme-root[data-theme="marathon"] .main { padding: 23px 18px 32px; }
+  .theme-root[data-theme="marathon"] .eat-layout { gap: 20px; align-items: stretch; }
+  .theme-root[data-theme="marathon"] .interface-overview { padding: 0; border: 0; display: grid; grid-template-columns: 1fr; }
+  .theme-root[data-theme="marathon"] .overview-kicker { margin-bottom: 11px; font-size: 8px; }
+  .theme-root[data-theme="marathon"] .overview-title { font-size: 25px; letter-spacing: -.08em; }
+  .theme-root[data-theme="marathon"] .overview-title br { display: none; }
+  .theme-root[data-theme="marathon"] .overview-visual,
+  .theme-root[data-theme="marathon"] .day-dial { display: none; }
+  .theme-root[data-theme="marathon"] .overview-stats { margin-top: 14px; gap: 7px; }
+  .theme-root[data-theme="marathon"] .overview-stat { flex-direction: row; justify-content: space-between; align-items: baseline; gap: 7px; padding: 7px 11px; border-bottom-width: 3px; }
+  .theme-root[data-theme="marathon"] .overview-stat strong { font-size: 22px; }
+  .theme-root[data-theme="marathon"] .eat-console { padding: 17px 14px; }
+  .theme-root[data-theme="marathon"] .page-heading h1 { font-size: 29px; }
+  .theme-root[data-theme="marathon"] .page-heading { margin-bottom: 18px; }
+  .theme-root[data-theme="marathon"] .page-kicker { font-size: 8px; }
+  .theme-root[data-theme="marathon"] .tiny-stamp { font-size: 8px; padding: 6px; }
+  .theme-root[data-theme="marathon"] .food-ticket { padding-inline: 16px; min-height: 225px; }
+  .theme-root[data-theme="marathon"] .ticket-top { margin-inline: -16px; font-size: 8px; padding-inline: 10px; }
+  .theme-root[data-theme="marathon"] .ticket-top span:first-child { font-size: 9px; }
+  .theme-root[data-theme="marathon"] .food-name { font-size: 49px; }
+  .theme-root[data-theme="marathon"] .food-name.long { font-size: 26px; }
+  .theme-root[data-theme="marathon"] .ticket-edge { left: 16px; font-size: 6px; }
+  .theme-root[data-theme="marathon"] .decision { padding: 15px 12px; min-height: 87px; }
+  .theme-root[data-theme="marathon"] .decision strong { font-size: 27px; }
+  .theme-root[data-theme="marathon"] .nav { padding-inline: 9px; }
+  .theme-root[data-theme="marathon"] .nav-item { padding: 6px 3px; margin-block: 6px; font-size: 10px; }
+  .theme-root[data-theme="marathon"] .food-list { grid-template-columns: 1fr; padding: 5px; }
+  .theme-root[data-theme="marathon"] .food-row { grid-template-columns: 33px minmax(0,1fr); padding: 17px 13px; }
+  .theme-root[data-theme="marathon"] .history-row { padding-inline: 13px; }
+}

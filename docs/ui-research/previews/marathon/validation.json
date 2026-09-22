@@ -1,0 +1,1051 @@
+{
+  "started_at": "2026-09-22T16:55:40.613Z",
+  "preview_binary": "/home/epiglottis/Code/whatoeat/target/debug/preview",
+  "scope": "SSR static DOM and browser layout; no live Dioxus events or native device execution",
+  "cases": [
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-ready-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.265625,
+        "scroll_y": 43,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-390-ready-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.265625,
+        "scroll_y": 43,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-760-ready-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.265625,
+        "scroll_y": 43,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-1060-ready-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.984375,
+        "scroll_y": 87,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-history-360-ready-none",
+      "theme": "marathon",
+      "screen": "history",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.734375,
+        "scroll_y": 22,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-history-390-ready-none",
+      "theme": "marathon",
+      "screen": "history",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.734375,
+        "scroll_y": 22,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-history-760-ready-none",
+      "theme": "marathon",
+      "screen": "history",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.734375,
+        "scroll_y": 22,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-history-1060-ready-none",
+      "theme": "marathon",
+      "screen": "history",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 762,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-foods-360-ready-none",
+      "theme": "marathon",
+      "screen": "foods",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.515625,
+        "scroll_y": 244,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-foods-390-ready-none",
+      "theme": "marathon",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.515625,
+        "scroll_y": 244,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-foods-760-ready-none",
+      "theme": "marathon",
+      "screen": "foods",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.71875,
+        "scroll_y": 224,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-foods-1060-ready-none",
+      "theme": "marathon",
+      "screen": "foods",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.625,
+        "scroll_y": 92,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-backup-360-ready-none",
+      "theme": "marathon",
+      "screen": "backup",
+      "width": 360,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.234375,
+        "scroll_y": 464,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-backup-390-ready-none",
+      "theme": "marathon",
+      "screen": "backup",
+      "width": 390,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.84375,
+        "scroll_y": 441,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-backup-760-ready-none",
+      "theme": "marathon",
+      "screen": "backup",
+      "width": 760,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.265625,
+        "scroll_y": 374,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-backup-1060-ready-none",
+      "theme": "marathon",
+      "screen": "backup",
+      "width": 1060,
+      "state": "ready",
+      "toast": "",
+      "metrics": {
+        "nav_top": 762,
+        "footer_bottom": 761.96875,
+        "scroll_y": 446,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "button primary"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-idle-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "idle",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary big",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-empty-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "empty",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.3125,
+        "scroll_y": 49,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-exhausted-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "exhausted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-accepted-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "accepted",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.328125,
+        "scroll_y": 68,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-stale-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "stale",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-loading-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "loading",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770,
+        "scroll_y": 0,
+        "control_contrast": {
+          "checked": [],
+          "skipped": [
+            "theme-select"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-long-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.90625,
+        "scroll_y": 102,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-360-busy-none",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 360,
+      "state": "busy",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.265625,
+        "scroll_y": 43,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": [
+            "decision skip",
+            "decision skip",
+            "decision eat",
+            "decision eat"
+          ]
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-history-390-long-none",
+      "theme": "marathon",
+      "screen": "history",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.734375,
+        "scroll_y": 2300,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-foods-390-long-none",
+      "theme": "marathon",
+      "screen": "foods",
+      "width": 390,
+      "state": "long",
+      "toast": "",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.515625,
+        "scroll_y": 340,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-foods-390-ready-1",
+      "theme": "marathon",
+      "screen": "foods",
+      "width": 390,
+      "state": "ready",
+      "toast": "1",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 769.515625,
+        "scroll_y": 244,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast",
+              "ratio": 13.32,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "button primary",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "toggle",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    },
+    {
+      "browser": "chromium",
+      "key": "marathon-eat-390-ready-error",
+      "theme": "marathon",
+      "screen": "eat",
+      "width": 390,
+      "state": "ready",
+      "toast": "error",
+      "metrics": {
+        "nav_top": 770,
+        "footer_bottom": 770.265625,
+        "scroll_y": 43,
+        "control_contrast": {
+          "checked": [
+            {
+              "label": "toast error",
+              "ratio": 10.46,
+              "minimum": 4.5
+            },
+            {
+              "label": "theme-select",
+              "ratio": 10.8,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 3
+            },
+            {
+              "label": "decision skip",
+              "ratio": 10.34,
+              "minimum": 4.5
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 3
+            },
+            {
+              "label": "decision eat",
+              "ratio": 14.46,
+              "minimum": 4.5
+            }
+          ],
+          "skipped": []
+        }
+      },
+      "result": "passed"
+    }
+  ],
+  "screenshots": [
+    "/tmp/whatoeat-marathon-check/chromium-marathon-eat-390-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-eat-1060-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-history-390-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-history-1060-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-foods-390-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-foods-1060-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-backup-390-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-backup-1060-ready-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-history-390-long-none.png",
+    "/tmp/whatoeat-marathon-check/chromium-marathon-eat-390-ready-error.png"
+  ],
+  "finished_at": "2026-09-22T16:55:46.656Z",
+  "passed": 28,
+  "failed": 0
+}

@@ -67,3 +67,5 @@ docs/ui-research/
 连接方向：[死亡搁浅 一餐之遥](studies/08-strand.md)。
 
 电影式菜单：[战地 1 休整时刻](studies/09-frontline.md)。
+
+模块方向：[Marathon 食欲协议](studies/10-marathon.md)。

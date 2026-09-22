@@ -4,8 +4,8 @@
   "path_base": "docs/ui-research",
   "scope": "Reference evidence for independently implemented interface themes. Game images are research only; implementation and validation recorded separately.",
   "source_policy": "Official video frames and community screenshots are distinguished; image dates do not establish client build versions. Assets are research references, not application runtime resources.",
-  "reference_count": 11,
-  "image_bytes_total": 4887573,
+  "reference_count": 13,
+  "image_bytes_total": 8098840,
   "references": [
     {
       "id": "HOME-01",
@@ -331,6 +331,56 @@
       "dimensions": [
         1600,
         900
+      ],
+      "format": "JPEG"
+    },
+    {
+      "id": "MR-01",
+      "family": "marathon",
+      "title": "Marathon Season 2 Cradle interface",
+      "file": "references/marathon/MR-01-cradle.jpg",
+      "study": "studies/10-marathon.md",
+      "kind": "official_developer_screenshot",
+      "source_page": "https://www.bungie.net/7/en/News/article/welcome_season_2",
+      "original_image_url": "https://images.contentstack.io/v3/assets/blte410e3b15535c144/blt3a26dc0a092bfe75/6a16371534dad55b6218dc39/Cradle_LVL30_MAX_DEX_NoTooltip_R2_052226_EN.jpg",
+      "page_published_at": "2026-05-27",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Season 2 announcement screenshot, not a claim about current live UI",
+        "Modern Marathon, not the 1994 game; exact client build unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "42c4a7c603c935a75bff9d3f6150978383a7fbebbfb46c5b0c4d37e1c3f6cad2",
+      "bytes": 1595180,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "format": "JPEG"
+    },
+    {
+      "id": "MR-02",
+      "family": "marathon",
+      "title": "Marathon Season 2 Convert Matter interface",
+      "file": "references/marathon/MR-02-convert.jpg",
+      "study": "studies/10-marathon.md",
+      "kind": "official_developer_screenshot",
+      "source_page": "https://www.bungie.net/7/en/News/article/welcome_season_2",
+      "original_image_url": "https://images.contentstack.io/v3/assets/blte410e3b15535c144/blt5e860340e418461b/6a16372cca310ca09af6e1a9/Convert-Matter_LVL50_Selection_EN.jpg",
+      "page_published_at": "2026-05-27",
+      "acquired_at": "2026-09-23",
+      "transformations": "none",
+      "limitations": [
+        "Season 2 announcement screenshot, not a claim about current live UI",
+        "Modern Marathon, not the 1994 game; exact client build unknown"
+      ],
+      "motion_status": "static only",
+      "sha256": "1aeaac83dca5e987702d045ea103b673cc266669fc3a8f18bcff42fddc68cde3",
+      "bytes": 1616087,
+      "dimensions": [
+        1920,
+        1080
       ],
       "format": "JPEG"
     }

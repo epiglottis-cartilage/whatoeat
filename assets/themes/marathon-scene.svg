@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="marathon-dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".5" fill="#85868c" opacity=".12"/></pattern></defs>
+  <path d="M0 0h1440v1000H0z" fill="#090a0e"/>
+  <path d="M0 0h1440v1000H0z" fill="url(#marathon-dots)"/>
+  <g fill="none" stroke="#71717d" stroke-width="1.5" opacity=".14">
+    <path d="M-90 0C260 240-230 550 185 1000M-72 0C278 240-212 550 203 1000M-54 0C296 240-194 550 221 1000M-36 0C314 240-176 550 239 1000M-18 0C332 240-158 550 257 1000M0 0C350 240-140 550 275 1000M18 0C368 240-122 550 293 1000M36 0C386 240-104 550 311 1000"/>
+  </g>
+  <g stroke="#777780" stroke-width="1" opacity=".4"><path d="M34 125h22m-11-11v22M1384 125h22m-11-11v22M34 886h22m-11-11v22M1384 886h22m-11-11v22"/></g>
+</svg>
